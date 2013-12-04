@@ -9,8 +9,9 @@
 	</form>
 	<dl class="accordion" data-accordion ng-controller="ItemsCtrl">
 		<div ng-show="loading">Loading Cars...</div>
+		<div ng-hide="loading">{{(items|filter:query).length}} Cars</div>
 		<dd class="car" ng-repeat="item in items | filter:query">
-			<a href="#panel{{$index + 1}}">Car #{{$index + 1}}</a>
+			<a href="#panel{{$index + 1}}">{{item.year}} {{item.make}} {{item.model}}</a>
 			<div id="panel{{$index + 1}}" class="content">
 				<ul>
 					<li><b>Dealer ID:</b> {{item.dealerid}}</li>
