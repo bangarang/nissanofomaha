@@ -5,6 +5,8 @@
 app = angular.module("vauto", [])
 
 app.controller "ItemsCtrl", ["$scope", "$http", @ItemsCtrl = ($scope, $http) ->
+  $scope.loading = true
   $http.get("/items").success (data) ->
     $scope.items = data
+    $scope.loading = false
 ]

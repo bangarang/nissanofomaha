@@ -8,6 +8,7 @@
 		<input type="text" ng-model="query" placeholder="Search">
 	</form>
 	<dl class="accordion" data-accordion ng-controller="ItemsCtrl">
+		<div ng-show="loading">Loading Cars...</div>
 		<dd class="car" ng-repeat="item in items | filter:query">
 			<a href="#panel{{$index + 1}}">Car #{{$index + 1}}</a>
 			<div id="panel{{$index + 1}}" class="content">
