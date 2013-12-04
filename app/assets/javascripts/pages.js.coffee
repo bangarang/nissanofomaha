@@ -2,8 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-app = angular.module 'vauto', []
+app = angular.module("vauto", [])
 
-app.controller "ItemsCtrl", @ItemsCtrl = ($scope, $http) ->
-  $http.get('/items').success (data) ->
+app.controller "ItemsCtrl", ["$scope", "$http", @ItemsCtrl = ($scope, $http) ->
+  $http.get("/items").success (data) ->
     $scope.items = data
+]
