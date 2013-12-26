@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204051615) do
+ActiveRecord::Schema.define(version: 20131223164208) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "users", force: true do |t|
     t.datetime "created_at",                     null: false
@@ -22,7 +25,49 @@ ActiveRecord::Schema.define(version: 20131204051615) do
     t.string   "remember_token",     limit: 128, null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+
+  create_table "vehicles", force: true do |t|
+    t.string   "make"
+    t.string   "model"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "dealerid"
+    t.string   "vin"
+    t.string   "stock_"
+    t.string   "newused"
+    t.string   "model_number"
+    t.string   "body"
+    t.string   "transmission"
+    t.string   "series"
+    t.integer  "body_door_ct"
+    t.integer  "odometer"
+    t.integer  "engine_cylinder_ct"
+    t.string   "engine_displacement"
+    t.string   "drivetrain_desc"
+    t.string   "colour"
+    t.string   "interior_color"
+    t.integer  "invoice"
+    t.integer  "msrp"
+    t.integer  "book_value"
+    t.integer  "price"
+    t.string   "inventory_date"
+    t.string   "certified"
+    t.text     "description"
+    t.text     "features"
+    t.text     "photo_url_list"
+    t.integer  "city_mpg"
+    t.integer  "highway_mpg"
+    t.string   "photos_last_modified_date"
+    t.string   "status_code"
+    t.integer  "cost"
+    t.string   "series_detail"
+    t.string   "inspection_checklist_"
+    t.string   "video_url"
+    t.string   "video_player_url"
+    t.string   "rw"
+  end
 
 end

@@ -10,3 +10,10 @@ app.controller "ItemsCtrl", ["$scope", "$http", @ItemsCtrl = ($scope, $http) ->
     $scope.items = data
     $scope.loading = false
 ]
+
+app.controller "VehiclesCtrl", ["$scope", "$http", @VehiclesCtrl = ($scope, $http) ->
+  $scope.loading = true
+  $http.get("/vehicles").success (data) ->
+    $scope.items = data
+    $scope.loading = false
+]

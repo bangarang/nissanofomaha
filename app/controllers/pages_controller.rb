@@ -14,4 +14,5 @@ class PagesController < ApplicationController
 		render :json => @things 
 		
 	end
+
 end

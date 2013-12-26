@@ -1,0 +1,65 @@
+<!-- <h1>Listing vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %> -->
+
+<div class="row">
+  <h2>Import Vehicles</h2>
+  <%= form_tag import_vehicles_path, multipart: true do %>
+    <%= submit_tag "Import" %>
+  <% end %>
+</div>
+<div class="row">
+  <h1>Inventory <small class="subheader">(<%= link_to "inventory.txt", "inventory.txt" %>)</small></h1>
+  
+</div>
+
+<div class="row" ng-controller="VehiclesCtrl">
+  <div class="row collapse">
+        <div class="small-10 columns">
+          <input type="text" ng-model="query" placeholder="Search" />
+        </div>
+        <div class="small-2 columns">
+          <span class="postfix">{{(items|filter:query).length}} Cars</span>
+        </div>
+      </div>
+  <div class="large-12 columns">
+    <dl class="accordion" data-accordion>
+      <div ng-show="loading">Loading Cars...</div>
+      <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <li ng-repeat="item in items | filter:query">
+          <div class="vehicle" >
+            <h4><a href="vehicles/{{$index + 1}}">{{item.year}} {{item.make}} {{item.model}}</a></h4>
+            <p><b>VIN:</b> {{item.vin}}</p>
+          </div>
+        </li>
+      </ul>
+  </div>
+</div>
