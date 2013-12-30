@@ -4,7 +4,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.where(newused: 'U')
   end
 
   # GET /vehicles/1
@@ -67,6 +67,16 @@ class VehiclesController < ApplicationController
   # end
 
   def import
+
+    # ftp = Net::FTP.new()
+    # ftp.passive = true
+    # ftp.connect(host)
+    # ftp.login(username,password)
+    # files = ftp.chdir(path_to_file)
+    # ftp.getbinaryfile(filename, tempfile, 1024)
+    # ftp.close
+
+
     text = File.read('public/inventory.txt').gsub(/\"/,'')
     CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "\t" }) do |row|
       # Vehicle.create! row.to_hash
@@ -92,6 +102,6 @@ class VehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
-      params.require(:vehicle).permit(:make, :model, :year, :vin)
+      params.require(:vehicle).permit(:make, :model, :year, :vin, :photos)
     end
 end

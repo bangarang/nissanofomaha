@@ -8,4 +8,7 @@ class Vehicle < ActiveRecord::Base
 	#     # Vehicle.create! row.to_hash
 	#   end
 	# end
+	def photos 
+		self.photo_url_list.to_s.split(",")
+	end 
 end
