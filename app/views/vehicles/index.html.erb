@@ -1,72 +1,74 @@
 <div class="row">
-  <h2>Import Vehicles</h2>
-  <%= form_tag import_vehicles_path, multipart: true do %>
-    <%= submit_tag "Import" %>
-  <% end %>
+  <div class="large-8 columns">
+    <h1>Used Vehicle Inventory <small class="subheader">(<%= link_to "inventory.txt", "inventory.txt" %>)</small></h1>
+  </div>
+  <div class="large-4 columns">
+    <%= form_tag import_vehicles_path, class: "right", multipart: true do %>
+      <%= submit_tag "Import from inventoy.txt", class: "button" %>
+    <% end %>
+  </div>
 </div>
-<div class="row">
-  <h1>Inventory <small class="subheader">(<%= link_to "inventory.txt", "inventory.txt" %>)</small></h1>
-  
-</div>
-
 <div class="row" ng-controller="VehiclesCtrl">
-  <ul class="button-group">
+  <div class="large-12 columns">
+    <ul class="button-group">
 
-    <li>
-      <a href="#" data-dropdown="price" class="small secondary button dropdown">Price:</a><br>
-      <ul id="price" data-dropdown-content class="f-dropdown">
-        <li><p ng-click="min_price='0'; max_price='2000'">$0-$2,000</p></li>
-        <li><p ng-click="min_price='2000'; max_price='5000'">$2,000-$5,000</p></li>
-        <li><p ng-click="min_price='5000'; max_price='10000'">$5,000-$10,000</p></li>
-        <li><p ng-click="min_price='10000'; max_price='100000'">$10,000-Above</p></li>
-        <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
-        <li><p>Min Price:<input ng-model="min_price" /></p></li>
-        <li><p>Max Price:<input ng-model="max_price" /></p></li>
-      </ul>
-    </li>
-    
-    <li>
-      <a href="#" data-dropdown="year" class="small secondary button dropdown">Year:</a><br>
-      <ul id="year" data-dropdown-content class="f-dropdown">
-        <li><p>Year:<input ng-model="the_year" /></p></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#" data-dropdown="price" class="small secondary button dropdown">Price:</a><br>
+        <ul id="price" data-dropdown-content class="f-dropdown">
+          <li><p ng-click="min_price='0'; max_price='2000'">$0-$2,000</p></li>
+          <li><p ng-click="min_price='2000'; max_price='5000'">$2,000-$5,000</p></li>
+          <li><p ng-click="min_price='5000'; max_price='10000'">$5,000-$10,000</p></li>
+          <li><p ng-click="min_price='10000'; max_price='100000'">$10,000-Above</p></li>
+          <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
+          <li><p>Min Price:<input ng-model="min_price" /></p></li>
+          <li><p>Max Price:<input ng-model="max_price" /></p></li>
+        </ul>
+      </li>
+      
+      <li>
+        <a href="#" data-dropdown="year" class="small secondary button dropdown">Year:</a><br>
+        <ul id="year" data-dropdown-content class="f-dropdown">
+          <li><p>Year:<input ng-model="the_year" /></p></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="#" data-dropdown="mpg" class="small secondary button dropdown">MPG:</a><br>
-      <ul id="mpg" data-dropdown-content class="f-dropdown">
-        <li><p>Minimum City:<input ng-model="city_mpg" /></p></li>
-        <li><p>Minimum Highway:<input ng-model="highway_mpg" /></p></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#" data-dropdown="mpg" class="small secondary button dropdown">MPG:</a><br>
+        <ul id="mpg" data-dropdown-content class="f-dropdown">
+          <li><p>Minimum City:<input ng-model="city_mpg" /></p></li>
+          <li><p>Minimum Highway:<input ng-model="highway_mpg" /></p></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="#" data-dropdown="model" class="small secondary button dropdown">Model</a><br>
-      <ul id="model" data-dropdown-content class="f-dropdown">
-        <li><p>Model:<input ng-model="the_model" /></p></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#" data-dropdown="model" class="small secondary button dropdown">Model</a><br>
+        <ul id="model" data-dropdown-content class="f-dropdown">
+          <li><p>Model:<input ng-model="the_model" /></p></li>
+        </ul>
+      </li>
 
-    <li>
-      <a href="#" data-dropdown="make" class="small secondary button dropdown">Make</a><br>
-      <ul id="make" data-dropdown-content class="f-dropdown">
-        <li><p>Make:<input ng-model="the_make" /></p></li>
-      </ul>
-    </li>
-  </ul>
-
-  <div class="row collapse">
-    <div class="small-10 columns">
-      <input type="text" ng-model="query" placeholder="Search" />
-    </div>
-    <div class="small-2 columns">
-      <span class="postfix">{{(items|filter:query).length}} Cars</span>
+      <li>
+        <a href="#" data-dropdown="make" class="small secondary button dropdown">Make</a><br>
+        <ul id="make" data-dropdown-content class="f-dropdown">
+          <li><p>Make:<input ng-model="the_make" /></p></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="large-12 columns">
+    <div class="row collapse">
+      <div class="small-10 columns">
+        <input type="text" ng-model="query" placeholder="Search" />
+      </div>
+      <div class="small-2 columns">
+        <span class="postfix">{{(items|filter:query).length}} Cars</span>
+      </div>
     </div>
   </div>
   <div class="large-12 columns">
     <div ng-show="loading">Loading Cars...</div>
     <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-      <li data-ng-repeat="item in items | filter:query | filter:priceFilter | filter:yearFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
+      <li data-ng-repeat="item in items | orderBy:'-year' | filter:query | filter:priceFilter | filter:yearFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
         <div class="vehicle" >
           <p>{{item.year}}</p>
           <img src="{{item.photos[0]}}" />
