@@ -13,7 +13,7 @@
 @import "bourbon";
 @import "neat";
 @import "grid_settings";
-
+@import "nissan-ag";
 html, body {
   margin: 0;
 }
@@ -24,6 +24,10 @@ img.full {
 }
 
 $red: #C71444;
+
+h1, h2, h3, h4, h5, h6, body {
+  font-family: 'nissan-ag';
+}
 
 @import "header";
 @import "vehicle";
