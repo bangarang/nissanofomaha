@@ -12,10 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require angular
 //= require angular-animate
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(document).ready(function() {
+  $(".price-click").click(function() {
+	  $(".price").toggleClass("up");
+	});
+  $(".odometer-click").click(function() {
+	  $(".odometer").toggleClass("up");
+	});
+});

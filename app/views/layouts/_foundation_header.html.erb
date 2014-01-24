@@ -1,0 +1,23 @@
+	<nav class="top-bar" data-topbar>
+	  <ul class="title-area">
+	    <li class="name">
+	      <%= image_tag('logo.png') %>
+	    </li>
+	  </ul>
+
+	  <section class="top-bar-section">
+	    <!-- Right Nav Section -->
+	    <ul class="right">
+	    <% if signed_in? %>
+		  <li class="has-dropdown">
+			<a href="#"><%= current_user.email %></a>
+			<ul class="dropdown">
+				<li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+			</ul>
+		  </li>
+	    <% else %>
+	      <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+	    <% end %>
+	    </ul>
+	  </section>
+	</nav>

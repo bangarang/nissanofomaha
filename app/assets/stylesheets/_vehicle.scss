@@ -1,0 +1,99 @@
+.filter {
+	background: $red;
+	color: white;
+	text-align: center;
+	h3 {
+		margin: 0;
+		padding: 15px;
+	}
+}
+
+.controls {
+	@include outer-container;
+	.control {
+		margin-right: -1px;
+		width: 25%;
+		border: 1px solid #ddd;
+		float: left;
+		h5 {
+			text-align: center;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+		.price, .odometer {
+			display: none;
+		}
+		.price.up, .odometer.up {
+			display: block;
+			position: absolute;
+			background: white;
+				padding-left: 0;
+			li {
+				list-style: none;
+				padding: 0 60px;
+				p {
+					text-align: center;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+}
+
+.vehiclegroup {
+	ul.vehicles {
+		padding: 0;
+		li {
+			display: inline-block;
+			list-style: none;
+			width: 20%;
+			padding: 0 15px;
+			margin: 10px 0;
+			vertical-align: top;
+		}
+	}
+}
+
+.vehicle {
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	.main {
+		box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+		img {
+			width: 100%;
+		}
+		h4 {
+			text-align: center;
+			margin: 5px;
+			a {
+				text-decoration: none;
+				color: #333;
+				text-transform: uppercase;
+			}
+		}
+		p {
+			text-align: center;
+			text-transform: uppercase;
+			color: #777777;
+		}
+	}
+	
+}
+
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave {
+  -webkit-transition:0.2s linear all;
+  transition:0.2s linear all;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+  opacity:1;
+}

@@ -32,7 +32,10 @@ gem 'jbuilder', '~> 1.2'
 
 
 gem 'angularjs-rails'
-gem 'foundation-rails'
+
+gem 'bourbon'
+gem 'neat'
+
 gem 'clearance'
 
 gem 'rails_12factor', group: :production

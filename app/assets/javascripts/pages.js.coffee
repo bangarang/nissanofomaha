@@ -23,10 +23,10 @@ app.controller "VehiclesCtrl", ["$scope", "$http", @VehiclesCtrl = ($scope, $htt
 		  	item.price > $scope.min_price and item.price < $scope.max_price
 		  else
 		  	true
-		$scope.yearFilter = (item) ->
-			if $scope.the_year
-		  	item.year is parseInt($scope.the_year)
-		  else 
+		$scope.odometerFilter = (item) ->
+			if $scope.min_odometer or $scope.max_odometer
+		  	item.odometer > $scope.min_odometer and item.odometer < $scope.max_odometer
+		  else
 		  	true
 		$scope.mpgFilter = (item) ->
 		  item.highway_mpg >= $scope.highway_mpg and item.city_mpg >= $scope.city_mpg

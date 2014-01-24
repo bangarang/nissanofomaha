@@ -29,6 +29,9 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
     clearance (1.1.0)
       bcrypt-ruby
@@ -45,9 +48,6 @@ GEM
       activemodel
     erubis (2.7.0)
     execjs (2.0.2)
-    foundation-rails (5.0.2.0)
-      railties (>= 3.1.0)
-      sass (>= 3.2.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -63,6 +63,9 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.2)
+    neat (1.5.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     pg (0.17.1)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -125,11 +128,12 @@ PLATFORMS
 
 DEPENDENCIES
   angularjs-rails
+  bourbon
   clearance
   coffee-rails (~> 4.0.0)
-  foundation-rails
   jbuilder (~> 1.2)
   jquery-rails
+  neat
   pg
   rails (= 4.0.1)
   rails_12factor
