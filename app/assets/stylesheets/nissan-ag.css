@@ -42,7 +42,7 @@
 /* IE */
 @font-face {
     font-family: 'nissan-ag-n2';
-    src: url('/assets/nissanag-light-webfont.eot);
+    src: url('/assets/nissanag-light-webfont.eot');
     src: url('/assets/nissanag-light-webfont.eot?#iefix') format('embedded-opentype'),
          url('/assets/nissanag-light-webfont.woff') format('woff'),
          url('/assets/nissanag-light-webfont.ttf') format('truetype'),
