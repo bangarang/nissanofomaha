@@ -25,7 +25,7 @@ app.controller "VehiclesCtrl", ["$scope", "$http", @VehiclesCtrl = ($scope, $htt
 		  	true
 		$scope.odometerFilter = (item) ->
 			if $scope.min_odometer or $scope.max_odometer
-		  	item.odometer > $scope.min_odometer and item.odometer < $scope.max_odometer
+		  	item.mileage > $scope.min_odometer and item.mileage < $scope.max_odometer
 		  else
 		  	true
 		$scope.mpgFilter = (item) ->

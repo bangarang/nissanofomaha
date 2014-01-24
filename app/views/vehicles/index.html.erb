@@ -20,18 +20,19 @@
         <li><p ng-click="min_price='2000'; max_price='5000'">$2,000-$5,000</p></li>
         <li><p ng-click="min_price='5000'; max_price='10000'">$5,000-$10,000</p></li>
         <li><p ng-click="min_price='10000'; max_price='100000'">$10,000-Above</p></li>
-<!--         <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
-        <li><p>Min Price:<input ng-model="min_price" /></p></li>
+        <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
+  <!--      <li><p>Min Price:<input ng-model="min_price" /></p></li>
         <li><p>Max Price:<input ng-model="max_price" /></p></li> -->
       </ul>
     </div>
     <div class="control">
       <h5 class="odometer-click">Mileage</h5>
       <ul class="odometer">
-        <li><p ng-click="min_odometer='0'; max_odometer='25000'">0-25,000</p></li>
-        <li><p ng-click="min_odometer='25000'; max_odometer='50000'">25,000-50,000</p></li>
-        <li><p ng-click="min_odometer='50000'; max_odometer='75000'">50,000-75,000</p></li>
-        <li><p ng-click="min_odometer='75000'; max_odometer='10000000'">75,000-Above</p></li>
+        <li><p ng-click="min_odometer='0'; max_odometer='25'">0-25k</p></li>
+        <li><p ng-click="min_odometer='25'; max_odometer='50'">25k-50k</p></li>
+        <li><p ng-click="min_odometer='50'; max_odometer='75'">50k-75k</p></li>
+        <li><p ng-click="min_odometer='75'; max_odometer='1000'">75k-Above</p></li>
+        <li><p ng-click="min_odometer=''; max_odometer=''">Clear</p></li>
 <!--         <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
         <li><p>Min Price:<input ng-model="min_price" /></p></li>
         <li><p>Max Price:<input ng-model="max_price" /></p></li> -->
@@ -93,10 +94,10 @@
           <div class="main">
             <img src="{{item.photos[0]}}" />
             <h4><a href="vehicles/{{$index + 1}}">{{item.make}} {{item.model }}</a></h4>
-            <p>{{item.price | currency:"$"}}</p>
+            <p class="price">{{item.price | currency:"$"}}</p>
             <div class="bottom">
-              <p>{{item.city_mpg}} / {{item.highway_mpg}}</p>
-              <p>{{item.odometer}}</p>
+              <p class="mpg">{{item.city_mpg}}/{{item.highway_mpg}}</p>
+              <p class="mileage">{{item.mileage }} k</p>
             </div>
           </div>
         </div>

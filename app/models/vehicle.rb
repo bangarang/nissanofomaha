@@ -8,6 +8,9 @@ class Vehicle < ActiveRecord::Base
 	#     # Vehicle.create! row.to_hash
 	#   end
 	# end
+	def mileage
+		(self.odometer / 1000)
+	end
 	def photos 
 		self.photo_url_list.to_s.split(",")
 	end 

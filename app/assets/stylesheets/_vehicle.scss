@@ -59,6 +59,13 @@
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
+	.top {
+		p {
+			color: #777777;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+	}
 	.main {
 		box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
 		img {
@@ -77,6 +84,24 @@
 			text-align: center;
 			text-transform: uppercase;
 			color: #777777;
+			line-height: 30px;
+		}
+
+		.bottom {
+			background: #DDDDDD;
+			p {
+				text-transform: none;
+				color: #333333;
+				font-weight: bold;
+				margin: 0;
+			}
+			.mpg, .mileage {
+				display: inline-block;
+				width: 49%;
+			}
+			.mpg {
+				border-right: 1px solid white;
+			}
 		}
 	}
 	
