@@ -93,7 +93,8 @@
           <div class="top"><p>{{item.year}}</p></div>
           <div class="main">
             <img src="{{item.photos[0]}}" />
-            <h4><a href="vehicles/{{$index + 1}}">{{item.make}} {{item.model }}</a></h4>
+            <!-- <h4><a href="vehicles/{{$index + 1}}">{{item.make}} {{item.model }}</a></h4> -->
+            <h4><a href="/usedvehicle">{{item.make}} {{item.model }}</a></h4>
             <p class="price">{{item.price | currency:"$"}}</p>
             <div class="bottom">
               <p class="mpg">{{item.city_mpg}}/{{item.highway_mpg}}</p>

@@ -24,4 +24,8 @@ $(document).ready(function() {
   $(".odometer-click").click(function() {
 	  $(".odometer").toggleClass("up");
 	});
+  $(".different-click").click(function() {
+	  $(".different").toggleClass("up");
+	  return false;
+	});
 });

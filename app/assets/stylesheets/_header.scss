@@ -16,6 +16,19 @@ header {
 				list-style: none;
 				float: left;
 				padding: 0 15px;
+				div.different {
+					display: none;
+				}
+				div.different.up {
+					display: block;
+					position: absolute;
+					background: white;
+					a.media {
+						display: block;
+						padding: 15px 30px;
+					}
+				}
+
 				a {
 					font-weight: bold;
 					color: #999999;

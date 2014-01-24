@@ -11,7 +11,10 @@ Vauto::Application.routes.draw do
   get 'items' => 'pages#items'
 
   get 'inventory' => 'pages#full_inventory'
-
+  get 'newvehicle' => 'pages#newvehicle'
+  get 'joinourteam' => 'pages#joinourteam'
+  get 'medialounge' => 'pages#medialounge'
+  get 'usedvehicle' => 'pages#usedvehicle'
   resources :vehicles do
     collection { post :import }
   end
