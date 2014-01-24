@@ -2,10 +2,10 @@
 	<nav>
 		<a href="/"><%= image_tag("logo.png", :class => "logo") %></a>
 		<ul class="menu">
-			<li>How We're Different</li>
-			<li>New Vehicles</li>
-			<li><a href="/usedvehicles">Used Vehicles</a></li>
-			<li>Service</li>
+			<li><a href="#" >How We're Different</a></li>
+			<li><a href="#">New Vehicles</a></li>
+			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
+			<li><a href="#">Service</a></li>
 		</ul>
 		<%= image_tag("nissan_logo.png", :class => "nissan_logo") %>
 	</nav>

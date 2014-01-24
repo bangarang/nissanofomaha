@@ -1,6 +1,6 @@
 @include font-face(nissan-ag, 'nissanag-light-webfont', $weight: 200, $asset-pipeline: true);
 @include font-face(nissan-ag, 'nissanag-regular-webfont', $weight: 400, $asset-pipeline: true);
-// @include font-face(nissan-ag, 'nissanag-italic-webfont', $weight: 400, $asset-pipeline: true);
+@include font-face(nissan-ag, 'nissanag-italic-webfont', $weight: 400, $style: italic, $asset-pipeline: true);
 @include font-face(nissan-ag, 'nissanag-bold-webfont', $weight: 700, $asset-pipeline: true);
 
 // @font-face {
