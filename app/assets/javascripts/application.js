@@ -14,14 +14,19 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-animate
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
   $(".price-click").click(function() {
 	  $(".price").toggleClass("up");
 	});
+	$(".price p").click(function() {
+	  $(".price").toggleClass("up");
+	});
   $(".odometer-click").click(function() {
+	  $(".odometer").toggleClass("up");
+	});
+	$(".odometer p").click(function() {
 	  $(".odometer").toggleClass("up");
 	});
   $(".different-click").click(function() {
