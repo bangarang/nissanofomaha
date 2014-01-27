@@ -22,7 +22,8 @@
 		<div class="description">
 			<p><%= @new_vehicle.description %></p>
 		</div>
-		
+		<% unless @new_vehicle.exteriors.empty? && @new_vehicle.interiors.empty? %>
+		<% unless @new_vehicle.exteriors.empty? %> 
 		<img src="<%= @new_vehicle.exteriors.first.photos.order(:name).first.image_url %>" width="950" height="535"
 		      class="reel exterior"
 		      id="exterior"
@@ -30,7 +31,8 @@
 		      data-frames="8"
 		      data-revolution="500"
 		      data-preload="linear">	
-
+		<% end %>
+		<% unless @new_vehicle.interiors.empty? %> 
     <img src="<%= @new_vehicle.interiors.first.photos.order(:name).first.image_url %>" width="950" height="535"
 		      class="reel interior off"
 		      id="interior"
@@ -38,7 +40,10 @@
 		      data-frames="8"
 		      data-revolution="500"
 		      data-preload="linear">	
+		<% end %>
+		
     <div class="labels">
+    	<% unless @new_vehicle.exteriors.empty? %> 
     	<div class="exterior active">
     		<% count = 0 %>
     		<% for exterior in @new_vehicle.exteriors %>
@@ -46,6 +51,9 @@
     		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= exterior.slug %>_label"><%= exterior.name %></h5>
     		<% end %>
     	</div>
+    	<% end %>
+
+    	<% unless @new_vehicle.interiors.empty? %> 
     	<div class="interior">
     		<% count = 0 %>
     		<% for interior in @new_vehicle.interiors %>
@@ -53,12 +61,15 @@
     		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= interior.slug %>_label"><%= interior.name %></h5>
     		<% end %>
     	</div>
+    	<% end %>
     </div>
+
 		<div class="view_controls">
 			<div class="int_ext">
 	      <h5 class="title">Select View: </h5><h5 id="exterior-click" class="click active">Exterior</h5><h5 id="interior-click" class="click">Interior</h5>
 	    </div>
 	    <div class="views">
+	    	<% unless @new_vehicle.exteriors.empty?  %>
 	    	<div class="exterior-views">
 	    		<h5 class="title">Select Color: </h5>
 					<% for exterior in @new_vehicle.exteriors %>
@@ -67,6 +78,8 @@
 						</div>
 					<% end %>
 				</div>
+				<% end %>
+				<% unless @new_vehicle.interiors.empty? %>
 				<div class="interior-views off">
 					<h5 class="title">Select Color: </h5>
 		      <% for interior in @new_vehicle.interiors %>
@@ -76,6 +89,7 @@
 						
 					<% end %>
 		    </div>
+		    <% end %>
 	    </div>
     </div>
 
@@ -98,7 +112,7 @@
 			<% end %>
 			});
 		<% end %>
-
+		<% end %> 
 		<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
 		<%= link_to 'Back', new_vehicles_path %>
 	</section>
