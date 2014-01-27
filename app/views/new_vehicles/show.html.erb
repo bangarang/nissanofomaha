@@ -38,7 +38,22 @@
 		      data-frames="8"
 		      data-revolution="500"
 		      data-preload="linear">	
-
+    <div class="labels">
+    	<div class="exterior active">
+    		<% count = 0 %>
+    		<% for exterior in @new_vehicle.exteriors %>
+    		<% count = count + 1  %>
+    		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= exterior.slug %>_label"><%= exterior.name %></h5>
+    		<% end %>
+    	</div>
+    	<div class="interior">
+    		<% count = 0 %>
+    		<% for interior in @new_vehicle.interiors %>
+    		<% count = count + 1  %>
+    		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= interior.slug %>_label"><%= interior.name %></h5>
+    		<% end %>
+    	</div>
+    </div>
 		<div class="view_controls">
 			<div class="int_ext">
 	      <h5 class="title">Select View: </h5><h5 id="exterior-click" class="click active">Exterior</h5><h5 id="interior-click" class="click">Interior</h5>
@@ -47,13 +62,18 @@
 	    	<div class="exterior-views">
 	    		<h5 class="title">Select Color: </h5>
 					<% for exterior in @new_vehicle.exteriors %>
-						<div class="circle" id="<%= exterior.slug %>" style="background:<%= exterior.color %>"></div>
+						<div class="color"> 
+							<div class="circle" id="<%= exterior.slug %>" style="background:<%= exterior.color %>"></div>
+						</div>
 					<% end %>
 				</div>
 				<div class="interior-views off">
 					<h5 class="title">Select Color: </h5>
 		      <% for interior in @new_vehicle.interiors %>
-						<div class="rectangle" id="<%= interior.slug %>" style="background:<%= interior.color %>"></div>
+		      	<div class="color">
+		      		<div class="rectangle" id="<%= interior.slug %>" style="background:<%= interior.color %>"></div>
+		      	</div>
+						
 					<% end %>
 		    </div>
 	    </div>
@@ -65,11 +85,15 @@
 			<% for exterior in @new_vehicle.exteriors %>
 				$('#<%= exterior.slug %>').click(function(){
 			  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == 8 %><% end %>]);
+			  	$('.labels .exterior h5').removeClass('active');
+					$('#<%= exterior.slug %>_label').addClass('active');
 			  });
 			<% end %>
 			<% for interior in @new_vehicle.interiors %>
 				$('#<%= interior.slug %>').click(function(){
 			  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == 13 %><% end %>]);
+			  	$('.labels .interior h5').removeClass('active');
+					$('#<%= interior.slug %>_label').addClass('active');
 			  });
 			<% end %>
 			});

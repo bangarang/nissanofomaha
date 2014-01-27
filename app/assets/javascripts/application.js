@@ -40,6 +40,10 @@ $(document).ready(function() {
 	$("#interior-click").click(function() {
 		$(this).addClass("active");
 		$("#exterior-click").removeClass("active");
+
+		$('.labels .interior').addClass("active");
+		$('.labels .exterior').removeClass("active");
+
 	  $("#interior-reel").removeClass("off");
 	  $("#exterior-reel").addClass("off");
 	  $(".interior-views").removeClass("off");
@@ -49,6 +53,10 @@ $(document).ready(function() {
 	$("#exterior-click").click(function() {
 		$(this).addClass("active");
 		$("#interior-click").removeClass("active");
+
+		$('.labels .exterior').addClass("active");
+		$('.labels .interior').removeClass("active");
+
 	  $("#exterior-reel").removeClass("off");
 	  $("#interior-reel").addClass("off");
 	  $(".exterior-views").removeClass("off");
