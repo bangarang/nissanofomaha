@@ -3,7 +3,7 @@
 
 	<div class="photo_container">
 	  <h1><%= @exterior.name %></h1>
-		<h2>Color: <%= @exterior.image %></h2>
+		<h2>Color: <%= @exterior.color %></h2>
 	  <div id="photos">
 	    <%= render @exterior.photos %>
 	  </div>
@@ -26,6 +26,6 @@
 	</div>
 
 	<%= link_to 'Edit', edit_exterior_path(@exterior) %> |
-	<%= link_to 'Back', new_vehicle_path(@interior.new_vehicle_id) %>
+	<%= link_to 'Back', new_vehicle_path(@exterior.new_vehicle_id) %>
 
 </div>
