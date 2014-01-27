@@ -1,0 +1,82 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<section class="newvehicle">
+		<header>
+			<div class="name">
+			  <h4>2014 Nissan</h4>
+			  <h1><%= @new_vehicle.name %></h1>
+			</div>
+		<div class="info">
+			<div class="spec">
+				<h3 class="title">Starting MSRP*</h3>
+		  	<h3 class="content">$<%= number_with_delimiter(@new_vehicle.msrp) %></h3>
+			</div>
+			<div class="spec">
+				<h3 class="title">City/Hwy MPG*</h3>
+		  	<h3 class="content"><%= @new_vehicle.city_mpg %>/<%= @new_vehicle.highway_mpg %></h3>
+			</div>
+		  
+		</div>
+		</header>
+		<div class="description">
+			<p><%= @new_vehicle.description %></p>
+		</div>
+		
+		<img src="<%= @new_vehicle.exteriors.first.photos.order(:name).first.image_url %>" width="950" height="535"
+		      class="reel exterior"
+		      id="exterior"
+		      data-images="<% count = 0 %><% for photo in @new_vehicle.exteriors.first.photos.order(:name) %><% count = count + 1 %><%= photo.image_url %><%= "," unless count == 8 %><% end %>"
+		      data-frames="8"
+		      data-revolution="500"
+		      data-preload="linear">	
+
+    <img src="<%= @new_vehicle.interiors.first.photos.order(:name).first.image_url %>" width="950" height="535"
+		      class="reel interior off"
+		      id="interior"
+		      data-images="<% count = 0 %><% for photo in @new_vehicle.interiors.first.photos.order(:name) %><% count = count + 1 %><%= photo.image_url %><%= "," unless count == 13 %><% end %>"
+		      data-frames="8"
+		      data-revolution="500"
+		      data-preload="linear">	
+
+		<div class="view_controls">
+			<div class="int_ext">
+	      <h5 class="title">Select View: </h5><h5 id="exterior-click" class="click active">Exterior</h5><h5 id="interior-click" class="click">Interior</h5>
+	    </div>
+	    <div class="views">
+	    	<div class="exterior-views">
+	    		<h5 class="title">Select Color: </h5>
+					<% for exterior in @new_vehicle.exteriors %>
+						<div class="circle" id="<%= exterior.slug %>" style="background:<%= exterior.color %>"></div>
+					<% end %>
+				</div>
+				<div class="interior-views off">
+					<h5 class="title">Select Color: </h5>
+		      <% for interior in @new_vehicle.interiors %>
+						<div class="rectangle" id="<%= interior.slug %>" style="background:<%= interior.color %>"></div>
+					<% end %>
+		    </div>
+	    </div>
+    </div>
+
+
+		<%= javascript_tag do %>
+			$(document).ready(function() {
+			<% for exterior in @new_vehicle.exteriors %>
+				$('#<%= exterior.slug %>').click(function(){
+			  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == 8 %><% end %>]);
+			  });
+			<% end %>
+			<% for interior in @new_vehicle.interiors %>
+				$('#<%= interior.slug %>').click(function(){
+			  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == 13 %><% end %>]);
+			  });
+			<% end %>
+			});
+		<% end %>
+
+		<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
+		<%= link_to 'Back', new_vehicles_path %>
+	</section>
+
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<div class="photo_container">
+	  <h1><%= @exterior.name %></h1>
+		<h2>Color: <%= @exterior.image %></h2>
+	  <div id="photos">
+	    <%= render @exterior.photos %>
+	  </div>
+	  <div class="clear"></div>
+
+	  <%= s3_uploader_form post: photos_url, as: "photo[image_url]", exterior: @exterior.id do %>
+	    <%= file_field_tag :file, multiple: true %>
+	  <% end %>
+
+	  <script id="template-upload" type="text/x-tmpl">
+	    <div class="upload">
+	      {%=o.name%}
+	      <div class="progress">
+	        <div class="bar" style="width: 0%">
+	        </div>
+	      </div>
+	    </div>
+	  </script>
+
+	</div>
+
+	<%= link_to 'Edit', edit_exterior_path(@exterior) %> |
+	<%= link_to 'Back', new_vehicle_path(@interior.new_vehicle_id) %>
+
+</div>

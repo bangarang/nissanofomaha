@@ -1,9 +1,11 @@
-header {
+header.main {
 	box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 	height: 75px;
 	width: 100%;
 	background: white;
 	position: fixed;
+	top: 0;
+	z-index: 10;
 	nav {
 		@include outer-container;
 		img.logo {

@@ -11,7 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.reel
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require angular
 //= require angular-animate
 //= require_tree .
@@ -32,5 +35,23 @@ $(document).ready(function() {
   $(".different-click").click(function() {
 	  $(".different").toggleClass("up");
 	  return false;
+	});
+
+	$("#interior-click").click(function() {
+		$(this).addClass("active");
+		$("#exterior-click").removeClass("active");
+	  $("#interior-reel").removeClass("off");
+	  $("#exterior-reel").addClass("off");
+	  $(".interior-views").removeClass("off");
+	  $(".exterior-views").addClass("off");
+
+	});
+	$("#exterior-click").click(function() {
+		$(this).addClass("active");
+		$("#interior-click").removeClass("active");
+	  $("#exterior-reel").removeClass("off");
+	  $("#interior-reel").addClass("off");
+	  $(".exterior-views").removeClass("off");
+	  $(".interior-views").addClass("off");
 	});
 });

@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>New Vehicles</h1>
+
+  <% @new_vehicles.each do |new_vehicle| %>
+    <div class="newvehicle_grid">
+      <%= image_tag(new_vehicle.image_url) %>
+      <h3 class="name"><%= link_to new_vehicle.name, new_vehicle %></h3>
+      <h4 class="price">$<%= number_with_delimiter(new_vehicle.msrp) %></h4>
+      <h5 class="controls">
+        <%= link_to 'Edit', edit_new_vehicle_path(new_vehicle) %> | <%= link_to 'Destroy', new_vehicle, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </h5>
+    </div>
+  <% end %>
+
+  <br>
+
+  <%= link_to 'Add New Vehicle', new_new_vehicle_path %>
+</div>

@@ -1,0 +1,27 @@
+<h1>Listing interiors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interiors.each do |interior| %>
+      <tr>
+        <td><%= interior.name %></td>
+        <td><%= link_to 'Show', interior %></td>
+        <td><%= link_to 'Edit', edit_interior_path(interior) %></td>
+        <td><%= link_to 'Destroy', interior, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interior', new_interior_path %>

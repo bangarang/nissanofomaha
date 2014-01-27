@@ -1,0 +1,7 @@
+<div class="photo">
+  <%= image_tag photo.image_url %>
+  <div class="actions">
+    <%= link_to "edit", edit_photo_path(photo) %> |
+    <%= link_to "remove", photo, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+</div>

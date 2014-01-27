@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Listing Exteriors</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @exteriors.each do |exterior| %>
+        <tr>
+          <td><%= exterior.name %></td>
+          <td><%= link_to 'Show', exterior %></td>
+          <td><%= link_to 'Edit', edit_exterior_path(exterior) %></td>
+          <td><%= link_to 'Destroy', exterior, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Exterior', new_exterior_path %>
+</div>

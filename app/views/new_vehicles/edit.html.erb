@@ -1,0 +1,41 @@
+<div class="container">
+	<h1>Editing New Vehicle</h1>
+
+	<%= render 'form' %>
+	
+	<h2>Interior Photo Sets</h2>
+	<table>
+    <% @new_vehicle.interiors.each do |interior| %>
+      <tr>
+        <td><%= interior.name %></td>
+        <td><%= link_to 'Show', interior %></td>
+        <td><%= link_to 'Edit', edit_interior_path(interior) %></td>
+        <td><%= link_to 'Destroy', interior, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+	</table>
+
+	<br>
+
+	<%= link_to 'New Interior Photo Set', new_interior_path(:new_vehicle_id => @new_vehicle) %>
+
+	<h2>Exterior Photo Sets</h2>
+	<table>
+    <% @new_vehicle.exteriors.each do |exterior| %>
+      <tr>
+        <td><%= exterior.name %></td>
+        <td><%= link_to 'Show', exterior %></td>
+        <td><%= link_to 'Edit', edit_exterior_path(exterior) %></td>
+        <td><%= link_to 'Destroy', exterior, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+	</table>
+
+	<br>
+
+	<%= link_to 'New Exterior Photo Set', new_exterior_path(:new_vehicle_id => @new_vehicle) %>
+
+	<%= link_to 'Show', @new_vehicle %> |
+	<%= link_to 'Back', new_vehicles_path %>
+
+</div>

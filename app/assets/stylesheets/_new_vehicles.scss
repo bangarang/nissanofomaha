@@ -1,0 +1,173 @@
+div.newvehicle_grid {
+	width: 25%;
+	border: 1px solid $red;
+	margin-left: -1px;
+	margin-top: -1px;
+	color: #777777;
+	text-align: center;
+	padding: 15px;
+	img {
+		max-width: 100%;
+	}
+	.name a {
+		font-weight: bold;
+		text-decoration: none;
+		color: #777777;
+		@include transition(0.2s ease-in);
+	}
+	.name a:hover {
+		color: $red;
+	}
+	.price {
+		font-weight: 100;
+	}
+}
+
+section.newvehicle {
+	header {
+		div.name, div.info {
+			display: inline-block;
+		}
+		.name {
+			h4 {
+				margin: 0;
+				color: #777777;
+			}
+			h1 {
+				font-size: 50px;
+				margin: 0;
+				color: $red;
+			}
+		}
+
+		div.info {
+			float: right;
+			div.spec {
+				display: inline-block;
+				margin: 25px 10px 0;
+				.title {
+					color: #777777;
+					font-size: 10px;
+					margin: 0;
+				}
+				.content {
+					color: #777777;
+					font-size: 24px;
+					margin: 0;
+				}
+			}
+		}
+		border-bottom: 2px solid $red;
+	}
+	div.description {
+		p {
+			margin-top: -2px;
+			padding-top: 15px;
+			color: #777777;
+		}
+	}
+	div.description:before {
+		content: "";
+		border-bottom: 2px solid $red;
+		width: 50%;
+		position: absolute;
+		right: 0;
+	}
+}
+
+div.reel.interior, div.reel.exterior {
+	display: block;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+#exterior-reel, #interior-reel {
+	width: auto !important;
+	height: auto !important;
+}
+
+div.reel.interior.off, div.reel.exterior.off, div.exterior-views.off, div.interior-views.off  {
+	display: none !important;
+}
+
+.view_controls {
+	@include outer-container;
+	.title {
+		display: inline-block;
+		font-weight: 100;
+		color: #777777;
+		padding: 10px 30px;
+		padding-left: 0;
+		margin: 0;
+		vertical-align: top;
+	}
+}
+
+div.int_ext {
+	margin: 10px 0;
+	@include span-columns(6 of 12);
+	.click {
+		display:inline-block;
+		background: #777777;
+		color: white;
+		font-weight: bold;
+		text-transform: uppercase;
+		padding: 10px 30px;
+		margin: 0;
+		cursor: pointer;
+	}
+	.click.active {
+		background: #343434;
+	}
+}
+.views {
+	@include span-columns(6);
+	@include omega;
+	.exterior-views, .interior-views {
+		display: inline-block;
+		float: right;
+		margin: 10px 0;
+	}
+}
+
+.circle {
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid #eee;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 5px;
+	overflow: hidden;
+}
+.circle:after {
+	content: '';
+	display: block;
+	height: 33px;
+	width: 33px;
+	border-radius:50%;
+	margin: 0;
+	background-image: -webkit-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: -moz-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: -ms-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: -o-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+}
+
+
+.rectangle {
+	height: 35px;
+	width: 75px;
+	border: 1px solid #eee;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 5px;
+}
+
+
+
+
+
+

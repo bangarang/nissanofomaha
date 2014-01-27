@@ -1,0 +1,27 @@
+<%= form_for(@exterior) do |f| %>
+  <% if @exterior.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exterior.errors.count, "error") %> prohibited this exterior from being saved:</h2>
+
+      <ul>
+      <% @exterior.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :new_vehicle_id %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

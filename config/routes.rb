@@ -1,4 +1,12 @@
 Vauto::Application.routes.draw do
+  resources :interiors
+
+  resources :exteriors
+
+  resources :photos
+
+  resources :new_vehicles
+
   resources :vehicles
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,27 @@
+<%= form_for(@interior) do |f| %>
+  <% if @interior.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interior.errors.count, "error") %> prohibited this interior from being saved:</h2>
+
+      <ul>
+      <% @interior.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :new_vehicle_id %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

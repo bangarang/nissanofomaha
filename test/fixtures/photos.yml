@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  interior_id: 1
+  exterior_id: 1
+
+two:
+  image: MyString
+  interior_id: 1
+  exterior_id: 1

@@ -38,6 +38,15 @@ gem 'neat'
 
 gem 'clearance'
 
+gem 'carrierwave'
+gem "mini_magick"
+gem 'fog'
+gem 'unf'
+
+gem 'sucker_punch', '~> 1.0'
+
+gem 'jquery-fileupload-rails'
+
 gem 'rails_12factor', group: :production
 
 group :doc do

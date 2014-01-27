@@ -1,4 +1,4 @@
-<header>
+<header class="main">
 	<nav>
 		<a href="/"><%= image_tag("logo.png", :class => "logo") %></a>
 		<ul class="menu">
@@ -9,7 +9,7 @@
 					<a href="/joinourteam" class="media">Join Our Team</a>
 				</div>
 			</li>
-			<li><a href="/newvehicle">New Vehicles</a></li>
+			<li><%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url) %></li>
 			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
 			<li><a href="#">Service</a></li>
 		</ul>
