@@ -153,7 +153,7 @@
 				<h3><%= package.city %>/<%= package.hwy %></h3>
 			</div>
 			<div class="features">
-				<h3><%= package.features %></h3>
+				<%= package.features.html_safe %>
 			</div>
 		</div>
 	<% end %>

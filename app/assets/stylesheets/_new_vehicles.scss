@@ -220,6 +220,7 @@ div.compare {
 		color: white;
 		line-height: 40px;
 		text-align: center;
+		cursor: pointer;
 	}
 	.prev {
 		float: left;
@@ -230,11 +231,12 @@ div.compare {
 }
 
 div.packages {
+	background: #eeeeee;
 	.label, .package {
 		display:inline-block;
 		width:20%;
 		vertical-align: top;
-		border-right: 2px solid white;
+		
 		.model,.mpg, .msrp, .features {
 			text-align: center;
 			h4 {
@@ -254,10 +256,25 @@ div.packages {
 	}
 	.package {
 		width: 100%;
-		line-height:50px;
-		border-right: 2px solid white;
+		border-left: 2px solid white;
 		h3 {
 			margin:0;
+		}
+		.model,.mpg {
+			background:#DDDDDD;
+			min-height: 50px;
+		}
+		.msrp, .features {
+			background:#EEEEEE;
+			min-height: 50px;
+		}
+		.features {
+			text-align: left;
+			color: #777777;
+			li {
+				list-style: none;
+
+			}
 		}
 	}
 }

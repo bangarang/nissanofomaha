@@ -31,9 +31,10 @@
   </div>
   <div class="field">
     <%= f.label :features %><br>
-    <%= f.text_area :features %>
+    <%= f.text_area :features, class: "tinymce" %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<%= tinymce %>
