@@ -7,7 +7,7 @@
       <h3 class="name"><%= link_to new_vehicle.name, new_vehicle %></h3>
       <h4 class="price">$<%= number_with_delimiter(new_vehicle.msrp) %></h4>
       <h5 class="controls">
-        <%= link_to 'Edit', edit_new_vehicle_path(new_vehicle) %> | <%= link_to 'Destroy', new_vehicle, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_new_vehicle_path(new_vehicle) %> <!-- | <%= link_to 'Destroy', new_vehicle, method: :delete, data: { confirm: 'Are you sure?' } %> -->
       </h5>
     </div><!--
   --><% end %>
