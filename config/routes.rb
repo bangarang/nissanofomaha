@@ -28,7 +28,7 @@ Vauto::Application.routes.draw do
 
   # get 'finance' => 'pages#finance'
 
-  get "index.asp?sg=k8i8fkuusn&p=11" => 'pages#finance'
+  get "index.asp" => 'pages#finance'
 
   resources :vehicles do
     collection { post :import }
