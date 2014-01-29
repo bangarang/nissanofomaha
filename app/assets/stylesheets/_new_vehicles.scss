@@ -203,7 +203,68 @@ div.int_ext {
 	margin: 0 5px;
 }
 
+div.compare {
+	.title {
+		font-weight: 100;
+		color: #777;
+		text-align: center;
+	}
+	.controllable {
+		@include outer-container;
+		max-width: 100%!important;
+	}
+	#square {
+		height: 40px;
+		width: 40px;
+		background: $red;
+		color: white;
+		line-height: 40px;
+		text-align: center;
+	}
+	.prev {
+		float: left;
+	}
+	.next {
+		float: right;
+	}
+}
 
+div.packages {
+	.label, .package {
+		display:inline-block;
+		width:20%;
+		vertical-align: top;
+		border-right: 2px solid white;
+		.model,.mpg, .msrp, .features {
+			text-align: center;
+			h4 {
+				text-transform: uppercase;
+				color:#777;
+				margin: 0;
+				font-size: 12px;
+				line-height:50px;
+			}
+		}
+		.model,.mpg {
+			background:#DDDDDD;
+		}
+		.msrp, .features {
+			background:#EEEEEE;
+		}
+	}
+	.package {
+		width: 100%;
+		line-height:50px;
+		border-right: 2px solid white;
+		h3 {
+			margin:0;
+		}
+	}
+}
+div#owl-demo {
+	width:80%;
+	display:inline-block!important;
+}
 
 
 

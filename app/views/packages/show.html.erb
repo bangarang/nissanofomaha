@@ -1,0 +1,32 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Model:</strong>
+    <%= @package.model %>
+  </p>
+
+  <p>
+    <strong>Msrp:</strong>
+    <%= @package.msrp %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= @package.city %>
+  </p>
+
+  <p>
+    <strong>Hwy:</strong>
+    <%= @package.hwy %>
+  </p>
+
+  <p>
+    <strong>Features:</strong>
+    <%= @package.features %>
+  </p>
+
+  <%= link_to 'Edit Package', edit_package_path(@package) %> |
+  <%= link_to 'Edit Vehicle', edit_new_vehicle_path(@package.new_vehicle_id) %> |
+  <%= link_to 'Show Vehicle', new_vehicle_path(@package.new_vehicle_id) %>
+</div>

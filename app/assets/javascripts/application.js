@@ -62,4 +62,26 @@ $(document).ready(function() {
 	  $(".exterior-views").removeClass("off");
 	  $(".interior-views").addClass("off");
 	});
+
+	var owl = $("#owl-demo");
+ 
+  owl.owlCarousel({
+      items : 3, //10 items above 1000px browser width
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : [400,1] // itemsMobile disabled - inherit from itemsTablet option
+  });
+ 
+  // Custom Navigation Events
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+  $(".play").click(function(){
+    owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+  })
+  $(".stop").click(function(){
+    owl.trigger('owl.stop');
+  })
 });

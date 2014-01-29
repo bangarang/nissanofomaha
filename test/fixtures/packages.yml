@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: MyString
+  msrp: MyString
+  city: 1
+  hwy: 1
+  features: MyText
+
+two:
+  model: MyString
+  msrp: MyString
+  city: 1
+  hwy: 1
+  features: MyText

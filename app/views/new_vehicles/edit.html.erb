@@ -35,6 +35,41 @@
 
 	<%= link_to 'New Exterior Photo Set', new_exterior_path(:new_vehicle_id => @new_vehicle) %>
 
+  <h2>Packages</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Msrp</th>
+        <th>City</th>
+        <th>Hwy</th>
+        <th>Features</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%  @new_vehicle.packages.each do |package| %>
+        <tr>
+          <td><%= package.model %></td>
+          <td><%= package.msrp %></td>
+          <td><%= package.city %></td>
+          <td><%= package.hwy %></td>
+          <td><%= package.features %></td>
+          <td><%= link_to 'Show', package %></td>
+          <td><%= link_to 'Edit', edit_package_path(package) %></td>
+          <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Package', new_package_path(:new_vehicle_id => @new_vehicle) %>
+
 	<%= link_to 'Show', @new_vehicle %> |
 	<%= link_to 'Back', new_vehicles_path %>
 

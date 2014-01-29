@@ -113,8 +113,52 @@
 			});
 		<% end %>
 		<% end %> 
-		<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
-		<%= link_to 'Back', new_vehicles_path %>
 	</section>
-
+	
 </div>
+
+<div class="compare">
+	<h2 class="title">Compare 2014 Nissan <%= @new_vehicle.name %> Versions & Specs</h2>
+	<div class="controllable">
+		<div class="prev" id="square"><</div>
+		<div class="next" id="square">></div>
+	</div>
+</div>
+
+<div class="packages">
+	<div class="label">
+		<div class="model">
+			<h4>Model</h4>
+		</div>
+		<div class="msrp">
+			<h4>Msrp</h4>
+		</div>
+		<div class="mpg">
+			<h4>Fuel Economy</h4>
+		</div>
+		<div class="features">
+			<h4>Features</h4>
+		</div>
+	</div><!-- 
+	--><div id="owl-demo">
+	<% for package in @new_vehicle.packages %>
+		<div class="package">
+			<div class="model">
+				<h3><%= package.model %></h3>
+			</div>
+			<div class="msrp">
+				<h3>$<%= number_with_delimiter(package.msrp) %></h3>
+			</div>
+			<div class="mpg">
+				<h3><%= package.city %>/<%= package.hwy %></h3>
+			</div>
+			<div class="features">
+				<h3><%= package.features %></h3>
+			</div>
+		</div>
+	<% end %>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
+<%= link_to 'Back', new_vehicles_path %>

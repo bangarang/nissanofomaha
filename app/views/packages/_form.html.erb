@@ -1,0 +1,39 @@
+<%= form_for(@package) do |f| %>
+  <% if @package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@package.errors.count, "error") %> prohibited this package from being saved:</h2>
+
+      <ul>
+      <% @package.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :new_vehicle_id %>
+
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :msrp %><br>
+    <%= f.text_field :msrp %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.number_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :hwy %><br>
+    <%= f.number_field :hwy %>
+  </div>
+  <div class="field">
+    <%= f.label :features %><br>
+    <%= f.text_area :features %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
