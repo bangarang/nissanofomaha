@@ -1,4 +1,6 @@
 Vauto::Application.routes.draw do
+  resources :categories
+
   resources :packages
 
   resources :interiors

@@ -35,6 +35,9 @@
     <%= f.label :highway_mpg %><br>
     <%= f.number_field :highway_mpg %>
   </div>
+  <div class="field">
+    <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
