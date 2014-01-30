@@ -15,6 +15,7 @@
 		width: 25%;
 		border: 1px solid #ddd;
 		float: left;
+		position: relative;
 		h5 {
 			text-align: center;
 			text-transform: uppercase;
@@ -27,7 +28,10 @@
 			display: block;
 			position: absolute;
 			background: white;
-				padding-left: 0;
+			padding-left: 0;
+			width: 100%;
+			margin-top: 0px;
+			border: 1px solid #ddd;
 			li {
 				list-style: none;
 				padding: 0 60px;

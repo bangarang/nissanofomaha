@@ -35,8 +35,8 @@
 				<img src="<%= @new_vehicle.exteriors.first.photos.order(:name).first.image_url %>" width="950" height="535"
 			      class="reel exterior"
 			      id="exterior"
-			      data-images="<% count = 0 %><% for photo in @new_vehicle.exteriors.first.photos.order(:name) %><% count = count + 1 %><%= photo.image_url %><%= "," unless count == 8 %><% end %>"
-			      data-frames="8"
+			      data-images="<% count = 0 %><% for photo in @new_vehicle.exteriors.first.photos.order(:name) %><% count = count + 1 %><%= photo.image_url %><%= "," unless count == @new_vehicle.exteriors.first.photos.length %><% end %>"
+			      data-frames="<%= @new_vehicle.exteriors.first.photos.length %>"
 			      data-revolution="500"
 			      data-preload="linear">	
 			<% end %>
@@ -44,8 +44,8 @@
 	    <img src="<%= @new_vehicle.interiors.first.photos.order(:name).first.image_url %>" width="950" height="535"
 			      class="reel interior off"
 			      id="interior"
-			      data-images="<% count = 0 %><% for photo in @new_vehicle.interiors.first.photos.order(:name) %><% count = count + 1 %><%= photo.image_url %><%= "," unless count == 13 %><% end %>"
-			      data-frames="8"
+			      data-images="<% count = 0 %><% for photo in @new_vehicle.interiors.first.photos.order(:name) %><% count = count + 1 %><%= photo.image_url %><%= "," unless count == @new_vehicle.interiors.first.photos.length %><% end %>"
+			      data-frames="<%= @new_vehicle.interiors.first.photos.length %>"
 			      data-revolution="500"
 			      data-preload="linear">	
 			<% end %>
@@ -106,14 +106,16 @@
 				$(document).ready(function() {
 				<% for exterior in @new_vehicle.exteriors %>
 					$('#<%= exterior.slug %>').click(function(){
-				  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == 8 %><% end %>]);
+				  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == exterior.photos.length %><% end %>]);
+						$('#exterior').reel('frames', <%= exterior.photos.length %>);				  	
 				  	$('.labels .exterior h5').removeClass('active');
 						$('#<%= exterior.slug %>_label').addClass('active');
 				  });
 				<% end %>
 				<% for interior in @new_vehicle.interiors %>
 					$('#<%= interior.slug %>').click(function(){
-				  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == 13 %><% end %>]);
+				  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == interior.photos.length %><% end %>]);
+				  	$('#interior').reel('frames', <%= interior.photos.length %>);	
 				  	$('.labels .interior h5').removeClass('active');
 						$('#<%= interior.slug %>_label').addClass('active');
 				  });
