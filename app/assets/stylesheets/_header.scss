@@ -8,6 +8,7 @@ header.main {
 	z-index: 10;
 	nav {
 		@include outer-container;
+		position: relative;
 		img.logo {
 			margin-top: 12px;
 		}
@@ -43,9 +44,13 @@ header.main {
 					color: $red;
 				}
 			}
+			@include media($tablet) {
+				display:none;
+			}
 		}
 		img.nissan_logo {
-			float: right;
+			position: absolute;
+			right:0;
 		}
 	}
 }

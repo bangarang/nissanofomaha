@@ -1,44 +1,69 @@
-<%= form_for(@new_vehicle) do |f| %>
-  <% if @new_vehicle.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@new_vehicle.errors.count, "error") %> prohibited this new_vehicle from being saved:</h2>
+<div class="new_vehicle_form">
+  <%= form_for(@new_vehicle) do |f| %>
+    <% if @new_vehicle.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@new_vehicle.errors.count, "error") %> prohibited this new_vehicle from being saved:</h2>
 
-      <ul>
-      <% @new_vehicle.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @new_vehicle.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <div class="pref_cont">
+        <%= f.label :name, class: 'prefix' %>
+      </div>
+      <div class="input_cont">
+        <%= f.text_field :name, placeholder: 'Name of the Vehicle' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="pref_cont">
+        <%= f.label :msrp, class: 'prefix' %>
+      </div>
+      <div class="input_cont">
+        <%= f.text_field :msrp, placeholder: 'Price of the Vehicle' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <h3>Description</h3>
+      <%= f.text_area :description %>
+    </div>
+    
+    <div class="mpg">
+      <h3>Miles Per Gallon</h3>
+      <div class="field">
+        <div class="pref_cont">
+          <%= f.label :city, class: 'prefix' %>
+        </div>
+        <div class="input_cont">
+          <%= f.number_field :city_mpg %>
+        </div>
+      </div>
+      
+      <div class="field">
+        <div class="pref_cont">
+          <%= f.label :highway, class: 'prefix' %>
+        </div>
+        <div class="input_cont">
+          <%= f.number_field :highway_mpg %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field two">
+      <%= f.file_field :image %>
+    </div>
+    <div class="field two last">
+      <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :msrp %><br>
-    <%= f.text_field :msrp %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :city_mpg %><br>
-    <%= f.number_field :city_mpg %>
-  </div>
-  <div class="field">
-    <%= f.label :highway_mpg %><br>
-    <%= f.number_field :highway_mpg %>
-  </div>
-  <div class="field">
-    <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
