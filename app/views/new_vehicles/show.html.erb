@@ -106,18 +106,26 @@
 				$(document).ready(function() {
 				<% for exterior in @new_vehicle.exteriors %>
 					$('#<%= exterior.slug %>').click(function(){
-				  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == exterior.photos.length %><% end %>]);
-						$('#exterior').reel('frames', <%= exterior.photos.length %>);				  	
+				  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == exterior.photos.length %><% if exterior.photos.length == 1 %>
+						,'<%= photo.image_url %>'<% end %><% end %>]);
+				  	if( $('#exterior').reel('frame') > <%= exterior.photos.length %>){
+							$('#exterior').reel('frame',<%= exterior.photos.length %>);
+						}	
+					$('#exterior').reel('frames', <%= exterior.photos.length %>);			  	
 				  	$('.labels .exterior h5').removeClass('active');
-						$('#<%= exterior.slug %>_label').addClass('active');
+					$('#<%= exterior.slug %>_label').addClass('active');
 				  });
 				<% end %>
 				<% for interior in @new_vehicle.interiors %>
 					$('#<%= interior.slug %>').click(function(){
-				  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == interior.photos.length %><% end %>]);
+				  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == interior.photos.length %><% if interior.photos.length == 1 %>
+						,'<%= photo.image_url %>'<% end %><% end %>]);
+				  	if( $('#interior').reel('frame') > <%= interior.photos.length %>){
+							$('#interior').reel('frame',<%= interior.photos.length %>);
+						}	
 				  	$('#interior').reel('frames', <%= interior.photos.length %>);	
 				  	$('.labels .interior h5').removeClass('active');
-						$('#<%= interior.slug %>_label').addClass('active');
+					$('#<%= interior.slug %>_label').addClass('active');
 				  });
 				<% end %>
 				});
