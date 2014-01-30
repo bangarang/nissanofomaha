@@ -26,7 +26,10 @@
 		<% unless @new_vehicle.exteriors.empty? && @new_vehicle.interiors.empty? %>
 		
 			<% if @new_vehicle.exteriors.empty? %> 
-				<%= image_tag(@new_vehicle.image_url, class: 'full', :id => 'exterior-reel') %>
+			<div id="exterior-reel">
+				<%= image_tag(@new_vehicle.image_url, class: 'full') %>
+			</div>
+				
 			<% else %>
 				
 				<img src="<%= @new_vehicle.exteriors.first.photos.order(:name).first.image_url %>" width="950" height="535"

@@ -117,6 +117,9 @@ div.reel.interior.off, div.reel.exterior.off, div.exterior-views.off, div.interi
 		padding-left: 0;
 		margin: 0;
 		vertical-align: top;
+		@include media($tablet) {
+			@include span-columns(8 of 8);
+		}
 	}
 	.color {
 		display: inline-block;
@@ -173,7 +176,11 @@ div.int_ext {
 		padding: 10px 30px;
 		margin: 0;
 		cursor: pointer;
-		@include span-columns(4 of 8);
+		@include media($tablet) {
+			@include span-columns(4 of 8);
+			margin:0;
+			width:50%;
+		}
 	}
 	.click.active {
 		background: #343434;
@@ -186,6 +193,9 @@ div.int_ext {
 		display: inline-block;
 		float: right;
 		margin: 10px 0;
+	}
+	@include media($tablet) {
+		@include span-columns(8 of 8);
 	}
 }
 
