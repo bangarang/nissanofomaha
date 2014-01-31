@@ -55,3 +55,106 @@ div.container {
 @import "vehicle";
 @import "new_vehicles";
 @import "photos";
+
+@import "royalslider";
+@import "rs-universal";
+
+div.head {
+	border-bottom: 3px solid $red;
+	.used-title {
+		text-transform: uppercase;
+		color: #777777;
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+	.used-price {
+		color: #777777;
+		float: right;
+		display: inline-block;
+		font-weight: normal;
+	}
+}
+
+div.royalSlider {
+	width: 100%;
+	height: 500px !important;
+	background: transparent !important;
+	
+}
+div.prior {
+	height:20px;
+}
+div.prior:before {
+	content: "";
+	border-bottom: 3px solid $red;
+	width: 50%;
+	position: absolute;
+	right: 0;
+	margin-top: -3px;
+}
+
+.rsUni, .rsUni .rsOverflow {
+	background: white !important;
+}
+
+.stats {
+	@include outer-container;
+	margin-top: 25px;
+	div.left, div.right {
+		@include span-columns(6 of 12);
+		div.spec:nth-child(n) {
+			background:#DDDDDD;
+		}
+		div.spec:nth-child(2n) {
+			background:#EEEEEE;
+		}
+		div.spec {
+			@include outer-container;
+			div.spec_title {
+				@include span-columns(4);
+				color: #777777;
+				text-transform: uppercase;
+				text-align: right;
+				padding: 0 15px;
+				border-right: 1px solid white;
+			}
+			div.spec_info {
+				@include span-columns(8);
+				@include omega;
+				color: #777777;
+				position: relative;
+				.spec_header {
+					font-weight: 100;
+					font-size: 13px;
+					position: absolute;
+					top: 0;
+					margin: 2px;
+
+				}
+			}
+		}
+	}
+	div.right {
+		@include omega;
+	}
+}
+
+div.links {
+	margin-top: 25px;
+	@include outer-container;
+	a {
+		@include span-columns(4 of 12)
+	}
+	a.red_button {
+		background: $red;
+		color: white;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		display: inline-block;
+		h4 {
+			margin: 15px;
+		}
+	}
+}
+

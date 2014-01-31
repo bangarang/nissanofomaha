@@ -28,9 +28,11 @@ Vauto::Application.routes.draw do
   get 'medialounge' => 'pages#medialounge'
   get 'usedvehicle' => 'pages#usedvehicle'
 
-  # get 'finance' => 'pages#finance'
+  get 'getservice' => 'pages#schedule_service'
 
-  get "index.asp" => 'pages#finance'
+  get 'getapproved' => 'pages#getapproved'
+
+  get "index.asp" => 'pages#thanks'
 
   resources :vehicles do
     collection { post :import }
