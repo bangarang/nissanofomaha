@@ -24,15 +24,33 @@ $(document).ready(function() {
   $(".price-click").click(function() {
 	  $(".price").toggleClass("up");
 	});
-	$(".price p").click(function() {
+	$(".price li").click(function() {
 	  $(".price").toggleClass("up");
+	  $(".price li").removeClass('selected');
+	  $(this).addClass('selected');
 	});
   $(".odometer-click").click(function() {
 	  $(".odometer").toggleClass("up");
 	});
-	$(".odometer p").click(function() {
+	$(".odometer li").click(function() {
 	  $(".odometer").toggleClass("up");
+	  $(".odometer li").removeClass('selected');
+	  $(this).addClass('selected');
 	});
+	$(".make-click").click(function() {
+	  $(".make").toggleClass("up");
+	});
+	$(".make li").click(function() {
+	  $(".make").toggleClass("up");
+	  $(".make li").removeClass('selected');
+	  $(this).addClass('selected');
+	});
+	$(".model-click").click(function() {
+	  $(".model").toggleClass("up");
+	});
+	// $(".model p").click(function() {
+	//   $(".model").toggleClass("up");
+	// });
   $(".different-click").click(function() {
 	  $(".different").toggleClass("up");
 	  return false;

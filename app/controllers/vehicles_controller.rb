@@ -5,6 +5,10 @@ class VehiclesController < ApplicationController
   # GET /vehicles.json
   def index
     @vehicles = Vehicle.where(newused: 'U')
+    @makes = []
+    Vehicle.where(newused: 'U').select("DISTINCT(MAKE)").each do |p| 
+      @makes << p.make
+    end
   end
 
   # GET /vehicles/1

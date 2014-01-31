@@ -16,10 +16,10 @@
     <div class="control">
       <h5 class="price-click">Price</h5>
       <ul class="price">
-        <li><p ng-click="min_price='0'; max_price='2000'">$0-$2,000</p></li>
-        <li><p ng-click="min_price='2000'; max_price='5000'">$2,000-$5,000</p></li>
-        <li><p ng-click="min_price='5000'; max_price='10000'">$5,000-$10,000</p></li>
-        <li><p ng-click="min_price='10000'; max_price='100000'">$10,000-Above</p></li>
+        <li><p ng-click="min_price='0'; max_price='2000'">$0 - $2,000</p></li>
+        <li><p ng-click="min_price='2000'; max_price='5000'">$2,000 - $5,000</p></li>
+        <li><p ng-click="min_price='5000'; max_price='10000'">$5,000 - $10,000</p></li>
+        <li><p ng-click="min_price='10000'; max_price='100000'">$10,000 - Above</p></li>
         <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
   <!--      <li><p>Min Price:<input ng-model="min_price" /></p></li>
         <li><p>Max Price:<input ng-model="max_price" /></p></li> -->
@@ -68,10 +68,21 @@
       </li> -->
 
       <div class="control">
-        <h5 class="">Make</h5>
+        <h5 class="make-click">Make</h5>
+        <ul class="make">
+          <% for m in @makes %>
+          <li><p ng-click="the_make='<%= m %>'"><%= m %></p></li>
+          <% end %>
+          <li><p ng-click="the_make=nil">Clear</p></li>
+        </ul>
       </div>
       <div class="control">
-        <h5 class="">Model</h5>
+        <h5 class="model-click">Model</h5>
+        <ul class="model">
+          
+          <li><p>Model:<input ng-model="the_model" /></p></li>
+          
+        </ul>
       </div>
     </ul>
   </div>
@@ -90,7 +101,7 @@
     <ul class="vehicles">
       <li data-ng-repeat="item in items | orderBy:'-year' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
         <div class="vehicle" >
-          <div class="top"><p>{{item.year}}</p></div>
+          <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
           <div class="main">
             <img src="{{item.photos[0]}}" />
             <!-- <h4><a href="vehicles/{{$index + 1}}">{{item.make}} {{item.model }}</a></h4> -->

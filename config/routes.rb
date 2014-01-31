@@ -29,6 +29,10 @@ Vauto::Application.routes.draw do
   get 'usedvehicle' => 'pages#usedvehicle'
 
   get 'getservice' => 'pages#schedule_service'
+  get 'service' => 'pages#service'
+
+  get 'facility' => 'pages#facility'
+  get 'philosophy' => 'pages#philosophy'
 
   get 'getapproved' => 'pages#getapproved'
 

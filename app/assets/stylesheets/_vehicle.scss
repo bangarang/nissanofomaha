@@ -21,10 +21,10 @@
 			text-transform: uppercase;
 			cursor: pointer;
 		}
-		.price, .odometer {
+		.price, .odometer, .model, .make {
 			display: none;
 		}
-		.price.up, .odometer.up {
+		.price.up, .odometer.up, .make.up, .model.up {
 			display: block;
 			position: absolute;
 			background: white;
@@ -35,9 +35,19 @@
 			li {
 				list-style: none;
 				padding: 0 60px;
+				border-bottom: 1px solid #EEEEEE;
 				p {
 					text-align: center;
 					cursor: pointer;
+					color: #999999;
+					font-weight: 100;
+				}
+			}
+			li:hover, li.selected {
+				border-bottom: 1px solid $red;
+				@include transition(0.2s);
+				p {
+					color: $red;
 				}
 			}
 		}
@@ -68,6 +78,12 @@
 			color: #777777;
 			font-weight: bold;
 			margin-bottom: 5px;
+		}
+		.year, .drive {
+			display: inline-block;
+		}
+		.drive {
+			float: right;
 		}
 	}
 	.main {
@@ -102,6 +118,7 @@
 			.mpg, .mileage {
 				display: inline-block;
 				width: 48%;
+				font-size: 13px;
 			}
 			.mpg {
 				border-right: 1px solid white;

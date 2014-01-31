@@ -1,0 +1,48 @@
+div.service_title {
+	color:$red;
+	text-transform: uppercase;
+	h1 {
+		font-size: 60px;
+		margin-top: 0;
+	}
+	h3 {
+		margin-bottom: 0;
+		font-size: 30px;
+	}
+}
+div.service_content {
+	color: #868686;
+	.red_italic {
+		color: $red;
+		font-style: italic;
+		font-weight: bold;
+	}
+}
+
+	a.red_button {
+		background: $red;
+		color: white;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		display: block;
+		font-weight: bold;
+		h2 {
+			margin: 15px;
+			padding: 15px;
+		}
+	}
+
+	div.contact_info {
+		@include outer-container;
+		div.contact_section {
+			@include span-columns(4 of 12);
+			.contact_title {
+				color: $red;
+				text-transform: uppercase;
+			}
+			.contact_line {
+				color: #666666;
+			}
+		}
+	}

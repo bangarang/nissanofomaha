@@ -5,13 +5,15 @@
 			<li>
 				<a href="#" class="different-click" >How We're Different</a>
 				<div class="different">
-					<a href="/medialounge" class="media">Media Lounge</a>
+					<a href="/philosophy" class="media">Our Philosophy</a>
+					<a href="/facility" class="media">Facility</a>
 					<a href="/joinourteam" class="media">Join Our Team</a>
+					<a href="/medialounge" class="media">Media Lounge</a>
 				</div>
 			</li>
 			<li><%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url) %></li>
 			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
-			<li><a href="#">Service</a></li>
+			<li><a href="/service">Service</a></li>
 		</ul>
 		<%= image_tag("nissan_logo.png", :class => "nissan_logo") %>
 	</nav>
