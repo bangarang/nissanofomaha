@@ -6,13 +6,15 @@
       <%= image_tag(new_vehicle.image_url) %>
       <h3 class="name"><%= link_to new_vehicle.name, new_vehicle %></h3>
       <h4 class="price">$<%= number_with_delimiter(new_vehicle.msrp) %></h4>
+      <% if signed_in? %>
       <h5 class="controls">
         <%= link_to 'Edit', edit_new_vehicle_path(new_vehicle) %> <!-- | <%= link_to 'Destroy', new_vehicle, method: :delete, data: { confirm: 'Are you sure?' } %> -->
       </h5>
+      <% end %>
     </div><!--
   --><% end %>
 
   <br>
-
-  <%= link_to 'Add New Vehicle', new_new_vehicle_path %>
+  
+  <%= link_to 'Add New Vehicle', new_new_vehicle_path if signed_in? %>
 </div>

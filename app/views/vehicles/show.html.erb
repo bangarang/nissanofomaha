@@ -6,6 +6,10 @@
 		<h2 class="used-price">$<%= number_with_delimiter(@vehicle.price) %></h2>
 	</div>
 	<div class="prior"></div>
+	<% if signed_in? %>
+	<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+	<%= link_to 'Back', vehicles_path %>
+	<% end %>
 	<div id="gallery" class="royalSlider rsUni">
 		<% for p in @vehicle.photos %>
 	  <a class="rsImg" data-rsbigimg="<%= p %>" href="<%= p %>">Vincent van Gogh - Still Life: Vase with Twelve Sunflowers<img width="96" height="72" class="rsTmb" src="<%= p %>"></a>
@@ -100,7 +104,4 @@
 		  });
 		});
 	<% end %>
-
-	<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
-	<%= link_to 'Back', vehicles_path %>
 </div>

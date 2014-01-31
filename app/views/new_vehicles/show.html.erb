@@ -22,6 +22,10 @@
 		<div class="description">
 			<p><%= @new_vehicle.description %></p>
 		</div>
+		<% if signed_in? %>
+			<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
+			<%= link_to 'Back', new_vehicles_path %>
+		<% end %>
 		
 		<% unless @new_vehicle.exteriors.empty? && @new_vehicle.interiors.empty? %>
 		
@@ -183,6 +187,3 @@
 	<% end %>
 	</div>
 </div>
-
-<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
-<%= link_to 'Back', new_vehicles_path %>
