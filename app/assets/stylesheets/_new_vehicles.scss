@@ -278,7 +278,7 @@ div.packages {
 				color:#777;
 				margin: 0;
 				font-size: 12px;
-				line-height:50px;
+				line-height:72px;
 			}
 		}
 		.model,.mpg {
@@ -291,23 +291,56 @@ div.packages {
 	.package {
 		width: 100%;
 		border-left: 2px solid white;
+		padding-bottom: 20px;
 		h3 {
 			margin:0;
 		}
+		.model, .mpg, .msrp, .features {
+			height: 72px;
+			line-height: 72px;
+			text-align: left;
+			padding: 0 25px;
+			color: #777;
+			font-size: 25px;
+			position:relative;
+			.label {
+				font-weight: 100;
+				position: absolute;
+				top: 6px;
+				line-height: 10px;
+				margin: 0;
+				width: 100%;
+				font-size: 10px;
+			}
+		}
 		.model,.mpg {
 			background:#DDDDDD;
-			min-height: 50px;
 		}
 		.msrp, .features {
 			background:#EEEEEE;
-			min-height: 50px;
 		}
 		.features {
 			text-align: left;
 			color: #777777;
-			li {
-				list-style: none;
-
+			font-size: 12px;
+			line-height: 16px;
+			min-height: 100px;
+			ul {
+				padding: 0;
+				li {
+					list-style: none;
+				}
+			}
+		}
+		.link {
+			text-align: center;
+			height: 20px;
+			a {
+				font-weight: bold;
+				font-size: 11px;
+				text-transform: uppercase;
+				text-decoration: none;
+				color: $red;
 			}
 		}
 	}

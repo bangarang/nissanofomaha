@@ -172,16 +172,18 @@
 				<h3><%= package.model %></h3>
 			</div>
 			<div class="msrp">
+				<h6 class="label">Starting at</h6>
 				<h3>$<%= number_with_delimiter(package.msrp) %></h3>
 			</div>
 			<div class="mpg">
+				<h6 class="label">City/Hwy MPG*</h6>
 				<h3><%= package.city %>/<%= package.hwy %></h3>
 			</div>
 			<div class="features">
 				<%= package.features.html_safe %>
 			</div>
 			<div class="link">
-				<%= link_to "Feature Details", package.link if package.link %>
+				<%= link_to "> Feature Details", package.link if package.link %>
 			</div>
 		</div>
 	<% end %>

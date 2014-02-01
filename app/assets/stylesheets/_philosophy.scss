@@ -1,0 +1,31 @@
+section.main_top {
+	background-size: cover;
+	background-position: center bottom;
+	.big {
+		color: $red;
+		text-transform: uppercase;
+		padding: 5% 0 20%;
+		h4 {
+			margin-bottom: -10px;
+			font-size: 20px;
+		}
+		h1 {
+			margin-top: 0;
+			font-size: 80px;
+		}
+	}
+}
+
+.page {
+	max-width: 720px;
+	margin: auto;
+	color: #777777;
+	.page_title {
+		color: $red;
+		text-transform: uppercase;
+	}
+}
+
+.bottom_border {
+	border-bottom: 3px solid $red;
+}
