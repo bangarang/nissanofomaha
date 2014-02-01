@@ -15,8 +15,6 @@
         <li><p ng-click="min_price='5000'; max_price='10000'">$5,000 - $10,000</p></li>
         <li><p ng-click="min_price='10000'; max_price='100000'">$10,000 - Above</p></li>
         <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
-  <!--      <li><p>Min Price:<input ng-model="min_price" /></p></li>
-        <li><p>Max Price:<input ng-model="max_price" /></p></li> -->
       </ul>
     </div>
     <div class="control">
@@ -27,69 +25,37 @@
         <li><p ng-click="min_odometer='50'; max_odometer='75'">50k-75k</p></li>
         <li><p ng-click="min_odometer='75'; max_odometer='1000'">75k-Above</p></li>
         <li><p ng-click="min_odometer=''; max_odometer=''">Clear</p></li>
-<!--         <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
-        <li><p>Min Price:<input ng-model="min_price" /></p></li>
-        <li><p>Max Price:<input ng-model="max_price" /></p></li> -->
       </ul>
     </div>
-<!--       <li>
-        <a href="#" data-dropdown="year" class="small secondary button dropdown">Year:</a><br>
-        <ul id="year" data-dropdown-content class="f-dropdown">
-          <li><p>Year:<input ng-model="the_year" /></p></li>
-        </ul>
-      </li>
 
-      <li>
-        <a href="#" data-dropdown="mpg" class="small secondary button dropdown">MPG:</a><br>
-        <ul id="mpg" data-dropdown-content class="f-dropdown">
-          <li><p>Minimum City:<input ng-model="city_mpg" /></p></li>
-          <li><p>Minimum Highway:<input ng-model="highway_mpg" /></p></li>
-        </ul>
-      </li> -->
 
-<!--       <li>
-        <a href="#" data-dropdown="model" class="small secondary button dropdown">Model</a><br>
-        <ul id="model" data-dropdown-content class="f-dropdown">
-          <li><p>Model:<input ng-model="the_model" /></p></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#" data-dropdown="make" class="small secondary button dropdown">Make</a><br>
-        <ul id="make" data-dropdown-content class="f-dropdown">
-          <li><p>Make:<input ng-model="the_make" /></p></li>
-        </ul>
-      </li> -->
-
-      <div class="control">
-        <h5 class="make-click">Make</h5>
-        <ul class="make">
-          <% for m in @makes %>
-          <li><p ng-click="the_make='<%= m %>'"><%= m %></p></li>
-          <% end %>
-          <li><p ng-click="the_make=nil">Clear</p></li>
-        </ul>
-      </div>
-      <div class="control">
-        <h5 class="model-click">Model</h5>
-        <ul class="model">
-          
-          <li><p>Model:<input ng-model="the_model" /></p></li>
-          
-        </ul>
-      </div>
-    </ul>
-  </div>
-<!--   <div class="large-12 columns">
-    <div class="row collapse">
-      <div class="small-10 columns">
-        <input type="text" ng-model="query" placeholder="Search" />
-      </div>
-      <div class="small-2 columns">
-        <span class="postfix">{{(items|filter:query).length}} Cars</span>
-      </div>
+    <div class="control">
+      <h5 class="make-click">Make</h5>
+      <ul class="make">
+        <% for m,k in @makes %>
+        <li id="<%= m %>"><p ng-click="the_make='<%= m %>'; the_model=nil"><%= m %></p></li>
+        <% end %>
+        <li><p ng-click="the_make=nil">Clear</p></li>
+      </ul>
     </div>
-  </div> -->
+    <div class="control">
+      <h5 class="model-click">Model</h5>
+      <ul class="model">
+        <% for m,k in @makes %>
+        <li id="<%= m %>" class="model_group">
+          <ul>
+            <% for t in k %>
+            <li><p ng-click="the_model='<%= t %>'"><%= t %></p></li>
+            <% end %>
+          </ul>
+        </li>
+        <% end %>
+        
+      </ul>
+    </div>
+  </div>
+
+
 
   <div class="vehiclegroup">
     <div ng-show="loading">Loading Cars...</div>

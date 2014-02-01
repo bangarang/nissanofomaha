@@ -43,10 +43,50 @@
 					font-weight: 100;
 				}
 			}
+			.model_group {
+				display: none;
+			}
+			.model_group.current {
+				display: block;
+				li {
+					padding: 0;
+					margin: 0;
+					width: 100%;
+				}
+			}
 			li:hover, li.selected {
 				border-bottom: 1px solid $red;
 				@include transition(0.2s);
 				p {
+					color: $red;
+				}
+			}
+		}
+		.model.up {
+			li {
+				border-bottom: none;
+				padding: 0;
+				ul{
+					padding: 0;
+					li {
+						padding: 0;
+						border-bottom: 1px solid #EEEEEE;
+					}
+					li:hover, li.selected {
+						border-bottom: 1px solid $red;
+						@include transition(0.2s);
+						p {
+							color: $red;
+						}
+					}
+				}
+			}
+			li:hover {
+				border-bottom: none;
+				ul li p {
+					color: #999;
+				}
+				ul li:hover p {
 					color: $red;
 				}
 			}

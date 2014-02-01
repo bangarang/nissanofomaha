@@ -43,14 +43,20 @@ $(document).ready(function() {
 	$(".make li").click(function() {
 	  $(".make").toggleClass("up");
 	  $(".make li").removeClass('selected');
+	  ident = $(this).attr('id');
+	  $('ul.model li').removeClass('current');
 	  $(this).addClass('selected');
+
+	  $('ul.model li#'+ident).addClass('current');
 	});
 	$(".model-click").click(function() {
 	  $(".model").toggleClass("up");
 	});
-	// $(".model p").click(function() {
-	//   $(".model").toggleClass("up");
-	// });
+	$(".model li ul li").click(function() {
+	  $(".model").toggleClass("up");
+	  $(".model li").removeClass('selected');
+	  $(this).addClass('selected');
+	});
   $(".different-click").click(function() {
 	  $(".different").toggleClass("up");
 	  return false;

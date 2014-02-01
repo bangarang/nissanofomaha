@@ -7,7 +7,12 @@ class VehiclesController < ApplicationController
     @vehicles = Vehicle.where(newused: 'U')
     @makes = []
     Vehicle.where(newused: 'U').select("DISTINCT(MAKE)").each do |p| 
-      @makes << p.make
+      # @makes << p.make
+        tmp =[]
+        Vehicle.where(newused: 'U', make: p.make ).select("DISTINCT(MODEL)").each do |j|
+          tmp << j.model
+        end
+        @makes << [p.make, tmp]
     end
   end
 
