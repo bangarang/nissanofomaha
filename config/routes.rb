@@ -1,4 +1,6 @@
 Vauto::Application.routes.draw do
+  resources :imports
+
   resources :categories
 
   resources :packages
@@ -39,9 +41,13 @@ Vauto::Application.routes.draw do
 
   get "index.asp" => 'pages#thanks'
 
-  resources :vehicles do
-    collection { post :import }
-  end
+  resources :vehicles
+
+  post 'process_file' => 'imports#process_file'
+
+  # resources :vehicles do
+  #   collection { post :import }
+  # end
 
   get 'usedvehicles' => 'vehicles#index'
 

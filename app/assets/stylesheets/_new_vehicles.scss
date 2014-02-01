@@ -26,6 +26,7 @@ div.newvehicle_grid {
 
 section.newvehicle {
 	header {
+		position: relative;
 		div.name, div.info {
 			display: inline-block;
 		}
@@ -33,6 +34,7 @@ section.newvehicle {
 			h4 {
 				margin: 0;
 				color: #777777;
+				text-transform: uppercase;
 			}
 			h1 {
 				font-size: 50px;
@@ -45,7 +47,9 @@ section.newvehicle {
 		}
 
 		div.info {
-			float: right;
+			position: absolute;
+			right: 0;
+			bottom: 0;
 			div.spec {
 				display: inline-block;
 				margin: 25px 10px 0;
@@ -53,6 +57,7 @@ section.newvehicle {
 					color: #777777;
 					font-size: 10px;
 					margin: 0;
+					font-weight: normal;
 				}
 				.content {
 					color: #777777;
@@ -62,6 +67,7 @@ section.newvehicle {
 			}
 			@include media($tablet) {
 				float: none;
+				position: relative;
 				text-align: center;
 				width: 100%;
 				div.spec {
@@ -203,7 +209,6 @@ div.int_ext {
 	height: 34px;
 	width: 34px;
 	border-radius: 50%;
-	border: 1px solid #eee;
 	display: inline-block;
 	cursor: pointer;
 	overflow: hidden;

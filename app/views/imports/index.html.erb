@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Listing imports</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>File</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @imports.each do |import| %>
+        <tr>
+          <td><%= import.name %></td>
+          <td><%= import.file %></td>
+          <td><%= link_to 'Show', import %></td>
+          <td><%= link_to 'Edit', edit_import_path(import) %></td>
+          <td><%= link_to 'Destroy', import, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Import', new_import_path %>
+
+  <div>
+    <%= form_tag process_file_path do %>
+      <%= submit_tag "Import Latest File", class: "button" %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form_tag delete_all_vehicles_path do %>
+      <%= submit_tag "Delete all Used Vehicles", class: "button" %>
+    <% end %>
+  </div>
+</div>  
