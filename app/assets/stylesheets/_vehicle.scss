@@ -130,6 +130,8 @@
 		box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
 		img {
 			width: 100%;
+			min-height: 116px;
+			background: #eee;
 		}
 		h4 {
 			text-align: center;
@@ -182,4 +184,13 @@
 .repeat-item.ng-leave,
 .repeat-item.ng-enter.ng-enter-active {
   opacity:1;
+}
+
+.used_main {
+	padding: 10% 0 14%;
+	color: white;
+	h2 {
+		font-size: 35px;
+		margin-bottom: 0;
+	}
 }

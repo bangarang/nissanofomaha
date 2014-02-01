@@ -84,10 +84,10 @@ div.prior.left:before {
 }
 
 div.links {
-	margin-top: 25px;
+	margin: 25px 0;
 	@include outer-container;
 	a {
-		@include span-columns(4 of 12)
+		@include span-columns(6 of 12)
 	}
 	a.red_button {
 		background: $red;
@@ -96,9 +96,17 @@ div.links {
 		text-decoration: none;
 		text-align: center;
 		display: inline-block;
+		@include transition(0.2s);
 		h4 {
 			margin: 15px;
 		}
+	}
+
+	a.red_button:hover {
+		background: $darkred;
+	}
+	a.red_button.big {
+		@include span-columns(12 of 12)
 	}
 }
 
