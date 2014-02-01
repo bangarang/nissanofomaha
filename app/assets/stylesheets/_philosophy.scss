@@ -65,10 +65,13 @@ section.main_top {
 			position: relative;
 		}
 	}
+	.bottom_border {
+		border-bottom: 3px solid $red;
+		max-width: 100%;
+		width: 1000px;
+		position: absolute;
+	}
 }
 .bottom_border {
 			border-bottom: 3px solid $red;
-			max-width: 100%;
-			width: 1000px;
-			position: absolute;
 		}

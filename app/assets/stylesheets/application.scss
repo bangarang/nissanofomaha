@@ -30,6 +30,8 @@ img.full {
   display: block;
 }
 
+$lightgray: #DDDDDD;
+$darkgray: #666666;
 $red: #C71444;
 
 h1, h2, h3, h4, h5, h6, body {
@@ -52,6 +54,7 @@ div.container {
 @import "owl.transitions";
 
 @import "header";
+@import "footer";
 @import "vehicle";
 @import "new_vehicles";
 @import "photos";

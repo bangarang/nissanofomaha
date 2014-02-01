@@ -1,0 +1,58 @@
+footer {
+	background: $lightgray;
+	color: $darkgray;
+	.copyright {
+		font-weight: 100;
+		text-align: center;
+		font-size: 12px;
+	}
+	.contacthours {
+		@include span-columns(8);
+		@include shift(2);
+		.hours {
+			border-right: 2px solid white;
+		}
+		.hours, .call {
+			@include span-columns(6);
+			text-transform: uppercase;
+			padding-left: 50px;
+			.footer_title {
+				color: $red;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			ul {
+				padding: 0;
+				li {
+					list-style: none;
+					line-height: 22px;
+					font-weight: 100;
+					font-size: 15px;
+					a {
+						color: $darkgray;
+						text-decoration: none;
+					}
+				}
+			}
+			@include media($tablet) {
+				@include span-columns(8);
+			}
+
+		}
+		.call {
+			@include omega;
+			text-transform:none;
+		}
+		@include media($tablet) {
+			@include span-columns(12);
+			@include shift(0);
+		}
+	}
+	.address {
+		text-align: center;
+		span.white {
+			color: white;
+			padding: 0 10px;
+		}
+	}
+}

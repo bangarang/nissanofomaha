@@ -1,7 +1,8 @@
+<% for category in @categories %>
 <div class="container">
-  <h1>New Vehicles</h1>
+  <h1><%= category.name %></h1>
 
-  <% @new_vehicles.each do |new_vehicle| %><!--
+  <% category.new_vehicles.order(:msrp).each do |new_vehicle| %><!--
     --><div class="newvehicle_grid">
       <%= image_tag(new_vehicle.image_url) %>
       <h3 class="name"><%= link_to new_vehicle.name, new_vehicle %></h3>
@@ -14,7 +15,6 @@
     </div><!--
   --><% end %>
 
-  <br>
-  
-  <%= link_to 'Add New Vehicle', new_new_vehicle_path if signed_in? %>
 </div>
+<% end %>
+  <%= link_to 'Add New Vehicle', new_new_vehicle_path if signed_in? %>
