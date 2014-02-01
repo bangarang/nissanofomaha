@@ -21,7 +21,7 @@ mixpanel.init("95ccd332f61cfd18cdbd8b4dfa845bfe");</script><!-- end Mixpanel -->
 		<%= render "layouts/header" %>
     <%= yield %>
 		<%= render "layouts/footer" %>
-    <% javascript_tag do %> 
+    <%= javascript_tag do %> 
       mixpanel.track("<%= yield(:title) %>");
     <% end %>
   </body>
