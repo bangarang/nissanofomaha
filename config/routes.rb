@@ -43,6 +43,8 @@ Vauto::Application.routes.draw do
 
   get "index.asp" => 'pages#thanks'
 
+  get 'scheduleajoyride' => 'test_rides#new'
+
   resources :vehicles
 
   post 'process_file' => 'imports#process_file'

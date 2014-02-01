@@ -1,6 +1,6 @@
 class TestRidesController < ApplicationController
   before_action :set_test_ride, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize, except: [:new, :create]
   # GET /test_rides
   # GET /test_rides.json
   def index

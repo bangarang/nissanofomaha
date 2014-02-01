@@ -357,10 +357,25 @@ div#owl-demo {
 	width:80%;
 	display:inline-block!important;
 }
-
-div.new_vehicle_form {
+.form_title {
+	color: $red;
+	text-align: center;
+}
+div.new_vehicle_form, div.test_ride_form {
+	.group {
+		@include outer-container;
+		background: #EEEEEE;
+		padding: 15px;
+		margin: 15px;
+	}
 	.three {
 		@include span-columns(6 of 12);
+	}
+	h4 {
+		text-align: center;
+		border-bottom: 1px #ddd solid;
+		padding-bottom: 10px;
+		margin-top: 0;
 	}
 
 	.mpg {
@@ -374,7 +389,22 @@ div.new_vehicle_form {
 			@include span-columns(6 of 12);
 		}
 	}
+	.checkboxes {
+		@include span-columns(12 of 12);
+		@include omega;
+
+		.field {
+			@include span-columns(4 of 12);
+		}
+	}
 	.field {
+	
+		input[type="checkbox"] {
+			width: auto;
+		}
+		p {
+			display: inline-block;
+		}
 		h3 {
 			text-align: center;
 		}
