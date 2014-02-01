@@ -14,6 +14,35 @@ section.main_top {
 			font-size: 80px;
 		}
 	}
+
+	.home {
+		color: white;
+		text-transform: uppercase;
+		padding: 3% 0 20%;
+		h4 {
+			font-size: 25px;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 50px;
+			margin-bottom: 0;
+		}
+		p {
+			text-transform: none;
+		}
+
+		h1, h4, p {
+			padding-left: 15px;
+		}
+		.prior {
+			height: 0;
+		}
+		.bottom_border_home {
+			border-bottom: 3px solid $red;
+			margin-left: -20px;
+		}
+	}
 }
 
 .page {
@@ -26,6 +55,20 @@ section.main_top {
 	}
 }
 
-.bottom_border {
-	border-bottom: 3px solid $red;
+.home_chairs {
+	overflow: hidden;
+	.home_left, .home-right {
+		@include span-columns(6);
+	}
+	.home-right {
+		img { 
+			position: relative;
+		}
+	}
 }
+.bottom_border {
+			border-bottom: 3px solid $red;
+			max-width: 100%;
+			width: 1000px;
+			position: absolute;
+		}

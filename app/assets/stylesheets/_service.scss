@@ -12,12 +12,13 @@ div.service_title {
 }
 div.service_content {
 	color: #868686;
+}
+
 	.red_italic {
 		color: $red;
 		font-style: italic;
 		font-weight: bold;
 	}
-}
 
 	a.red_button {
 		background: $red;
@@ -30,6 +31,21 @@ div.service_content {
 		h2 {
 			margin: 15px;
 			padding: 15px;
+		}
+	}
+
+	a.red_button.small {
+		background: $red;
+		color: white;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		display: inline-block;
+		font-weight: bold;
+		p {
+			padding: 5px 10px;
+			margin: 0;
+			font-size: 12px;
 		}
 	}
 
