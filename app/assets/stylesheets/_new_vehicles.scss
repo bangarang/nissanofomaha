@@ -1,6 +1,6 @@
 div.newvehicle_grid {
 	width: 250px;
-	border: 1px solid $red;
+	border: 1px solid white;
 	margin-left: -1px;
 	margin-top: -1px;
 	color: #777777;
@@ -10,17 +10,25 @@ div.newvehicle_grid {
 	img {
 		max-width: 100%;
 	}
-	.name a {
-		font-weight: bold;
-		text-decoration: none;
-		color: #777777;
-		@include transition(0.2s ease-in);
+	.name {
+		background:#DDDDDD;
+		margin: 0;
+		padding: 10px;
+		a {
+			font-weight: bold;
+			text-decoration: none;
+			color: #777777;
+			@include transition(0.2s ease-in);
+		}
 	}
 	.name a:hover {
 		color: $red;
 	}
 	.price {
 		font-weight: 100;
+		background: #EEEEEE;
+		margin: 0;
+		padding: 10px;
 	}
 }
 
