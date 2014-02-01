@@ -1,6 +1,7 @@
 section.main_top {
 	background-size: cover;
 	background-position: center bottom;
+	position: relative;
 	.big {
 		color: $red;
 		text-transform: uppercase;
@@ -41,6 +42,41 @@ section.main_top {
 		.bottom_border_home {
 			border-bottom: 3px solid $red;
 			margin-left: -20px;
+		}
+	}
+
+	.facility1 {
+		color: white;
+		padding: 30% 0 0;
+		.text {
+			text-transform: uppercase;
+			margin: 0;
+			font-size: 40px;
+		}
+	}
+	.facility2 {
+		position: absolute;
+		color: white;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		.leed {
+			padding-bottom: 30%;
+		}
+		.fastlane {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			text-shadow: 0 0 5px black;
+			padding-bottom: 20px;
+			.fastlane_inner {
+				@include span-columns(8);
+				@include shift(4);
+				text-align: right;
+			}
+			a.red_button.small {
+				text-shadow: none;
+			}
 		}
 	}
 }

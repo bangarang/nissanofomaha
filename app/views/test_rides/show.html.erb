@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First:</strong>
+  <%= @test_ride.first %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= @test_ride.last %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @test_ride.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @test_ride.email %>
+</p>
+
+<p>
+  <strong>Method phone:</strong>
+  <%= @test_ride.method_phone %>
+</p>
+
+<p>
+  <strong>Method email:</strong>
+  <%= @test_ride.method_email %>
+</p>
+
+<p>
+  <strong>Morning:</strong>
+  <%= @test_ride.morning %>
+</p>
+
+<p>
+  <strong>Afternoon:</strong>
+  <%= @test_ride.afternoon %>
+</p>
+
+<p>
+  <strong>Evening:</strong>
+  <%= @test_ride.evening %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @test_ride.comments %>
+</p>
+
+<%= link_to 'Edit', edit_test_ride_path(@test_ride) %> |
+<%= link_to 'Back', test_rides_path %>

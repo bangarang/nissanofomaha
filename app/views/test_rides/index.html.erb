@@ -1,0 +1,45 @@
+<h1>Listing test_rides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Method phone</th>
+      <th>Method email</th>
+      <th>Morning</th>
+      <th>Afternoon</th>
+      <th>Evening</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_rides.each do |test_ride| %>
+      <tr>
+        <td><%= test_ride.first %></td>
+        <td><%= test_ride.last %></td>
+        <td><%= test_ride.phone %></td>
+        <td><%= test_ride.email %></td>
+        <td><%= test_ride.method_phone %></td>
+        <td><%= test_ride.method_email %></td>
+        <td><%= test_ride.morning %></td>
+        <td><%= test_ride.afternoon %></td>
+        <td><%= test_ride.evening %></td>
+        <td><%= test_ride.comments %></td>
+        <td><%= link_to 'Show', test_ride %></td>
+        <td><%= link_to 'Edit', edit_test_ride_path(test_ride) %></td>
+        <td><%= link_to 'Destroy', test_ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test ride', new_test_ride_path %>

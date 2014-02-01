@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+		<h2>Name: <b><%= @first %> <%= @last %></b></h2>
+		<h5>Phone:</h5><%= @phone %></p>
+		<h5>E-mail Address: </h5><%= @email %></p>
+		<h5>Prefered Method of Contact:</h5><%= "Phone " if @method_phone %><%= "Email " if @method_email %></p>
+		<h5>Preferred Time of Day:</h5><%= "Morning " if @morning %><%= "Afternoon" if @afternoon %><%= "Evening " if @evening %> </p>
+		<h5>Comments</h5> 
+		<p><%= @comments %></p>
+		<p>Sent on: <%= @sent_on %></p>
+	</body>
+</html>

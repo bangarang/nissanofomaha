@@ -9,10 +9,11 @@
 					<a href="/philosophy" class="media">Our Philosophy</a>
 					<a href="/facility" class="media">Facility</a>
 					<a href="/joinourteam" class="media">Join Our Team</a>
-					<a href="/medialounge" class="media">Media Lounge</a>
 				</div>
 			</li>
-			<li><%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url) %></li>
+			<li>
+				<%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url) %>
+			</li>
 			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
 			<li><a href="/service">Service</a></li>
 			<% if signed_in? %>

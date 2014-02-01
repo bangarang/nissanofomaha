@@ -60,7 +60,7 @@
             <td><%= package.msrp %></td>
             <td><%= package.city %></td>
             <td><%= package.hwy %></td>
-            <td><%= package.features %></td>
+            <td><%= package.features.html_safe %></td>
             <td><%= link_to 'Show', package %></td>
             <td><%= link_to 'Edit', edit_package_path(package) %></td>
             <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>

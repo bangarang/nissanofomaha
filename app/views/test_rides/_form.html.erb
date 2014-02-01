@@ -1,0 +1,59 @@
+<%= form_for(@test_ride) do |f| %>
+  <% if @test_ride.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test_ride.errors.count, "error") %> prohibited this test_ride from being saved:</h2>
+
+      <ul>
+      <% @test_ride.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p>First Name</p>
+    <%= f.text_field :first %>
+  </div>
+  <div class="field">
+    <p>Last Name</p>
+    <%= f.text_field :last %>
+  </div>
+  <div class="field">
+    <p>Phone Number</p>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <p>E-mail Address</p>
+    <%= f.text_field :email %>
+  </div>
+  <h4>Prefered Method of Contact:</h4>
+  <div class="field">
+    <p>Phone</p>
+    <%= f.check_box :method_phone %>
+  </div>
+  <div class="field">
+    <p>E-mail</p>
+    <%= f.check_box :method_email %>
+  </div>
+  <h4>Preferred Time of Day:</h4>
+  <div class="field">
+    <p>Morning:</p>
+    <%= f.check_box :morning %>
+  </div>
+  <div class="field">
+    <p>Afternoon</p>
+    <%= f.check_box :afternoon %>
+  </div>
+  <div class="field">
+    <p>Evening</p>
+    <%= f.check_box :evening %>
+  </div>
+  <div class="field">
+    <p>Tell us what car you're interested in, and we'll match you up with the best fit.</p>
+    <%= f.text_area :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

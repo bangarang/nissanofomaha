@@ -1,4 +1,6 @@
 Vauto::Application.routes.draw do
+  resources :test_rides
+
   resources :imports
 
   resources :categories
