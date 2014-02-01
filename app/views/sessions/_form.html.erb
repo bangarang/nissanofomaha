@@ -1,19 +1,30 @@
-<%= form_for :session, :url => session_path do |form| %>
-  <div class='text-field'>
-    <%= form.label :email %>
-    <%= form.text_field :email, :type => 'email' %>
-  </div>
+<div class="test_ride_form">
+  <%= form_for :session, :url => session_path do |form| %>
 
-  <div class='password-field'>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <div class="field">
+      <div class="pref_cont">
+        <label class="prefix">E-Mail</label>
+      </div>
+      <div class="input_cont">
+        <%= form.text_field :email, :type => 'email', placeholder: 'you@example.com' %>
+      </div>
+    </div>
+    
+    <div class="field">
+      <div class="pref_cont">
+        <label class="prefix">Password</label>
+      </div>
+      <div class="input_cont">
+        <%= form.password_field :password, :type => 'email' %>
+      </div>
+    </div>
 
-  <div class='submit-field'>
-    <%= form.submit %>
-  </div>
-  <div class='other-links'>
-    <%= link_to t('.sign_up'), sign_up_path %>
-    <%= link_to t('.forgot_password'), new_password_path %>
-  </div>
-<% end %>
+    <div class="actions">
+      <input name="commit" type="submit" value="Sign In">
+    </div>
+    <div class='other-links'>
+      <!-- <%= link_to t('.sign_up'), sign_up_path %> -->
+      <%= link_to t('.forgot_password'), new_password_path %>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
 class ExteriorsController < ApplicationController
   before_action :set_exterior, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize
   # GET /exteriors
   # GET /exteriors.json
   def index

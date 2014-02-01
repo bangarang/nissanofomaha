@@ -1,6 +1,6 @@
 class NewVehiclesController < ApplicationController
   before_action :set_new_vehicle, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize, except: [:show, :index]
   # GET /new_vehicles
   # GET /new_vehicles.json
   def index

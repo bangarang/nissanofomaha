@@ -1,6 +1,6 @@
 class InteriorsController < ApplicationController
   before_action :set_interior, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize
   # GET /interiors
   # GET /interiors.json
   def index

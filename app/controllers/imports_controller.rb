@@ -1,6 +1,6 @@
 class ImportsController < ApplicationController
   before_action :set_import, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize
   # GET /imports
   # GET /imports.json
   def index

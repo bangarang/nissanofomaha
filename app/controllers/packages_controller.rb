@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize
   # GET /packages
   # GET /packages.json
   def index
