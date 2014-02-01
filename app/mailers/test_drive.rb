@@ -1,6 +1,7 @@
 class TestDrive < ActionMailer::Base
-  default from: "joyrides@nissanofomaha.com"
-  default to: "alex@thenewblk.com, matt@thenewblk.com"
+  default from: "testdrives@nissanofomaha.com"
+  default to: "jmartin@nissanofomaha.com, mquattro@cox.net, alex@thenewblk.com"
+  
   def joyride(test_drive, time = Time.zone.now)
   	@sent_on = time.to_formatted_s(:long_ordinal)
   	@first = test_drive.first
@@ -14,6 +15,6 @@ class TestDrive < ActionMailer::Base
   	@phone = test_drive.phone
 		@email = test_drive.email
 
-		mail(:subject => "New Joyride")
+		mail(:subject => "New Test Drive Request")
   end
 end

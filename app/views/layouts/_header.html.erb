@@ -1,7 +1,6 @@
 <header class="main">
 	<nav>
 		<a href="/"><%= image_tag("logo.png", :class => "logo") %></a>
-		<% unless current_page?(root_url) %>
 		<ul class="menu">
 			<li>
 				<a href="#" class="different-click" >How We're Different</a>
@@ -19,8 +18,7 @@
 			<% if signed_in? %>
 			<li><%= link_to t('.sign_out'), sign_out_path, :method => :delete %></li>
 			<% end %>
-			<% end %>
 		</ul>
-		<%= image_tag("nissan_logo.png", :class => "nissan_logo") %>
+		<a href="http://nissanusa.com"><%= image_tag("nissan_logo.png", :class => "nissan_logo") %></a>
 	</nav>
 </header>
