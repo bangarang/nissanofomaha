@@ -102,14 +102,24 @@ $(document).ready(function() {
   // Custom Navigation Events
   $(".next").click(function(){
     owl.trigger('owl.next');
-  })
+  });
   $(".prev").click(function(){
     owl.trigger('owl.prev');
-  })
+  });
   $(".play").click(function(){
     owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
-  })
+  });
   $(".stop").click(function(){
     owl.trigger('owl.stop');
-  })
+  });
+
+	$(".lines-button").click(function() {
+		$(this).toggleClass("x close");
+		$('ul.mobile-menu').toggleClass("up");
+	});
+
+  $(".mobile-different-click").click(function() {
+	  $(".mobile-different").toggleClass("up");
+	  return false;
+	});
 });

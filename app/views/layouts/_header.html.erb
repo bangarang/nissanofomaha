@@ -1,6 +1,11 @@
 <header class="main">
 	<nav>
 		<a href="/"><%= image_tag("logo.png", :class => "logo") %></a>
+		<div class="lines-button" type="button" role="button">
+		  <span class="lines"></span>
+		  <h2>MENU</h2>
+		</div>
+		<!-- <div class="navicontainer"><div class="navicon"></div><h2 class='menu'>MENU</h2></div> -->
 		<ul class="menu">
 			<li>
 				<a href="#" class="different-click" >How We're Different</a>
@@ -19,6 +24,26 @@
 			<li><%= link_to t('.sign_out'), sign_out_path, :method => :delete %></li>
 			<% end %>
 		</ul>
+		
+		<ul class="mobile-menu">
+			<li>
+				<a href="#" class="mobile-different-click" >How We're Different</a>
+				<div class="mobile-different">
+					<a href="/philosophy" class="media">Our Philosophy</a>
+					<a href="/facility" class="media">Facility</a>
+					<!-- <a href="/joinourteam" class="media">Join Our Team</a> -->
+				</div>
+			</li>
+			<li>
+				<%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url) %>
+			</li>
+			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
+			<li><a href="/service">Service</a></li>
+			<% if signed_in? %>
+			<li><%= link_to t('.sign_out'), sign_out_path, :method => :delete %></li>
+			<% end %>
+		</ul>
+
 		<a href="http://nissanusa.com"><%= image_tag("nissan_logo.png", :class => "nissan_logo") %></a>
 	</nav>
 </header>

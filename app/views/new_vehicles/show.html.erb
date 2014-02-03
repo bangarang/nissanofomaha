@@ -57,23 +57,23 @@
 			
 	    <div class="labels">
 	    	<% unless @new_vehicle.exteriors.empty? %> 
-	    	<div class="exterior active">
-	    		<% count = 0 %>
-	    		<% for exterior in @new_vehicle.exteriors %>
-	    		<% count = count + 1  %>
-	    		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= exterior.slug %>_label"><%= exterior.name %></h5>
-	    		<% end %>
-	    	</div>
+		    	<div class="exterior active">
+		    		<% count = 0 %>
+		    		<% for exterior in @new_vehicle.exteriors %>
+		    		<% count = count + 1  %>
+		    		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= exterior.slug %>_label"><%= exterior.name %></h5>
+		    		<% end %>
+		    	</div>
 	    	<% end %>
 
 	    	<% unless @new_vehicle.interiors.empty? %> 
-	    	<div class="interior">
-	    		<% count = 0 %>
-	    		<% for interior in @new_vehicle.interiors %>
-	    		<% count = count + 1  %>
-	    		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= interior.slug %>_label"><%= interior.name %></h5>
-	    		<% end %>
-	    	</div>
+		    	<div class="interior">
+		    		<% count = 0 %>
+		    		<% for interior in @new_vehicle.interiors %>
+		    		<% count = count + 1  %>
+		    		<h5 class="name<% if count == 1  %> active<% end %>" id="<%= interior.slug %>_label"><%= interior.name %></h5>
+		    		<% end %>
+		    	</div>
 	    	<% end %>
 	    </div>
 
@@ -83,58 +83,60 @@
 		    </div>
 		    <div class="views">
 		    	<% unless @new_vehicle.exteriors.empty?  %>
-		    	<div class="exterior-views">
-		    		<h5 class="title">Select Color: </h5>
-						<% for exterior in @new_vehicle.exteriors %>
-							<div class="color"> 
-								<div class="circle" id="<%= exterior.slug %>" style="background:<%= exterior.color %>"></div>
-							</div>
-						<% end %>
-					</div>
+			    	<div class="exterior-views">
+			    		<h5 class="title">Select Color: </h5>
+							<% for exterior in @new_vehicle.exteriors %>
+								<div class="color"> 
+									<div class="circle" id="<%= exterior.slug %>" style="background:<%= exterior.color %>"></div>
+								</div>
+							<% end %>
+						</div>
 					<% end %>
 					<% unless @new_vehicle.interiors.empty? %>
-					<div class="interior-views off">
-						<h5 class="title">Select Color: </h5>
-			      <% for interior in @new_vehicle.interiors %>
-			      	<div class="color">
-			      		<div class="rectangle" id="<%= interior.slug %>" style="background:<%= interior.color %>"></div>
-			      	</div>
-							
-						<% end %>
-			    </div>
+						<div class="interior-views off">
+							<h5 class="title">Select Color: </h5>
+				      <% for interior in @new_vehicle.interiors %>
+				      	<div class="color">
+				      		<div class="rectangle" id="<%= interior.slug %>" style="background:<%= interior.color %>"></div>
+				      	</div>
+								
+							<% end %>
+				    </div>
 			    <% end %>
 		    </div>
 	    </div>
 
 
-			<%= javascript_tag do %>
-				$(document).ready(function() {
-				<% for exterior in @new_vehicle.exteriors %>
-					$('#<%= exterior.slug %>').click(function(){
-				  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == exterior.photos.length %><% if exterior.photos.length == 1 %>
-						,'<%= photo.image_url %>'<% end %><% end %>]);
-				  	if( $('#exterior').reel('frame') > <%= exterior.photos.length %>){
-							$('#exterior').reel('frame',<%= exterior.photos.length %>);
-						}	
-					$('#exterior').reel('frames', <%= exterior.photos.length %>);			  	
-				  	$('.labels .exterior h5').removeClass('active');
-					$('#<%= exterior.slug %>_label').addClass('active');
-				  });
-				<% end %>
-				<% for interior in @new_vehicle.interiors %>
-					$('#<%= interior.slug %>').click(function(){
-				  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == interior.photos.length %><% if interior.photos.length == 1 %>
-						,'<%= photo.image_url %>'<% end %><% end %>]);
-				  	if( $('#interior').reel('frame') > <%= interior.photos.length %>){
-							$('#interior').reel('frame',<%= interior.photos.length %>);
-						}	
-				  	$('#interior').reel('frames', <%= interior.photos.length %>);	
-				  	$('.labels .interior h5').removeClass('active');
-					$('#<%= interior.slug %>_label').addClass('active');
-				  });
-				<% end %>
-				});
-			<% end %>
+<%= javascript_tag do %>
+$(document).ready(function() {
+<% for exterior in @new_vehicle.exteriors %>
+	$('#<%= exterior.slug %>').click(function(){
+	  	$('#exterior').reel('images', [<% count = 0 %><% for photo in exterior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == exterior.photos.length %><% if exterior.photos.length == 1 %>
+			,'<%= photo.image_url %>'<% end %><% end %>]);
+	  	if( $('#exterior').reel('frame') > <%= exterior.photos.length %>){
+				$('#exterior').reel('frame',<%= exterior.photos.length %>);
+			}	
+		$('#exterior').reel('frames', <%= exterior.photos.length %>);			  	
+	  	$('.labels .exterior h5').removeClass('active');
+		$('#<%= exterior.slug %>_label').addClass('active');
+	  });
+<% end %>
+
+<% for interior in @new_vehicle.interiors %>
+	$('#<%= interior.slug %>').click(function(){
+	  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == interior.photos.length %><% if interior.photos.length == 1 %>
+			,'<%= photo.image_url %>'<% end %><% end %>]);
+	  	
+	  	if( $('#interior').reel('frame') > <%= interior.photos.length %>){
+				$('#interior').reel('frame',<%= interior.photos.length %>);
+			}	
+			$('#interior').reel('frames', <%= interior.photos.length %>);			  	
+		  $('.labels .interior h5').removeClass('active');
+			$('#<%= interior.slug %>_label').addClass('active');
+	  });
+<% end %>
+});
+<% end %>
 		<% end %> 
 		<% if @new_vehicle.exteriors.empty? && @new_vehicle.interiors.empty? %>
 			<%= image_tag(@new_vehicle.image_url, class: 'full reel exterior') %>
