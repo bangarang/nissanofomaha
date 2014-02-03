@@ -43,6 +43,34 @@ section.main_top {
 			border-bottom: 3px solid $red;
 			margin-left: -20px;
 		}
+		@include media($tablet) {
+			padding: 10% 15px 14%;
+			text-shadow: 0 0 5px black;
+			background: rgba(0,0,0,0.4);
+			h1 { 
+				font-size: 28px;
+			}
+			h4 {
+				font-size: 23px;
+			}
+			p {
+				font-size: 16px;
+			}
+		}
+
+		@include media($mobile) {
+			text-shadow: 0 0 5px black;
+			background: rgba(0,0,0,0.7);
+			h1 { 
+				font-size: 18px;
+			}
+			h4 {
+				font-size: 15px;
+			}
+			p {
+				font-size: 12px;
+			}
+		}
 	}
 
 	.facility1 {

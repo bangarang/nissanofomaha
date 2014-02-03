@@ -7,6 +7,11 @@ div.newvehicle_grid {
 	text-align: center;
 	padding: 15px;
 	display: inline-block;
+	@include media($mobile) {
+		width: 90%;
+		display: block;
+		margin: auto;
+	}
 	img {
 		max-width: 100%;
 	}

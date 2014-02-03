@@ -1,7 +1,7 @@
 <% provide(:title, 'New Vehicles') %>
 <% for category in @categories %>
 <div class="container">
-  <h1><%= category.name %></h1>
+  <h1 class="form_title" id="<%= category.name.parameterize %>"><%= category.name %></h1>
 
   <% category.new_vehicles.order(:msrp).each do |new_vehicle| %><!--
     --><div class="newvehicle_grid">

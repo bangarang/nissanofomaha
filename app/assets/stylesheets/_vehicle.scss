@@ -12,10 +12,20 @@
 	@include outer-container;
 	.control {
 		margin-right: -1px;
+		margin-bottom: -1px;
 		width: 25%;
 		border: 1px solid #ddd;
 		float: left;
 		position: relative;
+		@include media($tablet) {
+			width: 50%;
+			.price.up, .odometer.up, .make.up, .model.up {
+				z-index: 1;
+				li {
+					padding: 0 !important;
+				}
+			}
+		}
 		h5 {
 			text-align: center;
 			text-transform: uppercase;
@@ -34,7 +44,6 @@
 			border: 1px solid #ddd;
 			li {
 				list-style: none;
-				padding: 0 60px;
 				border-bottom: 1px solid #EEEEEE;
 				p {
 					text-align: center;
@@ -101,10 +110,16 @@
 		li {
 			display: inline-block;
 			list-style: none;
-			width: 20%;
+			width: 200px;
 			padding: 0 15px;
 			margin: 10px 0;
 			vertical-align: top;
+
+			@include media($mobile) {
+				margin: auto;
+				width: 90%;
+				display: block;
+			}
 		}
 	}
 }
@@ -187,10 +202,32 @@
 }
 
 .used_main {
-	padding: 10% 0 14%;
+	padding: 5% 15px 20%;
 	color: white;
 	h2 {
 		font-size: 35px;
 		margin-bottom: 0;
+	}
+	@include media($tablet) {
+		padding: 10% 15px 14%;
+		text-shadow: 0 0 5px black;
+		background: rgba(0,0,0,0.4);
+		h2 { 
+			font-size: 26px;
+		}
+		p {
+			font-size: 16px;
+		}
+	}
+
+	@include media($mobile) {
+		text-shadow: 0 0 5px black;
+		background: rgba(0,0,0,0.7);
+		h2 { 
+			font-size: 18px;
+		}
+		p {
+			font-size: 12px;
+		}
 	}
 }
