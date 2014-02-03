@@ -27,6 +27,9 @@ GEM
       tzinfo (~> 0.3.37)
     angularjs-rails (1.2.5)
     arel (4.0.1)
+    asset_sync (1.0.0)
+      activemodel
+      fog (>= 1.8.0)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
     bourbon (3.1.8)
@@ -167,6 +170,7 @@ PLATFORMS
 
 DEPENDENCIES
   angularjs-rails
+  asset_sync
   bourbon
   carrierwave
   clearance

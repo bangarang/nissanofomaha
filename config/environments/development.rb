@@ -24,6 +24,11 @@ Vauto::Application.configure do
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
+
+  # config.action_controller.asset_host = "https://d1m7te8f07fs1m.cloudfront.net"
+  # config.assets.digest = true
+  # config.action_controller.asset_host = "d1m7te8f07fs1m.cloudfront.net/"
+
   # number of complex assets.
   config.assets.debug = true
 
