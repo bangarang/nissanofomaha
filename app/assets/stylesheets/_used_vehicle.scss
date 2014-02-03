@@ -87,8 +87,13 @@ div.links {
 	margin: 25px 0;
 	@include outer-container;
 	a {
-		@include span-columns(6 of 12)
+		@include span-columns(6 of 12);
+		@include media($tablet) {
+			@include span-columns(8);
+			border: 5px solid white;
+		}
 	}
+
 	a.red_button {
 		background: $red;
 		color: white;

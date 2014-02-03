@@ -242,12 +242,23 @@ div.int_ext {
 
 
 .rectangle {
-	height: 35px;
-	width: 75px;
-	border: 1px solid #eee;
+	height: 34px;
+	width: 34px;
 	display: inline-block;
 	cursor: pointer;
-	margin: 0 5px;
+	overflow: hidden;
+}
+.rectangle:after {
+	content: '';
+	display: block;
+	height: 33px;
+	width: 33px;
+	margin: 0;
+	background-image: -webkit-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: -moz-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: -ms-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: -o-radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
+	background-image: radial-gradient(17px 17px, circle cover, transparent, rgba(0,0,0,0.3));
 }
 
 div.compare {
@@ -296,6 +307,19 @@ div.packages {
 		}
 		.model,.mpg {
 			background:#DDDDDD;
+		}
+		.mpg {
+			.mobile {
+				display:none;
+			}
+			@include media($tablet) {
+				.mobile {
+					display:block;
+				}
+				.not_mobile {
+					display:none;
+				}
+			}
 		}
 		.msrp, .features {
 			background:#EEEEEE;
