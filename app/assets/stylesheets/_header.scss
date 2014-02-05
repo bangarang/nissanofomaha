@@ -19,10 +19,10 @@ header.main {
 				list-style: none;
 				float: left;
 				position: relative;
-				div.different {
+				div.different, div.new-dropdown {
 					display: none;
 				}
-				div.different.up {
+				div.different.up, div.new-dropdown.up {
 					display: block;
 					position: absolute;
 					background: white;

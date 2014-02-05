@@ -15,7 +15,14 @@
 				</div>
 			</li>
 			<li>
-				<%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url) %>
+				<%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url), class: " new-dropdown-click" %>
+				<div class="new-dropdown">
+					<% for category in @categories %>
+					<%= link_to category.name, '/new_vehicles#' + category.name.parameterize, class: 'media' unless current_page?(new_vehicles_url)%>
+					<%= link_to category.name, '#' + category.name.parameterize, class: 'media' if current_page?(new_vehicles_url)%>
+					<% end %>
+				</div>
+				
 			</li>
 			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
 			<li><a href="/service">Service</a></li>
