@@ -41,8 +41,8 @@ Vauto::Application.routes.draw do
   get 'facility' => 'pages#facility'
   get 'philosophy' => 'pages#philosophy'
 
-  get 'getapproved' => 'pages#getapproved'
-  # get 'getapproved' => 'credit_applications#new'
+  # get 'getapproved' => 'pages#getapproved'
+  get 'getapproved' => 'credit_applications#new'
 
   get "index.asp" => 'pages#thanks'
 
