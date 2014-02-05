@@ -27,16 +27,20 @@ class CreditApplicationsController < ApplicationController
   def create
     @credit_application = CreditApplication.new(credit_application_params)
 
-    respond_to do |format|
-      if @credit_application.save
-        CreditMailer.credit(@credit_application).deliver
-        format.html { redirect_to root_url, notice: 'Credit application was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @credit_application }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @credit_application.errors, status: :unprocessable_entity }
-      end
-    end
+    CreditMailer.credit(@credit_application).deliver
+
+    redirect_to root_url
+    
+    # respond_to do |format|
+    #   if @credit_application.save
+    #     CreditMailer.credit(@credit_application).deliver
+    #     format.html { redirect_to root_url, notice: 'Credit application was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @credit_application }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @credit_application.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /credit_applications/1

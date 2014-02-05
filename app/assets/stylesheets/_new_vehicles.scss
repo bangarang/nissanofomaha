@@ -585,7 +585,7 @@ div.actions {
 		@include transition(0.2s);
 	}
 	input[type="submit"]:hover {
-		background: black;
+		background: $darkred;
 	}
 
 }
