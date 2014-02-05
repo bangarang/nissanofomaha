@@ -68,7 +68,6 @@ $(document).ready(function() {
 	});
 	$(".new-dropdown a").click(function() {
 	  $(".new-dropdown").toggleClass("up");
-	  return false;
 	});
 
 	$("#interior-click").click(function() {
