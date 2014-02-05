@@ -122,4 +122,9 @@ $(document).ready(function() {
 	  $(".mobile-different").toggleClass("up");
 	  return false;
 	});
+
+	$(".joint-click").click(function() {
+	  $(".joint").toggleClass("up");
+	});
+
 });

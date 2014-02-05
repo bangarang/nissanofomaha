@@ -1,0 +1,434 @@
+<div class="credit_application_form">
+  <%= form_for(@credit_application) do |f| %>
+    <% if @credit_application.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@credit_application.errors.count, "error") %> prohibited this credit_application from being saved:</h2>
+
+        <ul>
+        <% @credit_application.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="group">
+      <div class="mpg">
+        <h4>Primary Applicant</h4>
+         <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">First Name</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :primary_first_name, placeholder: 'John' %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Last Name</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :primary_last_name, placeholder: 'Smith' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Address</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_address %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">City</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_city %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">State</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_state %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Zip Code</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_zip_code %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Contact Phone Number</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_contact_phone %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Email Address</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_email %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Time at Residence</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_time_at_residence %>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Monthly Rent</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_monthly_rent %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Social Security Number</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_social_security_number %>
+        </div>
+      </div>   
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Employer's Name</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_employer_name %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Employer's Phone</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_employer_phone %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Occupation</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_occupation %>
+        </div>
+      </div>   
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Time on Job</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_time_on_job %>
+        </div>
+      </div>     
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Monthly Income</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :primary_monthly_income %>
+        </div>
+      </div>   
+    </div>
+    
+    <h3 class="form_title joint-click">Do You have a Joint Applicant?</h3>
+    <div class="group joint">
+      <div class="mpg">
+        <h4>Joint Applicant</h4>
+         <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">First Name</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :joint_first_name, placeholder: 'John' %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Last Name</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :joint_last_name, placeholder: 'Smith' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Address</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_address %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">City</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_city %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">State</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_state %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Zip Code</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_zip_code %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Contact Phone Number</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_contact_phone %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Email Address</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_email %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Time at Residence</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_time_at_residence %>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Monthly Rent</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_monthly_rent %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Social Security Number</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_social_security_number %>
+        </div>
+      </div>   
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Employer's Name</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_employer_name %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Employer's Phone</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_employer_phone %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Occupation</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_occupation %>
+        </div>
+      </div>   
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Time on Job</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_time_on_job %>
+        </div>
+      </div>     
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Monthly Income</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :joint_monthly_income %>
+        </div>
+      </div>   
+    </div>
+
+    <div class="half">
+      <div class="group">
+        <h4>Vehicle of Interest</h4>
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Model Year</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :interest_model_year %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Make</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :interest_make %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Model</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :interest_model %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Price</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :interest_price %>
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Mileage</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :interest_mileage %>
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">VIN</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :interest_vin %>
+          </div>
+        </div>
+      </div>
+
+      <div class="group">
+        <h4>Trade In</h4>
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Model Year</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :trade_model_year %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Make</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :trade_make %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Model</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :trade_model %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Price</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :trade_price %>
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">Mileage</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :trade_mileage %>
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="pref_cont">
+            <label class="prefix">VIN</label>
+          </div>
+          <div class="input_cont">
+            <%= f.text_field :trade_vin %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <input name="commit" type="submit" value="Submit">
+    </div>
+  <% end %>
+</div>

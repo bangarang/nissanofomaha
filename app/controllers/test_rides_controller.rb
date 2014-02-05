@@ -43,7 +43,7 @@ class TestRidesController < ApplicationController
   def update
     respond_to do |format|
       if @test_ride.update(test_ride_params)
-        format.html { redirect_to @test_ride, notice: 'Test ride was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'Test ride was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -57,7 +57,7 @@ class TestRidesController < ApplicationController
   def destroy
     @test_ride.destroy
     respond_to do |format|
-      format.html { redirect_to test_rides_url }
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end

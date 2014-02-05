@@ -390,13 +390,31 @@ div#owl-demo {
 	color: $red;
 	text-align: center;
 }
-div.new_vehicle_form, div.test_ride_form {
+div.new_vehicle_form, div.test_ride_form, div.credit_application_form{
 	.group {
 		@include outer-container;
 		background: #EEEEEE;
 		padding: 15px;
-		margin: 15px;
+		margin: 15px 0;
+
+		@include media($tablet) {
+			margin: 15px;
+		}
 	}
+	.half {
+		@include outer-container;
+		@include media($tablet) {
+			margin: 15px;
+		}
+		.group {
+			@include span-columns(6);
+			@include media($tablet) {
+				margin: 15px auto;
+				@include span-columns(8);
+			}
+		}
+	} 
+
 	.three {
 		@include span-columns(6 of 12);
 	}
@@ -538,6 +556,20 @@ div.new_vehicle_form, div.test_ride_form {
 	}
 	select {
 		line-height: 18px;
+	}
+
+	.joint-click {
+		cursor:pointer;
+		@include transition(0.2s); 
+	}
+	.joint-click:hover {
+		color: $darkred;
+	}
+	.joint {
+		display:none;
+	}
+	.joint.up {
+		display: block;
 	}
 }
 

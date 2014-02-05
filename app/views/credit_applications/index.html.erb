@@ -1,0 +1,117 @@
+<h1>Listing credit_applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primary first name</th>
+      <th>Primary last name</th>
+      <th>Primary address</th>
+      <th>Primary city</th>
+      <th>Primary state</th>
+      <th>Primary zip code</th>
+      <th>Primary contact phone</th>
+      <th>Primary email</th>
+      <th>Primary time at residence</th>
+      <th>Primary monthly rent</th>
+      <th>Primary date of birth</th>
+      <th>Primary social security number</th>
+      <th>Primary employer name</th>
+      <th>Primary employer phone</th>
+      <th>Primary occupation</th>
+      <th>Primary time on job</th>
+      <th>Primary monthly income</th>
+      <th>Joint first name</th>
+      <th>Joint last name</th>
+      <th>Joint address</th>
+      <th>Joint city</th>
+      <th>Joint state</th>
+      <th>Joint zip code</th>
+      <th>Joint contact phone</th>
+      <th>Joint email</th>
+      <th>Joint time at residence</th>
+      <th>Joint monthly rent</th>
+      <th>Joint date of birth</th>
+      <th>Joint social security number</th>
+      <th>Joint employer name</th>
+      <th>Joint employer phone</th>
+      <th>Joint occupation</th>
+      <th>Joint time on job</th>
+      <th>Joint monthly income</th>
+      <th>Interest model year</th>
+      <th>Interest make</th>
+      <th>Interest model</th>
+      <th>Interest price</th>
+      <th>Interest mileage</th>
+      <th>Interest vin</th>
+      <th>Trade model year</th>
+      <th>Trade make</th>
+      <th>Trade model</th>
+      <th>Trade price</th>
+      <th>Trade mileage</th>
+      <th>Trade vin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @credit_applications.each do |credit_application| %>
+      <tr>
+        <td><%= credit_application.primary_first_name %></td>
+        <td><%= credit_application.primary_last_name %></td>
+        <td><%= credit_application.primary_address %></td>
+        <td><%= credit_application.primary_city %></td>
+        <td><%= credit_application.primary_state %></td>
+        <td><%= credit_application.primary_zip_code %></td>
+        <td><%= credit_application.primary_contact_phone %></td>
+        <td><%= credit_application.primary_email %></td>
+        <td><%= credit_application.primary_time_at_residence %></td>
+        <td><%= credit_application.primary_monthly_rent %></td>
+        <td><%= credit_application.primary_date_of_birth %></td>
+        <td><%= credit_application.primary_social_security_number %></td>
+        <td><%= credit_application.primary_employer_name %></td>
+        <td><%= credit_application.primary_employer_phone %></td>
+        <td><%= credit_application.primary_occupation %></td>
+        <td><%= credit_application.primary_time_on_job %></td>
+        <td><%= credit_application.primary_monthly_income %></td>
+        <td><%= credit_application.joint_first_name %></td>
+        <td><%= credit_application.joint_last_name %></td>
+        <td><%= credit_application.joint_address %></td>
+        <td><%= credit_application.joint_city %></td>
+        <td><%= credit_application.joint_state %></td>
+        <td><%= credit_application.joint_zip_code %></td>
+        <td><%= credit_application.joint_contact_phone %></td>
+        <td><%= credit_application.joint_email %></td>
+        <td><%= credit_application.joint_time_at_residence %></td>
+        <td><%= credit_application.joint_monthly_rent %></td>
+        <td><%= credit_application.joint_date_of_birth %></td>
+        <td><%= credit_application.joint_social_security_number %></td>
+        <td><%= credit_application.joint_employer_name %></td>
+        <td><%= credit_application.joint_employer_phone %></td>
+        <td><%= credit_application.joint_occupation %></td>
+        <td><%= credit_application.joint_time_on_job %></td>
+        <td><%= credit_application.joint_monthly_income %></td>
+        <td><%= credit_application.interest_model_year %></td>
+        <td><%= credit_application.interest_make %></td>
+        <td><%= credit_application.interest_model %></td>
+        <td><%= credit_application.interest_price %></td>
+        <td><%= credit_application.interest_mileage %></td>
+        <td><%= credit_application.interest_vin %></td>
+        <td><%= credit_application.trade_model_year %></td>
+        <td><%= credit_application.trade_make %></td>
+        <td><%= credit_application.trade_model %></td>
+        <td><%= credit_application.trade_price %></td>
+        <td><%= credit_application.trade_mileage %></td>
+        <td><%= credit_application.trade_vin %></td>
+        <td><%= link_to 'Show', credit_application %></td>
+        <td><%= link_to 'Edit', edit_credit_application_path(credit_application) %></td>
+        <td><%= link_to 'Destroy', credit_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit application', new_credit_application_path %>
