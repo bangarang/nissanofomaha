@@ -66,6 +66,10 @@ $(document).ready(function() {
 	  $(".new-dropdown").toggleClass("up");
 	  return false;
 	});
+	$(".new-dropdown a").click(function() {
+	  $(".new-dropdown").toggleClass("up");
+	  return false;
+	});
 
 	$("#interior-click").click(function() {
 		$(this).addClass("active");
