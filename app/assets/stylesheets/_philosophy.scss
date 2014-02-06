@@ -347,22 +347,44 @@ section.join_section_3 {
 }
 
 .home_chairs {
-	overflow: hidden;
-	.home_left, .home-right {
-		@include span-columns(6);
+	background-size: contain;
+	background-position: right center;
+	background-repeat: no-repeat;
+	position: relative;
+	@include media($tablet) {
+		background-size: cover;
+		background-position: center center;
 	}
-	.home-right {
-		img { 
-			position: relative;
+	.container {
+		@include media($mobile) {
+			padding: 0;
+		}
+	}
+	.home_left {
+		padding: 25px 0 175px;
+		@include span-columns(6);
+		@include media($tablet) {
+			padding: 50px 15px 100px;
+			@include span-columns(8);
+			background: rgba(255,255,255,0.9);
+		}
+	}
+	a.red_button.small {
+		@include media($mobile) {
+			display: table;
+			margin: auto;
 		}
 	}
 	.bottom_border {
 		border-bottom: 3px solid $red;
-		max-width: 100%;
-		width: 1000px;
+		width: 80%;
 		position: absolute;
+		z-index: -1;
+		@include media($tablet) {
+			display: none;
+		}
 	}
 }
 .bottom_border {
-			border-bottom: 3px solid $red;
-		}
+	border-bottom: 3px solid $red;
+}
