@@ -356,6 +356,7 @@ section.join_section_3 {
 		background-position: center center;
 	}
 	.container {
+		position: relative;
 		@include media($mobile) {
 			padding: 0;
 		}
@@ -377,7 +378,7 @@ section.join_section_3 {
 	}
 	.bottom_border {
 		border-bottom: 3px solid $red;
-		width: 80%;
+		width: 100%;
 		position: absolute;
 		z-index: -1;
 		@include media($tablet) {
