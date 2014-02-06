@@ -50,6 +50,8 @@ Vauto::Application.routes.draw do
 
   get 'scheduleajoyride' => 'test_rides#new'
 
+  get 'partsorder' => 'parts_orders#new'
+
   resources :vehicles
 
   post 'process_file' => 'imports#process_file'
