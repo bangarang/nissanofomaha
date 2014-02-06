@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @parts_order.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @parts_order.phone %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @parts_order.zip %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @parts_order.email %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @parts_order.year %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @parts_order.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @parts_order.model %>
+</p>
+
+<p>
+  <strong>Vin:</strong>
+  <%= @parts_order.vin %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @parts_order.comments %>
+</p>
+
+<%= link_to 'Edit', edit_parts_order_path(@parts_order) %> |
+<%= link_to 'Back', parts_orders_path %>

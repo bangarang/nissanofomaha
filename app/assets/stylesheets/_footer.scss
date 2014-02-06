@@ -11,6 +11,9 @@ footer {
 		@include shift(2);
 		.hours {
 			border-right: 2px solid white;
+			@include media($tablet) {
+				border: none;
+			}
 		}
 		.hours, .call {
 			@include span-columns(6);

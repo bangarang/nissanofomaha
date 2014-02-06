@@ -32,6 +32,10 @@ div.service_content {
 			margin: 15px;
 			padding: 15px;
 		}
+		h3 {
+			margin: 15px;
+			padding: 10px;
+		}
 	}
 
 	a.red_button.small {
@@ -57,12 +61,27 @@ div.service_content {
 		@include outer-container;
 		div.contact_section {
 			@include span-columns(4 of 12);
+			@include media($tablet) {
+				@include span-columns(8);
+				.contact_title {
+					text-align: center;
+				}
+			}
 			.contact_title {
 				color: $red;
 				text-transform: uppercase;
 			}
 			.contact_line {
 				color: #666666;
+				a {
+					text-decoration: none;
+					color: $red;
+					font-weight: bold;
+					@include transition(0.2s);
+				}
+				a:hover {
+					color: $darkred;
+				}
 			}
 		}
 	}

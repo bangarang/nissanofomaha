@@ -135,4 +135,18 @@ $(document).ready(function() {
 	  $(".joint").toggleClass("up");
 	});
 
+	// $(".vehicles li .vehicle .bottom p.ma.ng-binding").hover(function() {
+	//   $(".bottom_comments .ma").addClass("up");
+	// });
+
+	$('ul.vehicles').on("mouseenter mouseleave", ".bottom p.ma", function(e){
+    $(this).parent().parent().find('.comments p.ma').toggleClass("up");
+	}); 
+	$('ul.vehicles').on("mouseenter mouseleave", ".bottom p.mpg", function(e){
+    $(this).parent().parent().find('.comments p.mpg').toggleClass("up");
+	}); 
+	$('ul.vehicles').on("mouseenter mouseleave", ".bottom p.mileage", function(e){
+    $(this).parent().parent().find('.comments p.mileage').toggleClass("up");
+	});    
+
 });

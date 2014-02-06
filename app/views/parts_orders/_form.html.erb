@@ -1,0 +1,100 @@
+<div class="test_ride_form">
+  <%= form_for(@parts_order) do |f| %>
+    <% if @parts_order.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@parts_order.errors.count, "error") %> prohibited this parts_order from being saved:</h2>
+
+        <ul>
+        <% @parts_order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="group">
+      <h4>Contact Information</h4>
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Full Name</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Phone Number</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :phone %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Zipcode</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :zip %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">E-mail Address</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :email %>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h4>Your Vehicle Information</h4>
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Year</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :year %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Make</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :make %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">Model</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :model %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="pref_cont">
+          <label class="prefix">VIN</label>
+        </div>
+        <div class="input_cont">
+          <%= f.text_field :vin %>
+        </div>
+      </div>
+
+      <div class="field">
+        <h4>Briefly describe the parts you need. Include part numbers if you have them.</h4>
+        <%= f.text_area :comments %>
+      </div>
+    </div>
+    <div class="actions">
+      <input name="commit" type="submit" value="Submit">
+    </div>
+  <% end %>
+</div>

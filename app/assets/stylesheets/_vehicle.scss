@@ -155,6 +155,10 @@
 				text-decoration: none;
 				color: #333;
 				text-transform: uppercase;
+				@include transition(0.2s);
+			}
+			a:hover {
+				color: $red;
 			}
 		}
 		p {
@@ -171,6 +175,10 @@
 				color: #333333;
 				font-weight: bold;
 				margin: 0;
+				@include transition(0.2s);
+			}
+			p:hover {
+				color: $red;
 			}
 			.ma, .mpg, .mileage {
 				display: inline-block;
@@ -183,6 +191,26 @@
 				font-size: 13px;
 				border-right: 1px solid white;
 				border-left: 1px solid white;
+			}
+			.comments {
+				background: white;
+				text-align: center;
+				padding:10px;
+				position:relative;
+				p {
+					position: absolute;
+					left:0;
+					top: -10px;
+					width: 100%;
+					display:block;
+					color: $red;
+					text-transform: uppercase;
+					text-align: center;
+					opacity: 0;
+				}
+				p.up {
+					opacity: 1;
+				}
 			}
 		}
 	}

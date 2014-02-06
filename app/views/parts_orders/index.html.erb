@@ -1,0 +1,43 @@
+<h1>Listing parts_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Zip</th>
+      <th>Email</th>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Vin</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parts_orders.each do |parts_order| %>
+      <tr>
+        <td><%= parts_order.name %></td>
+        <td><%= parts_order.phone %></td>
+        <td><%= parts_order.zip %></td>
+        <td><%= parts_order.email %></td>
+        <td><%= parts_order.year %></td>
+        <td><%= parts_order.make %></td>
+        <td><%= parts_order.model %></td>
+        <td><%= parts_order.vin %></td>
+        <td><%= parts_order.comments %></td>
+        <td><%= link_to 'Show', parts_order %></td>
+        <td><%= link_to 'Edit', edit_parts_order_path(parts_order) %></td>
+        <td><%= link_to 'Destroy', parts_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parts order', new_parts_order_path %>

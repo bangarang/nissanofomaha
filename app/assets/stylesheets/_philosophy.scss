@@ -6,6 +6,7 @@ section.main_top {
 		color: $red;
 		text-transform: uppercase;
 		padding: 5% 0 20%;
+
 		h4 {
 			margin-bottom: -10px;
 			font-size: 20px;
@@ -13,6 +14,17 @@ section.main_top {
 		h1 {
 			margin-top: 0;
 			font-size: 80px;
+		}
+		@include media($tablet) {
+			padding: 15px;
+			background: rgba(0,0,0,0.7);
+			text-align: center;
+			h4 {
+				font-size: 20px;
+			}
+			h1 {
+				font-size: 50px;
+			}
 		}
 	}
 
@@ -81,20 +93,34 @@ section.main_top {
 			margin: 0;
 			font-size: 40px;
 		}
+		@include media($tablet) {
+			h2.text {
+				font-size: 30px;
+			}
+			padding: 100px 15px;
+			background: rgba(0,0,0,.5);
+		}
+		@include media($mobile) {
+			padding: 50px 15px;
+			background: rgba(0,0,0,.7);
+		}
 	}
 	.facility2 {
-		position: absolute;
 		color: white;
-		width: 100%;
-		height: 100%;
-		top: 0;
 		.leed {
 			padding-bottom: 30%;
+			@include media($tablet) {
+				padding-top: 25px;
+				padding-bottom: 100px;
+				background: rgba(0,0,0,.5);
+			}
+			@include media($mobile) {
+				padding-top: 10px;
+				padding-bottom: 25px;
+				background: rgba(0,0,0,.7);
+			}
 		}
 		.fastlane {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
 			text-shadow: 0 0 5px black;
 			padding-bottom: 20px;
 			.fastlane_inner {
@@ -104,8 +130,20 @@ section.main_top {
 			}
 			a.red_button.small {
 				text-shadow: none;
+			}		
+			@include media($tablet) {
+				background: rgba(0,0,0,.5);
+				.fastlane_inner {
+					@include span-columns(8);
+					@include shift(0);
+					text-align: left;
+				}
+			}
+			@include media($mobile) {
+				background: rgba(0,0,0,.7);
 			}
 		}
+
 	}
 }
 
@@ -302,6 +340,9 @@ section.join_section_3 {
 	.page_title {
 		color: $red;
 		text-transform: uppercase;
+	}
+	@include media($tablet) {
+		padding: 15px;
 	}
 }
 

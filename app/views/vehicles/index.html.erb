@@ -18,21 +18,22 @@
     <div class="control">
       <h5 class="price-click">Price</h5>
       <ul class="price">
-        <li><p ng-click="min_price='0'; max_price='2000'">$0 - $2,000</p></li>
-        <li><p ng-click="min_price='2000'; max_price='5000'">$2,000 - $5,000</p></li>
+        <li><p ng-click="min_price='0'; max_price='5000'">$0 - $5,000</p></li>
         <li><p ng-click="min_price='5000'; max_price='10000'">$5,000 - $10,000</p></li>
-        <li><p ng-click="min_price='10000'; max_price='100000'">$10,000 - Above</p></li>
-        <li><p ng-click="min_price=''; max_price=''">Clear</p></li>
+        <li><p ng-click="min_price='10000'; max_price='20000'">$10,000 - $20,000</p></li>
+        <li><p ng-click="min_price='20000'; max_price='30000'">$20,000 - $30,000</p></li>
+        <li><p ng-click="min_price='30000'; max_price='1000000'">$30,000 - Above</p></li>
+        <li><p ng-click="min_price=nil; max_price=nil">Show All</p></li>
       </ul>
     </div>
     <div class="control">
       <h5 class="odometer-click">Mileage</h5>
       <ul class="odometer">
-        <li><p ng-click="min_odometer='0'; max_odometer='25'">0-25k</p></li>
-        <li><p ng-click="min_odometer='25'; max_odometer='50'">25k-50k</p></li>
-        <li><p ng-click="min_odometer='50'; max_odometer='75'">50k-75k</p></li>
-        <li><p ng-click="min_odometer='75'; max_odometer='1000'">75k-Above</p></li>
-        <li><p ng-click="min_odometer=''; max_odometer=''">Clear</p></li>
+        <li><p ng-click="min_odometer='0'; max_odometer='25'">0 - 25k</p></li>
+        <li><p ng-click="min_odometer='25'; max_odometer='50'">25k - 50k</p></li>
+        <li><p ng-click="min_odometer='50'; max_odometer='75'">50k - 75k</p></li>
+        <li><p ng-click="min_odometer='75'; max_odometer='1000'">75k - Above</p></li>
+        <li><p ng-click="min_odometer=nil; max_odometer=nil">Show All</p></li>
       </ul>
     </div>
     <div class="control">
@@ -41,7 +42,7 @@
         <% for m,k in @makes %>
         <li id="<%= m %>"><p ng-click="the_make='<%= m %>'; the_model=nil"><%= m %></p></li>
         <% end %>
-        <li><p ng-click="the_make=nil">Clear</p></li>
+        <li><p ng-click="the_make=nil">Show All</p></li>
       </ul>
     </div>
     <div class="control">
@@ -53,6 +54,7 @@
             <% for t in k %>
             <li><p ng-click="the_model='<%= t %>'"><%= t %></p></li>
             <% end %>
+            <li><p ng-click="the_model=nil">Show All</p></li>
           </ul>
         </li>
         <% end %>
@@ -62,27 +64,33 @@
   </div>
 
 
-
-  <div class="vehiclegroup">
-    <div ng-show="loading">Loading Cars...</div>
-    <ul class="vehicles">
-      <li data-ng-repeat="item in items | orderBy:'-year' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
-        <div class="vehicle" >
-          <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
-          <div class="main">
-            <img src="{{item.photos[0]}}" />
-            <!-- <h4><a href="vehicles/{{$index + 1}}">{{item.make}} {{item.model }}</a></h4> -->
-            <!-- <h4><a href="/usedvehicle">{{item.make}} {{item.model }}</a></h4> -->
-            <h4><a href="/vehicles/{{item.id}}">{{item.make}} {{item.model }}</a></h4>
-            <p class="price">{{item.price | currency:"$"}}</p>
-            <div class="bottom">
-              <p class="ma">{{item.m_a}}</p>
-              <p class="mpg">{{item.city_mpg}}/{{item.highway_mpg}}</p>
-              <p class="mileage">{{item.mileage }} k</p>
+  <div class="container">
+    <div class="vehiclegroup">
+      <div ng-show="loading">Loading Cars...</div>
+      <ul class="vehicles">
+        <li data-ng-repeat="item in items | orderBy:'-year' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
+          <div class="vehicle" >
+            <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
+            <div class="main">
+              <a href="/vehicles/{{item.id}}"><img src="{{item.photos[0]}}" /></a>
+              <h4><a href="/vehicles/{{item.id}}">{{item.make}} {{item.model }}</a></h4>
+              <p class="price">{{item.price | currency:"$"}}</p>
+              
+              <div class="bottom">
+                <div class="comments">
+                  <p class="ma">Transmission</p>
+                  <p class="mpg">Miles per Gallon</p>
+                  <p class="mileage">Mileage</p>
+                </div>
+                <p class="ma">{{item.m_a}}</p>
+                <p class="mpg">{{item.city_mpg}}/{{item.highway_mpg}}</p>
+                <p class="mileage">{{item.mileage }} k</p>
+              </div>
             </div>
           </div>
-        </div>
-      </li> 
-    </ul>
+        </li> 
+      </ul>
+    </div>
   </div>
+  
 </div>
