@@ -110,7 +110,7 @@
 		li {
 			display: inline-block;
 			list-style: none;
-			width: 200px;
+			width: 250px;
 			padding: 0 15px;
 			margin: 10px 0;
 			vertical-align: top;
@@ -172,13 +172,17 @@
 				font-weight: bold;
 				margin: 0;
 			}
-			.mpg, .mileage {
+			.ma, .mpg, .mileage {
 				display: inline-block;
-				width: 48%;
+				width: 24%;
 				font-size: 13px;
 			}
 			.mpg {
+				display: inline-block;
+				width: 48%;
+				font-size: 13px;
 				border-right: 1px solid white;
+				border-left: 1px solid white;
 			}
 		}
 	}

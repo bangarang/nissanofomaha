@@ -109,6 +109,192 @@ section.main_top {
 	}
 }
 
+section.service_main {
+	background-size: cover;
+	background-position: center bottom;
+	position: relative;
+	margin-bottom: 25px;
+	.service_content {
+		padding: 400px 0 20px;
+		color: white;
+		text-transform: uppercase;
+		h2 {
+			margin-bottom: 0;
+		}
+		h1 {
+			margin: 0;
+			font-size: 50px;
+		}
+		@include media($tablet) {
+			padding: 200px 15px 20px;
+			background: rgba(0,0,0,.5);
+		}
+		@include media($mobile) {
+			padding: 100px 15px 50px;
+			background: rgba(0,0,0,.7);
+			h2 {
+				font-size: 15px;
+			}
+			h1 {
+				font-size: 28px;
+			}
+		}
+	}
+}
+
+section.join_main {
+	background-size: cover;
+	background-position: center top;
+	position: relative;
+	.join_content {
+		padding: 50px 0 300px;
+		color: white;
+		text-transform: uppercase;
+		.inner {
+			@include span-columns(6);
+			@include shift(6);
+		}
+		
+		h2 {
+			margin-bottom: 0;
+		}
+		h1 {
+			margin: 0;
+			font-size: 50px;
+		}
+		@include media($tablet) {
+			padding: 40px 15px 240px;
+			background: rgba(0,0,0,.5);
+			h2 {
+				font-size: 20px;
+			}
+			h1 {
+				font-size: 36px;
+			}
+			.inner {
+				@include span-columns(8);
+				@include shift(0);
+			}
+		}
+		@include media($mobile) {
+			padding: 25px 15px 125px;
+			h2 {
+				font-size: 15px;
+			}
+			h1 {
+				font-size: 28px;
+			}
+		}
+	}
+}
+
+section.join_section_1, section.join_section_3 {
+	background-size: cover;
+	background-position: right center;
+	background-repeat: no-repeat;
+	position: relative;
+	.join_content_1, .join_content_3 {
+		@include span-columns(6);
+		padding-top: 150px;
+		padding-bottom: 150px;
+		.join_title {
+			color: $red;
+			text-transform: uppercase;
+		}
+		.join_content {
+			color: #999999;
+		}
+	}
+	@include media($tablet) {
+		background-position: center top;
+		.join_content_1, .join_content_3 {
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+	}
+	@include media($mobile) {
+		background-position: left top;
+		.join_content_1, .join_content_3 {
+			@include span-columns(4);
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+	}
+}
+
+section.join_section_2 {
+	background-size: cover;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	position: relative;
+	.join_content_2 {
+		@include span-columns(6);
+		@include shift(6);
+		padding-top: 15px;
+		padding-bottom: 15px;
+		.join_title {
+			color: $red;
+			text-transform: uppercase;
+		}
+		.join_content {
+			color: #999999;
+		}
+	}
+	@include media($tablet) {
+		background-position: center top;
+
+		.join_content_2 {
+			@include span-columns(4);
+			@include shift(4);
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+	}
+	@include media($mobile) {
+		background-position: right top;
+		.join_content_2 {
+			@include shift(0);
+			@include span-columns(4);
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+	}
+}
+
+section.join_section_3 {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+	.join_content_3 {
+		@include span-columns(6);
+		padding-top: 50px;
+		padding-bottom: 150px;
+		.join_title {
+			color: $red;
+			text-transform: uppercase;
+		}
+		.join_content {
+			color: #999999;
+		}
+	}
+	@include media($tablet) {
+		background-position: left top;
+		.join_content_3 {
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+	}
+	@include media($mobile) {
+		background-position: left top;
+		.join_content_3 {
+			@include span-columns(4);
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+	}
+}
+
 .page {
 	max-width: 720px;
 	margin: auto;

@@ -14,4 +14,12 @@ class Vehicle < ActiveRecord::Base
 	def photos 
 		self.photo_url_list.to_s.split(",")
 	end 
+
+	def m_a
+		if self.transmission.to_s.include? "Manual"
+			"M"
+		else
+			"A"
+		end
+	end
 end

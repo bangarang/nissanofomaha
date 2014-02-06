@@ -92,10 +92,11 @@ section.newvehicle {
 		border-bottom: 2px solid $red;
 	}
 	div.description {
-		p {
+		color: #777777;
+		h2 {
+			margin: 0;
 			margin-top: -2px;
-			padding-top: 15px;
-			color: #777777;
+			padding-top: 15px;			
 		}
 		// padding: 0 15px;
 		font-size: 14px;
@@ -266,6 +267,7 @@ div.compare {
 		font-weight: 100;
 		color: #777;
 		text-align: center;
+		margin-bottom: -25px;
 	}
 	.controllable {
 		@include outer-container;

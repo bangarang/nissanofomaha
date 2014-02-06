@@ -41,6 +41,9 @@ h1, h2, h3, h4, h5, h6, body {
 
 div.container {
   @include outer-container;
+  @include media($tablet) {
+    padding: 0 15px;
+  }
 }
 
 .field {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204235817) do
+ActiveRecord::Schema.define(version: 20140206023900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140204235817) do
     t.string   "msrp"
     t.string   "image"
     t.integer  "category_id"
+    t.text     "headline"
   end
 
   create_table "packages", force: true do |t|
@@ -196,6 +197,7 @@ ActiveRecord::Schema.define(version: 20140204235817) do
     t.string   "video_url"
     t.string   "video_player_url"
     t.string   "rw"
+    t.boolean  "m_a"
   end
 
 end
