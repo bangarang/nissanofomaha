@@ -63,14 +63,6 @@ class ImportsController < ApplicationController
 
   def process_file
 
-    # ftp = Net::FTP.new()
-    # ftp.passive = true
-    # ftp.connect(host)
-    # ftp.login(username,password)
-    # files = ftp.chdir(path_to_file)
-    # ftp.getbinaryfile(filename, tempfile, 1024)
-    # ftp.close
-
     Vehicle.delete_all
 
     @last_import = Import.last
@@ -98,14 +90,33 @@ class ImportsController < ApplicationController
 
     path_to_file = '/'
     filename = 'inventory.txt'
+    
+    # ftp = Net::FTP.new()
+    # ftp.passive = true
+    # ftp.connect(ENV["FTP_HOST"])
+    # ftp.login(ENV["FTP_USER"],ENV["FTP_PASSWORD"])
+    # files = ftp.chdir(path_to_file)
+    # ftp.getbinaryfile(filename, tempfile, 1024)
+    # ftp.close
+    time = Time.zone.now
+    Dir.chdir("tmp" ) do
+      Net::FTP.open(ENV["FTP_HOST"]) do |ftp|
+        ftp.passive = true
+        ftp.login(ENV["FTP_USER"],ENV["FTP_PASSWORD"])
+        ftp.chdir(path_to_file)
 
-    ftp = Net::FTP.new()
-    ftp.passive = true
-    ftp.connect(host)
-    ftp.login(username,password)
-    files = ftp.chdir(path_to_file)
-    ftp.getbinaryfile(filename, tempfile, 1024)
-    ftp.close
+        import = Import.new
+        import.name = time.strftime("%Y_%m_%d")
+        import.file = ftp.get(filename)
+        import.file = File.open(filename)
+        import.save!
+
+        # @import.save
+        # ... Load the files in the database here
+      end
+    end
+
+    redirect_to imports_url
 
   end
 
