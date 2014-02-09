@@ -30,7 +30,7 @@
   <%= link_to 'New Import', new_import_path %>
 
   <div>
-    <%= form_tag process_file_path do %>
+    <%= form_tag import_latest_path do %>
       <%= submit_tag "Import Latest File", class: "button" %>
     <% end %>
   </div>

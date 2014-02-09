@@ -139,13 +139,13 @@ $(document).ready(function() {
 	//   $(".bottom_comments .ma").addClass("up");
 	// });
 
-	$('ul.vehicles').on("mouseenter mouseleave", ".bottom p.ma", function(e){
+	$('ul.vehicles').on("mouseenter mouseleave", ".bottom .chips p.ma", function(e){
     $(this).parent().parent().find('.comments p.ma').toggleClass("up");
 	}); 
-	$('ul.vehicles').on("mouseenter mouseleave", ".bottom p.mpg", function(e){
+	$('ul.vehicles').on("mouseenter mouseleave", ".bottom .chips p.mpg", function(e){
     $(this).parent().parent().find('.comments p.mpg').toggleClass("up");
 	}); 
-	$('ul.vehicles').on("mouseenter mouseleave", ".bottom p.mileage", function(e){
+	$('ul.vehicles').on("mouseenter mouseleave", ".bottom .chips p.mileage", function(e){
     $(this).parent().parent().find('.comments p.mileage').toggleClass("up");
 	});    
 

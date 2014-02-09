@@ -35,8 +35,12 @@ $darkgray: #666666;
 $red: #C71444;
 $darkred: #B30030;
 
-h1, h2, h3, h4, h5, h6, body {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'nissan-ag';
+}
+
+body, p {
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 div.container {

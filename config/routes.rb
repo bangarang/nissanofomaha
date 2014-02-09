@@ -54,7 +54,7 @@ Vauto::Application.routes.draw do
 
   resources :vehicles
 
-  post 'process_file' => 'imports#process_file'
+  post 'import_latest' => 'imports#import_latest'
 
   post 'import_ftp' => 'imports#import_ftp'
 

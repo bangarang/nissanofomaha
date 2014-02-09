@@ -61,7 +61,9 @@ class ImportsController < ApplicationController
     end
   end
 
-  def process_file
+  
+
+  def import_latest
 
     Vehicle.delete_all
 

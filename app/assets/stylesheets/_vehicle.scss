@@ -143,10 +143,12 @@
 	}
 	.main {
 		box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
-		img {
+		.image {
 			width: 100%;
-			min-height: 95px;
+			height: 150px;
 			background: #eee;
+			background-size: cover;
+			background-position: center center;
 		}
 		h4 {
 			text-align: center;
@@ -182,13 +184,13 @@
 			}
 			.ma, .mpg, .mileage {
 				display: inline-block;
-				width: 24%;
-				font-size: 13px;
+				width: 23%;
+				font-size: 11px;
 			}
 			.mpg {
 				display: inline-block;
-				width: 48%;
-				font-size: 13px;
+				width: 47%;
+				font-size: 11px;
 				border-right: 1px solid white;
 				border-left: 1px solid white;
 			}

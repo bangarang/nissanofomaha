@@ -72,8 +72,8 @@
           <div class="vehicle" >
             <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
             <div class="main">
-              <a href="/vehicles/{{item.id}}"><img src="{{item.photos[0]}}" /></a>
-              <h4><a href="/vehicles/{{item.id}}">{{item.make}} {{item.model }}</a></h4>
+              <a href="/vehicles/{{item.vin}}"><div class="image" style="background-image: url('{{item.photos[0]}}') "></div></a>
+              <h4><a href="/vehicles/{{item.vin}}">{{item.make}} {{item.model }}</a></h4>
               <p class="price">{{item.price | currency:"$"}}</p>
               
               <div class="bottom">
@@ -82,9 +82,12 @@
                   <p class="mpg">Miles per Gallon</p>
                   <p class="mileage">Mileage</p>
                 </div>
-                <p class="ma">{{item.m_a}}</p>
-                <p class="mpg">{{item.city_mpg}}/{{item.highway_mpg}}</p>
-                <p class="mileage">{{item.mileage }} k</p>
+                <div class="chips">
+                  <p class="ma">{{item.m_a}}</p>
+                  <p class="mpg">{{item.city_mpg}}/{{item.highway_mpg}}</p>
+                  <p class="mileage">{{item.mileage }} k</p>
+                </div>
+                
               </div>
             </div>
           </div>

@@ -7,46 +7,45 @@
 		</div>
 		<ul class="menu">
 			<li>
-				<a href="#" class="different-click" >How We're Different</a>
+				<a href="#" class="different-click" ><h4>How We're Different</h4></a>
 				<div class="different">
-					<a href="/philosophy" class="media">Our Philosophy</a>
-					<a href="/facility" class="media">Facility</a>
-					<a href="/joinourteam" class="media">Join Our Team</a>
+					<a href="/philosophy" class="media"><h4>Our Philosophy</h4></a>
+					<a href="/facility" class="media"><h4>Facility</h4></a>
+					<a href="/joinourteam" class="media"><h4>Join Our Team</h4></a>
 				</div>
 			</li>
 			<li>
-				<%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url), class: " new-dropdown-click" %>
+				<%= link_to "<h4>New Vehicles</h4>".html_safe, new_vehicles_url, class: active_class?(new_vehicles_url), class: " new-dropdown-click" %>
 				<div class="new-dropdown">
 					<% for category in @categories %>
-					<%= link_to category.name, '/new_vehicles#' + category.name.parameterize, class: 'media' unless current_page?(new_vehicles_url)%>
-					<%= link_to category.name, '#' + category.name.parameterize, class: 'media' if current_page?(new_vehicles_url)%>
+					<%= link_to "<h4>".html_safe + category.name + "</h4>".html_safe, '/new_vehicles#' + category.name.parameterize, class: 'media' unless current_page?(new_vehicles_url)%>
+					<%= link_to "<h4>".html_safe + category.name + "</h4>".html_safe, '#' + category.name.parameterize, class: 'media' if current_page?(new_vehicles_url)%>
 					<% end %>
 				</div>
-				
 			</li>
-			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
-			<li><a href="/service">Service</a></li>
+			<li><%= link_to "<h4>Used Vehicles</h4>".html_safe, usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
+			<li><a href="/service"><h4>Service</h4></a></li>
 			<% if signed_in? %>
-			<li><%= link_to t('.sign_out'), sign_out_path, :method => :delete %></li>
+			<li><%= link_to "<h4>Sign Out</h4>".html_safe, sign_out_path, :method => :delete %></li>
 			<% end %>
 		</ul>
 		
 		<ul class="mobile-menu">
 			<li>
-				<a href="#" class="mobile-different-click" >How We're Different</a>
+				<a href="#" class="mobile-different-click" ><h4>How We're Different</h4></a>
 				<div class="mobile-different">
-					<a href="/philosophy" class="media">Our Philosophy</a>
-					<a href="/facility" class="media">Facility</a>
-					<a href="/joinourteam" class="media">Join Our Team</a>
+					<a href="/philosophy" class="media"><h4>Our Philosophy</h4></a>
+					<a href="/facility" class="media"><h4>Facility</h4></a>
+					<a href="/joinourteam" class="media"><h4>Join Our Team</h4></a>
 				</div>
 			</li>
 			<li>
-				<%= link_to "New Vehicles", new_vehicles_url, class: active_class?(new_vehicles_url) %>
+				<%= link_to "<h4>New Vehicles</h4>".html_safe, new_vehicles_url, class: active_class?(new_vehicles_url) %>
 			</li>
-			<li><%= link_to "Used Vehicles", usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
-			<li><a href="/service">Service</a></li>
+			<li><%= link_to "<h4>Used Vehicles</h4>".html_safe, usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
+			<li><a href="/service"><h4>Service</h4></a></li>
 			<% if signed_in? %>
-			<li><%= link_to t('.sign_out'), sign_out_path, :method => :delete %></li>
+			<li><%= link_to "<h4>Sign Out</h4>".html_safe, sign_out_path, :method => :delete %></li>
 			<% end %>
 		</ul>
 

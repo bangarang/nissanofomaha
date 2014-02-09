@@ -47,8 +47,12 @@ header.main {
 					color: #999999;
 					text-transform: uppercase;
 					text-decoration: none;
-					font-size: 13px;
-					margin: 0 20px;
+					
+					h4 {
+						font-size: 13px;
+						margin: 0 20px;
+					}
+					
 					@include transition(0.2s ease-in-out);
 				}
 				a.active, a:hover {
