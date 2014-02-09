@@ -130,6 +130,7 @@
 	transition: all 0.2s ease-in-out;
 	.top {
 		p {
+			font-size: 11px;
 			color: #777777;
 			font-weight: bold;
 			margin-bottom: 5px;
@@ -150,11 +151,14 @@
 			background-size: cover;
 			background-position: center center;
 		}
-		h4 {
+		p.name {
+			line-height: 25px;
 			text-align: center;
-			margin: 5px;
+			margin: 0px;
+			font-size: 11px;
 			a {
 				text-decoration: none;
+				font-weight: bold;
 				color: #333;
 				text-transform: uppercase;
 				@include transition(0.2s);
@@ -163,16 +167,22 @@
 				color: $red;
 			}
 		}
-		p {
+		p.price {
+			line-height: 1em;
+			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
 			color: #777777;
-			line-height: 30px;
+			font-weight: bold;
+			font-size: 14px;
 		}
 
 		.bottom {
 			background: #DDDDDD;
 			p {
+				text-align: center;
+				text-transform: uppercase;
+				line-height: 30px;
 				text-transform: none;
 				color: #333333;
 				font-weight: bold;
@@ -197,12 +207,12 @@
 			.comments {
 				background: white;
 				text-align: center;
-				padding:10px;
+				padding: 15px;
 				position:relative;
 				p {
 					position: absolute;
 					left:0;
-					top: -10px;
+					top: 0;
 					width: 100%;
 					display:block;
 					color: $red;
@@ -216,7 +226,6 @@
 			}
 		}
 	}
-	
 }
 
 

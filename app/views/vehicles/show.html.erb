@@ -11,11 +11,24 @@
 	<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 	<%= link_to 'Back', vehicles_path %>
 	<% end %>
-	<div id="gallery" class="royalSlider rsUni">
-		<% for p in @vehicle.photos %>
-	  <a class="rsImg" data-rsbigimg="<%= p %>" href="<%= p %>">Vincent van Gogh - Still Life: Vase with Twelve Sunflowers<img width="96" height="72" class="rsTmb" src="<%= p %>"></a>
-	  <% end %>
+
+	<div class="gallery">
+		<div class="usedImageWrapper">
+			<img src="<%= @vehicle.photos.first %>" alt="">
+		</div>
+
+		<div class="usedThumbWrapper">
+			<h5 class="title">Photo Gallery</h5>
+			<div class="usedThumbs">
+				<% for p in @vehicle.photos %>
+			  	<img src="<%= p %>">
+			  <% end %>
+			</div>
+			<h5 class="arrow"><div class="square"></div></h5>
+		</div>
 	</div>
+	
+
 
 	<div class="stats">
 		<div class="left">
@@ -80,29 +93,192 @@
 		<a href="/scheduleajoyride" class="red_button"><h4>Schedule a Joy Ride</h4></a>
 		<a href="/getapproved" class="red_button"><h4>Get Approved</h4></a>
 	</div>
-
-	<%= javascript_tag do %> 
-		jQuery(document).ready(function() {
-		  $('#gallery').royalSlider({
-		    fullscreen: {
-		      enabled: true,
-		      nativeFS: true
-		    },
-		    controlNavigation: 'thumbnails',
-		    thumbs: {
-		      orientation: 'vertical',
-		      paddingBottom: 4,
-		      appendSpan: true
-		    },
-		    transitionType:'fade',
-		    autoScaleSlider: true, 
-		    autoScaleSliderWidth: 960,     
-		    autoScaleSliderHeight: 600,
-		    loop: true,
-		    arrowsNav: false,
-		    keyboardNavEnabled: true
-
-		  });
-		});
+	<% if @vehicle.description %>
+	<div class="stats">
+		<div class="whole">
+			<h5 class="title">Description</h5>
+			<p><%= @vehicle.description %></p>
+		</div>
+	</div>
 	<% end %>
+
+	<div class="stats">
+		<div class="left">
+			<% if @vehicle.body_door_ct %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Door Count</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.body_door_ct %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.drivetrain_desc %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Drivetrain</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.drivetrain_desc %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.series %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Series</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.series %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.colour %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Color</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.colour %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.interior_color %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Interior Color</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.interior_color %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.body %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Body</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.body %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.invoice %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Invoice</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.invoice %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.book_value %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Book Value</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.book_value %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.inventory_date %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Inventory Date</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.inventory_date %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.certified %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Certified</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.certified %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.dealerid %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Dealer ID</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.dealerid %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.model_number %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Model Number</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.model_number %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.status_code %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Status Code</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.status_code %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.series_detail %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Series Detail</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.series_detail %></h3>
+				</div>
+			</div>
+			<% end %>
+
+			<% if @vehicle.inspection_checklist_ %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Inspection Checklist</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.inspection_checklist_ %></h3>
+				</div>
+			</div>
+			<% end %>
+
+		</div>
+
+		<% if @vehicle.features %>
+		<div class="left">
+			<div class="whole">
+				<h5 class="title">Features</h5>
+				<p><%= @vehicle.features %></p>
+			</div>
+		</div>
+		<% end %>
+	</div>
+
 </div>

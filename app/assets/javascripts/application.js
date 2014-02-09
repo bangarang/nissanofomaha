@@ -147,6 +147,13 @@ $(document).ready(function() {
 	}); 
 	$('ul.vehicles').on("mouseenter mouseleave", ".bottom .chips p.mileage", function(e){
     $(this).parent().parent().find('.comments p.mileage').toggleClass("up");
-	});    
+	});   
+
+	$('.usedThumbs img').click(function() {
+    var src = this.src;
+    $('.usedImageWrapper img').fadeOut(100,function(){
+        $(this).fadeIn(400)[0].src = src;
+    });
+	}); 
 
 });

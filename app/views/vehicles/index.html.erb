@@ -73,8 +73,8 @@
             <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
             <div class="main">
               <a href="/vehicles/{{item.vin}}"><div class="image" style="background-image: url('{{item.photos[0]}}') "></div></a>
-              <h4><a href="/vehicles/{{item.vin}}">{{item.make}} {{item.model }}</a></h4>
-              <p class="price">{{item.price | currency:"$"}}</p>
+              <p class="name"><a href="/vehicles/{{item.vin}}">{{item.make}} {{item.model }}</a></p>
+              <p class="price">${{item.price | number:0}}</p>
               
               <div class="bottom">
                 <div class="comments">
