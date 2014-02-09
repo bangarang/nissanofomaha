@@ -66,17 +66,11 @@ class ImportsController < ApplicationController
     Vehicle.delete_all
 
     @last_import = Import.last
-    # File.open(last_import.file_url, 'r')
-    # text = File.read(@last_import.file_url.to_s).gsub(/\"/,'')
+
     text = open(@last_import.file_url).read.gsub(/\"/,'')
 
     CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "\t" }) do |row|
-      # Vehicle.create! row.to_hash
-      # vehicle = Vehicle.find_by(vin: row["vin"]) || Vehicle.new
-      # vehicle.attributes = row.to_hash.slice(*accessible_attributes)
-      # vehicle.save!
-      # puts "Vin: "
-      # puts row[1]
+
       if Vehicle.find_by(vin: row[1])
         # puts row["vin"]
       else
@@ -91,13 +85,7 @@ class ImportsController < ApplicationController
     path_to_file = '/'
     filename = 'inventory.txt'
     
-    # ftp = Net::FTP.new()
-    # ftp.passive = true
-    # ftp.connect(ENV["FTP_HOST"])
-    # ftp.login(ENV["FTP_USER"],ENV["FTP_PASSWORD"])
-    # files = ftp.chdir(path_to_file)
-    # ftp.getbinaryfile(filename, tempfile, 1024)
-    # ftp.close
+
     time = Time.zone.now
     Dir.chdir("tmp" ) do
       Net::FTP.open(ENV["FTP_HOST"]) do |ftp|
@@ -106,13 +94,26 @@ class ImportsController < ApplicationController
         ftp.chdir(path_to_file)
 
         import = Import.new
-        import.name = time.strftime("%Y_%m_%d")
+        import.import_time = time
+        import.name = time.strftime('%Y_%m_%d')
         import.file = ftp.get(filename)
         import.file = File.open(filename)
         import.save!
+      end
+    end
 
-        # @import.save
-        # ... Load the files in the database here
+    Vehicle.delete_all
+
+    @last_import = Import.last
+    
+    text = open(@last_import.file_url).read.gsub(/\"/,'')
+
+    CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "\t" }) do |row|
+
+      if Vehicle.find_by(vin: row[1])
+        # puts row["vin"]
+      else
+        Vehicle.create! row.to_hash
       end
     end
 
@@ -128,6 +129,6 @@ class ImportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def import_params
-      params.require(:import).permit(:name, :file)
+      params.require(:import).permit(:name, :file, :import_time)
     end
 end
