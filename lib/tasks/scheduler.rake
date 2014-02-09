@@ -1,6 +1,7 @@
 desc "This task is called by the Heroku scheduler add-on"
+# heroku run rake import_vehicles
 task :import_vehicles => :environment do
   puts "Updating vehicles..."
-  Import.import_ftp
+  ImportsController.import_ftp
   puts "done."
 end
