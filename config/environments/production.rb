@@ -75,7 +75,7 @@ Vauto::Application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
-  config.action_controller.asset_host = "d1m7te8f07fs1m.cloudfront.net"
+  config.action_controller.asset_host = "htttp://d1m7te8f07fs1m.cloudfront.net"
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
