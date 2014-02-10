@@ -334,7 +334,7 @@ section.join_section_3 {
 }
 
 .page {
-	max-width: 720px;
+	max-width: 660px;;
 	margin: auto;
 	color: #777777;
 	.page_title {
@@ -347,7 +347,7 @@ section.join_section_3 {
 }
 
 .home_chairs {
-	background-size: contain;
+	background-size: 50%;
 	background-position: right center;
 	background-repeat: no-repeat;
 	position: relative;
@@ -355,19 +355,25 @@ section.join_section_3 {
 		background-size: cover;
 		background-position: center center;
 	}
+	@include media($big) {
+		background-size: 640px;
+	}
 	.container {
 		position: relative;
 		@include media($mobile) {
 			padding: 0;
+		}
+		@include media($tablet) {
+			padding: 0 15px;
+			background: rgba(255,255,255,0.9);
 		}
 	}
 	.home_left {
 		padding: 25px 0 175px;
 		@include span-columns(6);
 		@include media($tablet) {
-			padding: 50px 15px 100px;
+			padding: 50px 0 100px;
 			@include span-columns(8);
-			background: rgba(255,255,255,0.9);
 		}
 	}
 	a.red_button.small {
@@ -388,4 +394,8 @@ section.join_section_3 {
 }
 .bottom_border {
 	border-bottom: 3px solid $red;
+	margin-top: 50px;
+}
+.prior.bottom {
+	margin-bottom: 50px;
 }
