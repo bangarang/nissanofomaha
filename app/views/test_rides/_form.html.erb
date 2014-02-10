@@ -11,88 +11,97 @@
         </ul>
       </div>
     <% end %>
-    <div class="group">
-      <div class="mpg">
-        <h4>Contact Information</h4>
-        <div class="field">
-          <div class="pref_cont">
-            <label class="prefix">First Name</label>
-          </div>
-          <div class="input_cont">
-            <%= f.text_field :first, placeholder: 'John' %>
-          </div>
-        </div>
-        <div class="field">
-          <div class="pref_cont">
-            <label class="prefix">Last Name</label>
-          </div>
-          <div class="input_cont">
-            <%= f.text_field :last, placeholder: 'Smith' %>
-          </div>
-        </div>
-      </div>
 
-      <div class="mpg">
-        <div class="field">
-          <div class="pref_cont">
-            <label class="prefix">Phone Number</label>
+
+    <section class="form_section">
+      <h2 class="thin_form_title">Schedule a Joy Ride</h2>
+      <h5 class="subtitle">Contact Information</h5>
+      <div class="the_fields">
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>First Name</p>
           </div>
-          <div class="input_cont">
-            <%= f.text_field :phone, placeholder: '(000) 000-0000' %>
-          </div>
+          <%= f.text_field :first, placeholder: 'John', class: 'text_field_content' %>
         </div>
-        <div class="field">
-          <div class="pref_cont">
-            <label class="prefix">Email Address</label>
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>Last Name</p>
           </div>
-          <div class="input_cont">
-            <%= f.text_field :email, placeholder: 'you@example.com' %>
-          </div>
+          <%= f.text_field :last, placeholder: 'Smith', class: 'text_field_content' %>
         </div>
       </div>
 
 
-    </div>
-    <div class="group">
-      <div class="mpg">
-        <h4>Prefered Method of Contact</h4>
-        <div class="field">
-          <p>Phone</p>
-          <%= f.check_box :method_phone %>
+      <div class="the_fields">
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>Phone Number</p>
+          </div>
+          <%= f.text_field :phone, placeholder: '(000) 000-0000', class: 'text_field_content' %>
         </div>
-        <div class="field">
-          <p>E-mail</p>
-          <%= f.check_box :method_email %>
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>Email Address</p>
+          </div>
+          <%= f.text_field :email, placeholder: 'you@example.com', class: 'text_field_content' %>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="group">
-      <div class="checkboxes">
-        <h4>Preferred Time of Day</h4>
-        <div class="field">
-          <p>Morning:</p>
-          <%= f.check_box :morning %>
+    <section class="form_section">
+      <div class="the_fields">
+        <div class="gray_label half">
+          <p class="gray_label_content">Prefered Method of Contact</p>
         </div>
-        <div class="field">
-          <p>Afternoon</p>
-          <%= f.check_box :afternoon %>
+        
+        <div class="red_checkbox quarter">
+          <label>
+            <input name="test_ride[method_phone]" type="hidden" value="0">
+            <input id="test_ride_method_phone" name="test_ride[method_phone]" type="checkbox" value="1"><span>Phone</span>
+          </label>
         </div>
-        <div class="field">
-          <p>Evening</p>
-          <%= f.check_box :evening %>
+        <div class="red_checkbox quarter">
+          <label>
+            <input name="test_ride[method_email]" type="hidden" value="0">
+            <input id="test_ride_method_email" name="test_ride[method_email]" type="checkbox" value="1"><span>Email</span>
+          </label>
         </div>
       </div>
-    </div>
+
+      <div class="the_fields">
+        <div class="gray_label half">
+          <p class="gray_label_content">Preferred Time of Day</p>
+        </div>
+        
+        <div class="red_checkbox sixth">
+          <label>
+            <input name="test_ride[morning]" type="hidden" value="0">
+            <input id="test_ride_morning" name="test_ride[morning]" type="checkbox" value="1"><span>Morning</span>
+          </label>
+        </div>
+        <div class="red_checkbox sixth">
+          <label>
+            <input name="test_ride[afternoon]" type="hidden" value="0">
+            <input id="test_ride_afternoon" name="test_ride[afternoon]" type="checkbox" value="1"><span>Afternoon</span>
+          </label>
+        </div>
+        <div class="red_checkbox sixth">
+          <label>
+            <input name="test_ride[evening]" type="hidden" value="0">
+            <input id="test_ride_evening" name="test_ride[evening]" type="checkbox" value="1"><span>Evening</span>
+          </label>
+        </div>
+      </div>
+    </section>
     
-    <div class="group">
-      <div class="field">
-        <h4>Tell us what car you're interested in, and we'll match you up with the best fit.</h4>
-        <%= f.text_area :comments %>
+    <section class="form_section">
+      <div class="the_fields">
+        <h3 class="gray_title">Tell us what car you're interested in, and we'll match you up with the best fit.</h3>
+        <%= f.text_area :comments, class: 'text_area_content' %>
       </div>
-    </div>
+    </section>
     <div class="actions">
-      <input name="commit" type="submit" value="Submit">
+      <input name="commit" type="submit" value="Submit Request">
     </div>
   <% end %>
 
