@@ -4,7 +4,7 @@ class ImportsController < ApplicationController
   # GET /imports
   # GET /imports.json
   def index
-    @imports = Import.all
+    @imports = Import.all.reverse
   end
 
   # GET /imports/1
@@ -61,7 +61,16 @@ class ImportsController < ApplicationController
     end
   end
 
-  
+  def restore
+
+    Vehicle.delete_all
+
+    @import = Import.find(params[:import_id])
+
+    import(@import)
+
+    redirect_to imports_url
+  end  
 
   def import_latest
 
@@ -69,16 +78,8 @@ class ImportsController < ApplicationController
 
     @last_import = Import.last
 
-    text = open(@last_import.file_url).read.gsub(/\"/,'')
+    import(@last_import)
 
-    CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "\t" }) do |row|
-
-      if Vehicle.find_by(vin: row[1])
-        # puts row["vin"]
-      else
-        Vehicle.create! row.to_hash
-      end
-    end
     redirect_to imports_url
   end
 
@@ -108,7 +109,14 @@ class ImportsController < ApplicationController
 
     @last_import = Import.last
     
-    text = open(@last_import.file_url).read.gsub(/\"/,'')
+    import(@last_import)
+
+    redirect_to imports_url
+
+  end
+
+  def import(import)
+    text = open(import.file_url).read.gsub(/\"/,'')
 
     CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "\t" }) do |row|
 
@@ -119,9 +127,18 @@ class ImportsController < ApplicationController
       end
     end
 
-    redirect_to imports_url
+    for i in Import.all 
+      i.latest = false
+      i.save
+    end
+
+    import = Import.find(import)
+    import.current = Time.now
+    import.latest = true
+    import.save
 
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -131,6 +148,6 @@ class ImportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def import_params
-      params.require(:import).permit(:name, :file, :import_time)
+      params.require(:import).permit(:name, :file, :import_time, :current, :latest)
     end
 end

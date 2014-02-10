@@ -58,6 +58,8 @@ Vauto::Application.routes.draw do
 
   post 'import_ftp' => 'imports#import_ftp'
 
+  get 'restore' => 'imports#restore'
+
   # resources :vehicles do
   #   collection { post :import }
   # end
