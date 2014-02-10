@@ -27,8 +27,13 @@ task :import_vehicles => :environment do
 
   Vehicle.delete_all
 
-  @last_import = Import.last
+  for i in Import.all 
+    i.latest = false
+    i.save
+  end
   
+  @last_import = Import.last
+
   text = open(@last_import.file_url).read.gsub(/\"/,'')
 
   CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "\t" }) do |row|
@@ -39,6 +44,10 @@ task :import_vehicles => :environment do
       Vehicle.create! row.to_hash
     end
   end
+
+  @last_import.current = Time.now
+  @last_import.latest = true
+  @last_import.save
     
   puts "done."
 end
