@@ -387,6 +387,7 @@ section.join_section_3 {
 		width: 100%;
 		position: absolute;
 		z-index: -1;
+		margin-top: 0px;
 		@include media($tablet) {
 			display: none;
 		}
