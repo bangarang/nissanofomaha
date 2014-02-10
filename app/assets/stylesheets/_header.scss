@@ -80,47 +80,49 @@ header.main {
 				margin: 0;
 				border-top: 2px #eee solid;
 				li {
-				list-style: none;
-				position: relative;
-				line-height: 50px;
-				border-bottom: 2px #eee solid;
-				div.mobile-different {
-					display: none;
-				}
-				div.mobile-different.up {
-					border-top: 2px #eee solid;
-					display: block;
-					background: white;
-					width: 100%;
-					margin-bottom: -2px;
-					a.media {
-						display: block;
-						padding: 5px 0;
-						text-align: center;
-						font-weight: 100;
-						text-transform: none;
-						border-bottom: 2px #eee solid;
-						margin: 0;
-					}
-					a.media:hover {
-						font-weight: bold;
-						border-bottom: 2px $red solid;
-					}
-				}
+					list-style: none;
+					position: relative;
+					border-bottom: 2px #eee solid;
 
-				a {
-					font-weight: bold;
-					color: #999999;
-					text-transform: uppercase;
-					text-decoration: none;
-					font-size: 13px;
-					margin: 0 15px;
-					@include transition(0.2s ease-in-out);
+					div.mobile-different {
+						display: none;
+					}
+					div.mobile-different.up {
+						border-top: 2px #eee solid;
+						display: block;
+						background: white;
+						width: 100%;
+						margin-bottom: -2px;
+						a.media {
+							display: block;
+							text-align: center;
+							font-weight: 100;
+							text-transform: none;
+							border-bottom: 2px #eee solid;
+						}
+						a.media:hover {
+							font-weight: bold;
+							border-bottom: 2px $red solid;
+						}
+					}
+
+					a {
+						font-weight: bold;
+						color: #999999;
+						text-transform: uppercase;
+						text-decoration: none;
+						font-size: 13px;
+						margin: 0;
+						@include transition(0.2s ease-in-out);
+						h4 {
+							margin: 0;
+							line-height: 50px;
+						}
+					}
+					a.active, a:hover {
+						color: $red;
+					}
 				}
-				a.active, a:hover {
-					color: $red;
-				}
-			}
 			}
 		}
 		img.nissan_logo {
@@ -183,7 +185,7 @@ $color: #777;
 	display: none;
 	@include media($tablet) {
 	  display: inline-block;
-	  padding: $button-size/2 $button-size/4;
+	  padding: 25px 10px;
 	  transition: .3s;
 	  cursor: pointer;
 	  user-select: none;
