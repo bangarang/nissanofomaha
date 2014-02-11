@@ -6,7 +6,7 @@
   <% category.new_vehicles.order(:msrp).each do |new_vehicle| %><!--
     --><div class="newvehicle_grid">
       <%= link_to image_tag(new_vehicle.image_url), new_vehicle %>
-      <h3 class="name"><%= link_to new_vehicle.name, new_vehicle %></h3>
+      <h3 class="name"><%= link_to new_vehicle.name.html_safe, new_vehicle %></h3>
       <h4 class="price">$<%= number_with_delimiter(new_vehicle.msrp) %></h4>
       <% if signed_in? %>
       <h5 class="controls">
