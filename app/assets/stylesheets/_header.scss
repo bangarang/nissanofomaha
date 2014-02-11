@@ -14,7 +14,7 @@ header.main {
 		}
 		ul.menu {
 			display: inline-block;
-			padding-right: 0;
+			padding-left: 0;
 			li {
 				list-style: none;
 				float: left;
@@ -50,7 +50,7 @@ header.main {
 					
 					h4 {
 						font-size: 13px;
-						margin: 0 20px;
+						margin: 0 25px;
 					}
 					
 					@include transition(0.2s ease-in-out);

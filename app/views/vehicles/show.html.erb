@@ -12,6 +12,7 @@
 	<%= link_to 'Back', vehicles_path %>
 	<% end %>
 
+	<% unless @vehicle.photos.empty? %>
 	<div class="gallery">
 		<div class="usedImageWrapper">
 			<img src="<%= @vehicle.photos.first %>" alt="">
@@ -27,8 +28,7 @@
 			<h5 class="arrow"><div class="square"></div></h5>
 		</div>
 	</div>
-	
-
+	<% end %>
 
 	<div class="stats">
 		<div class="left">

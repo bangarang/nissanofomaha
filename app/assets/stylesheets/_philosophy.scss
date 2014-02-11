@@ -189,8 +189,8 @@ section.join_main {
 		color: white;
 		text-transform: uppercase;
 		.inner {
-			@include span-columns(6);
-			@include shift(6);
+			@include span-columns(7);
+			@include shift(5);
 		}
 		
 		h2 {
@@ -198,7 +198,8 @@ section.join_main {
 		}
 		h1 {
 			margin: 0;
-			font-size: 50px;
+			font-size: 60px;
+			line-height: 50px;
 		}
 		@include media($tablet) {
 			padding: 40px 15px 240px;
@@ -228,9 +229,13 @@ section.join_main {
 
 section.join_section_1, section.join_section_3 {
 	background-size: cover;
-	background-position: right center;
+	background-position: center center;
 	background-repeat: no-repeat;
 	position: relative;
+	@include media($big) {
+		background-position: right center;
+		background-size: 1000px;
+	}
 	.join_content_1, .join_content_3 {
 		@include span-columns(6);
 		padding-top: 150px;
@@ -262,9 +267,13 @@ section.join_section_1, section.join_section_3 {
 
 section.join_section_2 {
 	background-size: cover;
-	background-position: left bottom;
+	background-position: center center;
 	background-repeat: no-repeat;
 	position: relative;
+	@include media($big) {
+		background-position: left center;
+		background-size: 1000px;
+	}
 	.join_content_2 {
 		@include span-columns(6);
 		@include shift(6);
@@ -300,10 +309,10 @@ section.join_section_2 {
 }
 
 section.join_section_3 {
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	position: relative;
+	// background-size: cover;
+	// background-position: center center;
+	// background-repeat: no-repeat;
+	// position: relative;
 	.join_content_3 {
 		@include span-columns(6);
 		padding-top: 50px;
@@ -317,7 +326,7 @@ section.join_section_3 {
 		}
 	}
 	@include media($tablet) {
-		background-position: left top;
+		// background-position: left top;
 		.join_content_3 {
 			padding-top: 75px;
 			padding-bottom: 75px;
@@ -369,7 +378,7 @@ section.join_section_3 {
 		}
 	}
 	.home_left {
-		padding: 25px 0 175px;
+		padding: 25px 0 175px 15px;
 		@include span-columns(6);
 		@include media($tablet) {
 			padding: 50px 0 100px;

@@ -59,7 +59,9 @@ div.service_content {
 
 	div.contact_info {
 		@include outer-container;
+		margin-bottom: 50px;
 		div.contact_section {
+			font-size: 15px;
 			@include span-columns(4 of 12);
 			@include media($tablet) {
 				@include span-columns(8);
