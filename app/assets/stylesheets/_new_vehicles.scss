@@ -186,7 +186,7 @@ div.reel.interior.off, div.reel.exterior.off, div.exterior-views.off, div.interi
 
 div.int_ext {
 	margin: 10px 0;
-	@include span-columns(6 of 12);
+	@include span-columns(5 of 12);
 	@include media($tablet) {
 		@include span-columns(8 of 8);
 		margin: 0;
@@ -211,7 +211,7 @@ div.int_ext {
 	}
 }
 .views {
-	@include span-columns(6);
+	@include span-columns(7);
 	@include omega;
 	.exterior-views, .interior-views {
 		display: inline-block;
@@ -272,6 +272,9 @@ div.compare {
 		color: #777;
 		text-align: center;
 		margin-bottom: -25px;
+		@include media($tablet) {
+			margin-bottom: 0;
+		}
 	}
 	.controllable {
 		@include outer-container;
@@ -285,6 +288,15 @@ div.compare {
 		line-height: 40px;
 		text-align: center;
 		cursor: pointer;
+		@include transition(0.2s);
+		@include media($mobile) {
+			width: 49%;
+		}
+	}
+
+	#square:hover {
+		@include transition(0.2s);
+		background: $darkred;
 	}
 	.prev {
 		float: left;
@@ -444,12 +456,18 @@ div.hint {
 	left: 50%;
 	margin-left: -100px;
 	margin-top: -60px;
-	opacity: 1;
-	@include transition(0.2s);
+	@include transition(.2s);
+	@include media($tablet) {
+		top: 0;
+		margin-top:0;
+	}
+}
+.threesixty_container {
+	position: relative;
 }
 
 div.hint.leave {
-	opacity: 0;
+	display: none;
 }
 
 #exterior-reel, #interior-reel, .reel-panning, .reel-panning * {
