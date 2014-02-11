@@ -233,7 +233,7 @@ section.join_section_1, section.join_section_3 {
 	background-repeat: no-repeat;
 	position: relative;
 	@include media($big) {
-		background-position: right center;
+		background-position: center center;
 		background-size: 1000px;
 	}
 	.join_content_1, .join_content_3 {
@@ -271,7 +271,7 @@ section.join_section_2 {
 	background-repeat: no-repeat;
 	position: relative;
 	@include media($big) {
-		background-position: left center;
+		background-position: center center;
 		background-size: 1000px;
 	}
 	.join_content_2 {

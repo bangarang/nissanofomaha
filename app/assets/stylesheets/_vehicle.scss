@@ -244,8 +244,18 @@
   opacity:1;
 }
 
+
+section.main_top.used_top {
+	@include media($big) {
+		background-position: center center;
+	}
+}
+
 .used_main {
 	padding: 5% 15px 20%;
+	@include media($big) {
+		padding: 50px 15px 200px;
+	}
 	color: white;
 	h2 {
 		font-size: 35px;
@@ -264,6 +274,7 @@
 	}
 
 	@include media($mobile) {
+		padding: 5% 15px 20% !important;
 		text-shadow: 0 0 5px black;
 		background: rgba(0,0,0,0.7);
 		h2 { 
