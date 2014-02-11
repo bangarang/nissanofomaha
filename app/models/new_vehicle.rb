@@ -6,4 +6,14 @@ class NewVehicle < ActiveRecord::Base
 	belongs_to :category
 
 	mount_uploader :image, ImageUploader
+
+	before_validation :generate_slug
+
+	def to_param
+		slug
+	end
+
+	def generate_slug
+		self.slug ||= name.parameterize
+	end
 end

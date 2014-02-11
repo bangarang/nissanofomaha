@@ -17,7 +17,7 @@
 				<%= link_to "<h4>New Vehicles</h4>".html_safe, new_vehicles_url, class: active_class?(new_vehicles_url), class: " new-dropdown-click" %>
 				<div class="new-dropdown">
 					<% for category in @categories %>
-					<%= link_to "<h4>".html_safe + category.name + "</h4>".html_safe, '/new_vehicles#' + category.name.parameterize, class: 'media' unless current_page?(new_vehicles_url)%>
+					<%= link_to "<h4>".html_safe + category.name + "</h4>".html_safe, '/new#' + category.name.parameterize, class: 'media' unless current_page?(new_vehicles_url)%>
 					<%= link_to "<h4>".html_safe + category.name + "</h4>".html_safe, '#' + category.name.parameterize, class: 'media' if current_page?(new_vehicles_url)%>
 					<% end %>
 				</div>

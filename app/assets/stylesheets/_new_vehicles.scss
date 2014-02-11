@@ -431,3 +431,92 @@ h1.edit_main {
 img#exterior-reel.off {
 	display: none;
 }
+
+div.hint {
+	display: inline-block;
+	background: rgba(0,0,0,0.8);
+	color: white;
+	font-weight: bold;
+	padding: 10px 35px;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -60px;
+	opacity: 1;
+	@include transition(0.2s);
+}
+
+div.hint.leave {
+	opacity: 0;
+}
+
+#exterior-reel, #interior-reel, .reel-panning, .reel-panning * {
+	cursor: move !important;
+}
+
+#exterior-reel, #interior-reel {
+	img {
+		opacity: 1;
+		@include transition(0.2s);
+	}
+}
+
+#interior-reel.reel-loading, #exterior-reel.reel-loading {
+	
+	position: relative;
+	// z-index: 100;
+	img {
+		opacity: 0.3;
+		@include transition(0.2s);
+	}
+}
+#interior-reel.reel-loading:after, #exterior-reel.reel-loading:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -25px;
+	height: 50px;
+	width: 50px;
+	background: $darkred;
+	// z-index: -1;
+
+	@include animation(rotate 3s infinite linear,fadeInSquare .8s 1);
+}
+
+@-webkit-keyframes rotate {
+  from {-webkit-transform: rotate(0deg);}
+  to   {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotate {
+  from {-moz-transform: rotate(0deg);}
+  to   {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotate {
+  from {-o-transform: rotate(0deg);}
+  to   {-o-transform: rotate(359deg);}
+}
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to   {transform: rotate(359deg);}
+}
+
+@-webkit-keyframes fadeInSquare {
+  from { opacity: 0;}
+  to   { opacity:1;}
+}
+@-moz-keyframes fadeInSquare {
+  from { opacity: 0;}
+  to   { opacity:1;}
+}
+@-o-keyframes fadeInSquare {
+  from { opacity: 0;}
+  to   { opacity:1;}
+}
+@keyframes fadeInSquare {
+  from { opacity: 0;}
+  to   { opacity:1;}
+}

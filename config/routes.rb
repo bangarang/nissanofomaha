@@ -17,9 +17,7 @@ Vauto::Application.routes.draw do
 
   resources :photos
 
-  resources :new_vehicles
-
-  resources :vehicles
+  resources :new_vehicles, path: 'new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -52,7 +50,7 @@ Vauto::Application.routes.draw do
 
   get 'partsorder' => 'parts_orders#new'
 
-  resources :vehicles
+  resources :vehicles, path: 'used'
 
   post 'import_latest' => 'imports#import_latest'
 

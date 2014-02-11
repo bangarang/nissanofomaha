@@ -26,7 +26,7 @@ app.controller "ItemsCtrl", ["$scope", "$http", @ItemsCtrl = ($scope, $http) ->
 
 app.controller "VehiclesCtrl", ["$scope", "$http", @VehiclesCtrl = ($scope, $http) ->
   $scope.loading = true
-  $http.get("/vehicles.json").success (data) ->
+  $http.get("/used.json").success (data) ->
     $scope.items = data
     $scope.loading = false
     $scope.city_mpg = 0

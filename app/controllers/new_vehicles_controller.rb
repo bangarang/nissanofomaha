@@ -65,11 +65,11 @@ class NewVehiclesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_new_vehicle
-      @new_vehicle = NewVehicle.find(params[:id])
+      @new_vehicle = NewVehicle.find_by_slug(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def new_vehicle_params
-      params.require(:new_vehicle).permit(:name, :description, :city_mpg, :highway_mpg, :msrp, :image, :category_id, :headline)
+      params.require(:new_vehicle).permit(:name, :description, :city_mpg, :highway_mpg, :msrp, :image, :category_id, :headline, :slug)
     end
 end
