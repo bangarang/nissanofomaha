@@ -35,6 +35,9 @@ header.main {
 						text-transform: none;
 						border-bottom: 2px #eee solid;
 						margin: 0;
+						h4 {
+							margin:0;
+						}
 					}
 					a.media:hover {
 						font-weight: bold;

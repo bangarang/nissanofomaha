@@ -277,7 +277,7 @@ section.join_section_2 {
 	.join_content_2 {
 		@include span-columns(6);
 		@include shift(6);
-		padding-top: 15px;
+		padding-top: 0px;
 		padding-bottom: 15px;
 		.join_title {
 			color: $red;
@@ -315,8 +315,8 @@ section.join_section_3 {
 	// position: relative;
 	.join_content_3 {
 		@include span-columns(6);
-		padding-top: 50px;
-		padding-bottom: 150px;
+		padding-top: 10px;
+		padding-bottom: 30px;
 		.join_title {
 			color: $red;
 			text-transform: uppercase;
