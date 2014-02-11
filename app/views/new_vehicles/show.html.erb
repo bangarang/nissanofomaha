@@ -6,7 +6,7 @@
 		<header>
 			<div class="name">
 			  <h4>2014 Nissan</h4>
-			  <h1><%= @new_vehicle.name %></h1>
+			  <h1><%= @new_vehicle.name.html_safe %></h1>
 			</div>
 		<div class="info">
 			<div class="spec">
@@ -59,7 +59,7 @@
 		      data-preload="linear">	
 				<% end %>
 
-				
+
 			</div>
 			
 	    <div class="labels">
@@ -106,7 +106,6 @@
 				      	<div class="color">
 				      		<div class="rectangle" id="<%= interior.slug %>" style="background:<%= interior.color %>"></div>
 				      	</div>
-								
 							<% end %>
 				    </div>
 			    <% end %>
@@ -172,7 +171,7 @@ $(document).ready(function() {
 </div>
 
 <div class="compare">
-	<h2 class="title">Compare 2014 Nissan <%= @new_vehicle.name %> Versions & Specs</h2>
+	<h2 class="title">Compare 2014 Nissan <%= @new_vehicle.name.html_safe %> Versions & Specs</h2>
 	<div class="controllable">
 		<div class="prev" id="square"><</div>
 		<div class="next" id="square">></div>
