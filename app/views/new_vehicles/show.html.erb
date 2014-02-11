@@ -1,4 +1,7 @@
-<% provide(:title, 'New Vehicle: ' + @new_vehicle.name) %>
+<% @tmp = @new_vehicle.name.gsub("<sup>","")%>
+<%	@tmp = @tmp.gsub("</sup>","") %>
+
+<% provide(:title, 'New Vehicle: ' + @tmp) %>
 <div class="container">
 	<p id="notice"><%= notice %></p>
 
