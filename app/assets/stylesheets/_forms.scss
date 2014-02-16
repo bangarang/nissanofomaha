@@ -182,8 +182,10 @@ div.new_vehicle_form, div.test_ride_form, div.credit_application_form{
 
 div.actions {
 	input[type="submit"] {
+		font-size: 16px;
 		width: 100%;
 		margin-bottom: 50px;
+		padding: 15px;
 		line-height: 30px;
 		border: none;
 		background: $red;
@@ -227,6 +229,8 @@ div.actions {
 			font-size: 15px;
 			line-height: 50px;
 			margin: 0;
+			border: 2px solid #eee;
+			border-radius: 5px;
 			@include media($mobile) {
 				font-size: 12px;
 			}
@@ -242,28 +246,58 @@ div.actions {
 		width: 40%;
 		margin: 0;
 		float: left;
+		p {
+			font-size: 14px;
+			padding: 14px;
+			margin: 0;
+			@include media($mobile) {
+				font-size: 12px;
+				padding: 12px;
+			}
+		}
+		border: 2px solid #eee;
 		border-bottom-right-radius: 0px;
 		border-top-right-radius: 0px;
-		@include media($mobile) {
-			font-size: 12px;
-			line-height: 27px;
-		}
-		
 	}
 	.text_field_content {
 		width: 60%;
 		border: 0;
 		margin: 0;
-		border: 2px solid #eee;
 		float: left;
-		line-height: 45px;
-		font-size: 15px;
-		border-bottom-right-radius: 5px;
-		border-top-right-radius: 5px;
-		padding-left: 15px;
-		@include media($mobile) {
-			font-size: 12px;
+
+		input {
+			-webkit-appearance: none;
+			-webkit-border-radius: 0;
+			border-radius: 0;
+			background-color: white;
+			font-family: inherit;
+			margin: 0;
+			display: block;
+			font-size: 14px;
+			padding: 14px;
+			width: 100%;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
+			-moz-transition: -moz-box-shadow 0.45s, border-color 0.45s ease-in-out;
+			transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+			-webkit-transition: all 0.15s linear;
+			-moz-transition: all 0.15s linear;
+			transition: all 0.15s linear;
+
+			border: 2px solid #eee;
+			border-bottom-right-radius: 5px;
+			border-top-right-radius: 5px;
+
+			@include media($mobile) {
+				font-size: 12px;
+				padding: 12px;
+			}
+
 		}
+
+
 	}
 
 	.text_field.half {
@@ -289,39 +323,77 @@ div.actions {
 		padding: 15px;
 	}
 
+	// .red_checkbox {
+	//   // border: 2px solid #eee;
+	//   border-radius: 5px;
+	//   overflow: auto;
+	// 	label {
+	//     span {
+	//     	border: 2px solid #eee;
+	// 	    text-align:center;
+	// 	    display:block;
+	// 	    border-radius:5px;
+	// 	    line-height: 50px;
+	// 	    @include media($mobile) {
+	// 				font-size: 12px;
+	// 			}
+	// 		}
+	// 		input {
+	// 	    position:absolute;
+	// 	    top:-20px;
+	// 		}
+		
+	// 		input[type=checkbox]:hover ~ span:hover {
+	// 	    background-color:$darkred;
+	// 	    color:#fff;
+	// 	    border-color: $darkred;
+	// 	    cursor: pointer;
+	// 		}
+	// 		input:checked + span {
+	// 	    background-color:$red;
+	// 	    border-color: $red;
+	// 	    color:#fff;
+	// 		}
+	// 		input:checked:hover + span:hover {
+	// 	    background-color:$darkred;
+	// 	    border-color: $darkred;
+	// 	    color:#fff;
+	// 	    cursor: pointer;
+	// 		}
+	// 	}
+	// }
+
 	.red_checkbox {
-	  background-color: #EFEFEF;
-	  border-radius: 5px;
-	  overflow: auto;
+		input[type=checkbox] {
+		   position: absolute;
+		   top: -9999px;
+		   left: -9999px;
+		   /* For mobile, it's typically better to position checkbox on top of clickable
+		      area and turn opacity to 0 instead. */
+		}
 		label {
-	    span {
-		    text-align:center;
-		    display:block;
-		    border-radius:5px;
-		    line-height: 50px;
-		    @include media($mobile) {
-					font-size: 12px;
-				}
-			}
-			input {
-		    position:absolute;
-		    top:-20px;
+    	border: 2px solid #eee;
+	    text-align:center;
+	    display:block;
+	    border-radius:5px;
+	    line-height: 50px;
+	    cursor: pointer;
+
+	    @include media($mobile) {
+				font-size: 12px;
 			}
 		}
-		input:hover + span {
-	    background-color:$darkred;
-	    color:#fff;
-	    cursor: pointer;
+		label:hover, input[type=checkbox]:checked ~ label:hover {
+			background: $darkred;
+			border-color: $darkred;
+			color: white;
 		}
-		input:checked + span {
-	    background-color:$red;
-	    color:#fff;
+		input[type=checkbox]:checked ~ label {
+			background: $red;
+			border-color: $red;
+			color: white;
 		}
-		input:checked:hover + span {
-	    background-color:$darkred;
-	    color:#fff;
-	    cursor: pointer;
-		}
+
 	}
 	.red_checkbox.quarter {
 		@include span-columns(3);

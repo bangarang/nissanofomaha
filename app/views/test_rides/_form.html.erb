@@ -21,13 +21,18 @@
           <div class="gray_label fifth">
             <p>First Name</p>
           </div>
-          <%= f.text_field :first, placeholder: 'John', class: 'text_field_content' %>
+          <div class="text_field_content">
+            <%= f.text_field :first, placeholder: 'John' %>
+          </div>
+          
         </div>
         <div class="text_field half">
           <div class="gray_label fifth">
             <p>Last Name</p>
           </div>
-          <%= f.text_field :last, placeholder: 'Smith', class: 'text_field_content' %>
+          <div class="text_field_content">
+            <%= f.text_field :last, placeholder: 'Smith'%>
+          </div>
         </div>
       </div>
 
@@ -37,13 +42,17 @@
           <div class="gray_label fifth">
             <p>Phone Number</p>
           </div>
-          <%= f.text_field :phone, placeholder: '(000) 000-0000', class: 'text_field_content' %>
+          <div class="text_field_content">
+            <%= f.text_field :phone, placeholder: '(000) 000-0000' %>
+          </div>
         </div>
         <div class="text_field half">
           <div class="gray_label fifth">
             <p>Email Address</p>
           </div>
-          <%= f.text_field :email, placeholder: 'you@example.com', class: 'text_field_content' %>
+          <div class="text_field_content">
+            <%= f.text_field :email, placeholder: 'you@example.com' %>
+          </div>
         </div>
       </div>
     </section>
@@ -55,16 +64,16 @@
         </div>
         
         <div class="red_checkbox quarter">
-          <label>
-            <input name="test_ride[method_phone]" type="hidden" value="0">
-            <input id="test_ride_method_phone" name="test_ride[method_phone]" type="checkbox" value="1"><span>Phone</span>
-          </label>
+          
+          <input name="test_ride[method_phone]" type="hidden" value="0">
+          <input id="test_ride_method_phone" name="test_ride[method_phone]" type="checkbox" value="1">
+          <label for="test_ride_method_phone">Phone</label>
+          <div class="square"></div>
         </div>
-        <div class="red_checkbox quarter">
-          <label>
-            <input name="test_ride[method_email]" type="hidden" value="0">
-            <input id="test_ride_method_email" name="test_ride[method_email]" type="checkbox" value="1"><span>Email</span>
-          </label>
+        <div class="red_checkbox quarter">          
+          <input name="test_ride[method_email]" type="hidden" value="0">
+          <input id="test_ride_method_email" name="test_ride[method_email]" type="checkbox" value="1">
+          <label for="test_ride_method_email">Email</label>
         </div>
       </div>
 
@@ -74,22 +83,19 @@
         </div>
         
         <div class="red_checkbox sixth">
-          <label>
-            <input name="test_ride[morning]" type="hidden" value="0">
-            <input id="test_ride_morning" name="test_ride[morning]" type="checkbox" value="1"><span>Morning</span>
-          </label>
+          <input name="test_ride[morning]" type="hidden" value="0">
+          <input id="test_ride_morning" name="test_ride[morning]" type="checkbox" value="1">
+          <label for="test_ride_morning">Morning</label>
         </div>
         <div class="red_checkbox sixth">
-          <label>
             <input name="test_ride[afternoon]" type="hidden" value="0">
-            <input id="test_ride_afternoon" name="test_ride[afternoon]" type="checkbox" value="1"><span>Afternoon</span>
-          </label>
+            <input id="test_ride_afternoon" name="test_ride[afternoon]" type="checkbox" value="1">
+            <label for="test_ride_afternoon">Afternoon</label>
         </div>
         <div class="red_checkbox sixth">
-          <label>
             <input name="test_ride[evening]" type="hidden" value="0">
-            <input id="test_ride_evening" name="test_ride[evening]" type="checkbox" value="1"><span>Evening</span>
-          </label>
+            <input id="test_ride_evening" name="test_ride[evening]" type="checkbox" value="1">
+            <label for="test_ride_evening">Evening</label>
         </div>
       </div>
     </section>
