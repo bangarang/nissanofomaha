@@ -488,7 +488,7 @@ div.hint.leave {
 	}
 }
 
-#interior-reel.reel-loading, #exterior-reel.reel-loading {
+#interior-reel.reel-loading, #exterior-reel.reel-loading, {
 	
 	position: relative;
 	// z-index: 100;
@@ -497,7 +497,9 @@ div.hint.leave {
 		@include transition(0.2s);
 	}
 }
-#interior-reel.reel-loading:after, #exterior-reel.reel-loading:after {
+
+
+#interior-reel.reel-loading:after, #exterior-reel.reel-loading:after, .spinning_square {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -510,6 +512,11 @@ div.hint.leave {
 	// z-index: -1;
 
 	@include animation(rotate 3s infinite linear,fadeInSquare .8s 1);
+}
+
+.loading {
+	position: relative;
+	height: 200px;
 }
 
 @-webkit-keyframes rotate {
