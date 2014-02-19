@@ -12,7 +12,6 @@
 	@include outer-container;
 	.control {
 		margin-right: -1px;
-		margin-bottom: -1px;
 		width: 25%;
 		border: 1px solid #ddd;
 		float: left;
@@ -30,6 +29,25 @@
 			text-align: center;
 			text-transform: uppercase;
 			cursor: pointer;
+			margin: 0;
+			padding: 20px;
+			@include transition(0.2s);
+		}
+		h5:hover {
+			color: $red;
+		}
+		h5:after {
+			content: '';
+			display: inline-block;
+			height: 7px;
+			width: 7px;
+			border-right: 4px solid $red;
+			border-bottom: 4px solid $red;
+			-webkit-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+			margin-left: 15px;
+			vertical-align: top;
 		}
 		.price, .odometer, .model, .make {
 			display: none;
@@ -42,6 +60,8 @@
 			width: 100%;
 			margin-top: 0px;
 			border: 1px solid #ddd;
+			border-bottom: none;
+			z-index: 1;
 			li {
 				list-style: none;
 				border-bottom: 1px solid #EEEEEE;
@@ -50,6 +70,8 @@
 					cursor: pointer;
 					color: #999999;
 					font-weight: 100;
+					margin: 0;
+					padding: 12px;
 				}
 			}
 			.model_group {
@@ -99,6 +121,37 @@
 					color: $red;
 				}
 			}
+		}
+	}
+	.control.clicked {
+		h5:after {
+			border-right: none;
+			border-bottom: none;
+			border-left: 4px solid $red;
+			border-top: 4px solid $red;
+			vertical-align: bottom;
+		}
+	}
+	.control.inactive {
+		h5 {
+			color: #666;
+			cursor: inherit;
+		}
+		h5:after {
+			border-right: 4px solid #666;
+			border-bottom: 4px solid #666;
+		}
+	}
+	.control.inactive.clicked {
+		h5 {
+			color: #666;
+		}
+		h5:after {
+			border-right: 4px solid #666;
+			border-bottom: 4px solid #666;
+			border-left: none;
+			border-top: none;
+			vertical-align: top;
 		}
 	}
 

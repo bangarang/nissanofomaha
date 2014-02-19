@@ -33,7 +33,7 @@
         <li><p ng-click="min_odometer='25'; max_odometer='50'">25k - 50k</p></li>
         <li><p ng-click="min_odometer='50'; max_odometer='75'">50k - 75k</p></li>
         <li><p ng-click="min_odometer='75'; max_odometer='1000'">75k - Above</p></li>
-        <li><p ng-click="min_odometer=nil; max_odometer=nil">Show All</p></li>
+        <li class="showall"><p ng-click="min_odometer=nil; max_odometer=nil">Show All</p></li>
       </ul>
     </div>
     <div class="control">
@@ -42,10 +42,10 @@
         <% for m,k in @makes %>
         <li id="<%= m %>"><p ng-click="the_make='<%= m %>'; the_model=nil"><%= m %></p></li>
         <% end %>
-        <li><p ng-click="the_make=nil">Show All</p></li>
+        <li class="showall"><p ng-click="the_make=nil; the_model=nil;">Show All</p></li>
       </ul>
     </div>
-    <div class="control">
+    <div class="control inactive">
       <h5 class="model-click">Model</h5>
       <ul class="model">
         <% for m,k in @makes %>
@@ -54,7 +54,7 @@
             <% for t in k %>
             <li><p ng-click="the_model='<%= t %>'"><%= t %></p></li>
             <% end %>
-            <li><p ng-click="the_model=nil">Show All</p></li>
+            <li class="showall"><p ng-click="the_model=nil">Show All</p></li>
           </ul>
         </li>
         <% end %>

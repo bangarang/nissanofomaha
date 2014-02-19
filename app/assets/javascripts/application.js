@@ -26,6 +26,7 @@ $(document).ready(function() {
 	});
 	$(".price li").click(function() {
 	  $(".price").toggleClass("up");
+	  $(".price").parent().toggleClass("clicked");
 	  $(".price li").removeClass('selected');
 	  $(this).addClass('selected');
 	});
@@ -34,29 +35,49 @@ $(document).ready(function() {
 	});
 	$(".odometer li").click(function() {
 	  $(".odometer").toggleClass("up");
+	  $(".odometer").parent().toggleClass("clicked");
 	  $(".odometer li").removeClass('selected');
 	  $(this).addClass('selected');
 	});
+
 	$(".make-click").click(function() {
 	  $(".make").toggleClass("up");
 	});
+
 	$(".make li").click(function() {
 	  $(".make").toggleClass("up");
+	  $(".make").parent().toggleClass("clicked");
 	  $(".make li").removeClass('selected');
 	  ident = $(this).attr('id');
 	  $('ul.model li').removeClass('current');
 	  $(this).addClass('selected');
-
 	  $('ul.model li#'+ident).addClass('current');
+	  $('.model-click').parent().removeClass('inactive');
 	});
+
 	$(".model-click").click(function() {
-	  $(".model").toggleClass("up");
+		if( $('.model').parent().attr('class') != "control inactive" ){
+		  $(".model").toggleClass("up");
+		}
 	});
 	$(".model li ul li").click(function() {
 	  $(".model").toggleClass("up");
+	  $(".model").parent().toggleClass("clicked");
 	  $(".model li").removeClass('selected');
 	  $(this).addClass('selected');
 	});
+
+	$('.control h5').click(function() {
+		if( $(this).parent().attr('class') != "control inactive" ){
+			$(this).parent().toggleClass("clicked");
+		}
+	});
+
+	$('.make li.showall').click(function() {
+		$('.model-click').parent().addClass('inactive');
+	});
+
+
   $(".different-click").click(function() {
 	  $(".different").toggleClass("up");
 	  return false;
@@ -154,6 +175,6 @@ $(document).ready(function() {
     $('.usedImageWrapper img').fadeOut(100,function(){
         $(this).fadeIn(400)[0].src = src;
     });
-	}); 
+	});
 
 });
