@@ -58,4 +58,12 @@ footer {
 			padding: 0 10px;
 		}
 	}
+	.privacy {
+		text-decoration: none;
+		color: $darkgray;
+		@include transition(0.2s);
+	}
+	.privacy:hover {
+		color: $gray;
+	}
 }
