@@ -1,0 +1,53 @@
+section.specials {
+	background: #eee;
+	padding: 15px 0 50px;
+	div.container {
+		@include outer-container;
+		position: relative;
+
+		@include media($tablet) {
+			padding: 0;
+		}
+	}
+	.special_title {
+		color: #999999;
+		text-align: center;
+		text-transform: uppercase;
+		@include media($mobile) {
+			font-size: 16px;
+		}
+	}
+	.special_title:before {
+		content: '';
+		display: block;
+		border-bottom: $red 3px solid;
+		width: 30%;
+		position: absolute;
+		margin-top: 14px;
+	}
+	.special_title:after {
+		content: '';
+		display: block;
+		border-bottom: $red 3px solid;
+		width: 30%;
+		position: absolute;
+		right: 0;
+		margin-top: -17px;
+	}
+	div.special {
+		@include span-columns(4);
+		padding: 15px;
+		img {
+			max-width: 100%;
+			border: #eee 1px solid;
+			@include transition(0.2s);
+		}
+
+		img:hover {
+			border: $red 1px solid;
+		}
+		@include media($mobile) {
+			padding: 5px;
+		}
+	}
+}
