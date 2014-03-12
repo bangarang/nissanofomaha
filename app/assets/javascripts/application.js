@@ -17,6 +17,7 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require angular
 //= require angular-animate
+//= require css3-mediaqueries
 //= require tinymce
 //= require_tree .
 
