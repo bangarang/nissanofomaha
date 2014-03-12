@@ -75,7 +75,7 @@ Vauto::Application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
-  config.action_controller.asset_host = "http://nissanofomaha-assets.s3-website-us-east-1.amazonaws.com"
+  # config.action_controller.asset_host = "http://nissanofomaha-assets.s3-website-us-east-1.amazonaws.com"
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
