@@ -27,6 +27,9 @@ GEM
       tzinfo (~> 0.3.37)
     angularjs-rails (1.2.5)
     arel (4.0.1)
+    asset_sync (1.0.0)
+      activemodel
+      fog (>= 1.8.0)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
     bourbon (3.1.8)
@@ -67,6 +70,8 @@ GEM
       ruby-hmac
     formatador (0.2.4)
     hike (1.2.3)
+    html5shiv-rails (0.0.2)
+      railties (>= 3.2.0, < 5.0)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -173,11 +178,13 @@ PLATFORMS
 
 DEPENDENCIES
   angularjs-rails
+  asset_sync
   bourbon
   carrierwave
   clearance
   coffee-rails (~> 4.0.0)
   fog
+  html5shiv-rails
   jbuilder (~> 1.2)
   jquery-fileupload-rails
   jquery-rails

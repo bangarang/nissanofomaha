@@ -53,7 +53,9 @@ gem 'tinymce-rails'
 
 gem 'unicorn'
 
-# gem 'asset_sync'
+gem 'asset_sync'
+
+gem 'html5shiv-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
