@@ -70,7 +70,7 @@
         <div class="spinning_square"></div>
       </div>
       <ul class="vehicles">
-        <li data-ng-repeat="item in items | orderBy:'-price' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
+        <li data-ng-repeat="item in items | orderBy:'price' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
           <div class="vehicle" >
             <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
             <div class="main">
