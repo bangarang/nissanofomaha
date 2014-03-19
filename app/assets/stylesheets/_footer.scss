@@ -5,6 +5,9 @@ footer {
 		font-weight: 100;
 		text-align: center;
 		font-size: 12px;
+		@include media($mobile) {
+			font-size: 9px;
+		}
 	}
 	.contacthours {
 		@include span-columns(8);
@@ -19,6 +22,10 @@ footer {
 			@include span-columns(6);
 			text-transform: uppercase;
 			padding-left: 50px;
+			@include media($mobile) {
+				padding-left: 0px;
+				text-align: center;
+			}
 			.footer_title {
 				color: $red;
 				font-weight: bold;
@@ -31,6 +38,9 @@ footer {
 					line-height: 22px;
 					font-weight: 100;
 					font-size: 15px;
+					@include media($mobile) {
+						font-size: 10px;
+					}
 					a {
 						color: $darkgray;
 						text-decoration: none;

@@ -81,3 +81,9 @@ div.container {
 @import "forms";
 @import "backup";
 @import "home";
+
+#iCoder_POP1141877261 {
+  @include media($tablet) {
+    display: none!important;
+  }
+}

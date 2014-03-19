@@ -18,11 +18,11 @@
     <div class="control">
       <h5 class="price-click">Price</h5>
       <ul class="price">
-        <li><p ng-click="min_price='0'; max_price='5000'">$0 - $5,000</p></li>
-        <li><p ng-click="min_price='5000'; max_price='10000'">$5,000 - $10,000</p></li>
-        <li><p ng-click="min_price='10000'; max_price='20000'">$10,000 - $20,000</p></li>
-        <li><p ng-click="min_price='20000'; max_price='30000'">$20,000 - $30,000</p></li>
-        <li><p ng-click="min_price='30000'; max_price='1000000'">$30,000 - Above</p></li>
+        <li><p ng-click="min_price='0'; max_price='10000'">Under $10,000</p></li>
+        <li><p ng-click="min_price='10000'; max_price='14999'">$10,000-14,999</p></li>
+        <li><p ng-click="min_price='15000'; max_price='19999'">$15,000-19,999</p></li>
+        <li><p ng-click="min_price='20000'; max_price='29999'">$20,000-29,999</p></li>
+        <li><p ng-click="min_price='30000'; max_price='1000000'">Over $30,000</p></li>
         <li><p ng-click="min_price=nil; max_price=nil">Show All</p></li>
       </ul>
     </div>
@@ -70,7 +70,7 @@
         <div class="spinning_square"></div>
       </div>
       <ul class="vehicles">
-        <li data-ng-repeat="item in items | orderBy:'-year' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
+        <li data-ng-repeat="item in items | orderBy:'-price' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
           <div class="vehicle" >
             <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
             <div class="main">

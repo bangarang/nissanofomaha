@@ -1,6 +1,9 @@
 section.specials {
 	background: #eee;
-	padding: 15px 0 50px;
+	padding: 50px;
+	@include media($tablet) {
+		padding: 15px;
+	}
 	div.container {
 		@include outer-container;
 		position: relative;
