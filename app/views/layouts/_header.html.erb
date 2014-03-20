@@ -27,7 +27,6 @@
 			<% if signed_in? %>
 			<li><%= link_to "<h4>Sign Out</h4>".html_safe, sign_out_path, :method => :delete %></li>
 			<% end %>
-			<li><a onclick="javascript:window.open('http://applications.contactatonce.com/CaoClientContainer.aspx?MerchantId=48039&amp;Providerid=3341&amp;PlacementId=1&amp;OriginationUrl='+encodeURIComponent(location.href),'','resizable=yes,toolbar=no,menubar=no,location=no,scrollbars=no,status=no,height=400,width=600');return false;" href="#"><h4>Online Chat</h4></a></li>
 		</ul>
 		
 		<ul class="mobile-menu">

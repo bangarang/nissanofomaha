@@ -11,6 +11,16 @@ class NewVehiclesController < ApplicationController
   # GET /new_vehicles/1
   # GET /new_vehicles/1.json
   def show
+    @tmp = @new_vehicle.name.gsub("<sup>","")
+    @tmp = @tmp.gsub("</sup>","")
+
+    @tmp = @tmp.delete('^a-zA-Z ')
+
+    @vauto_name = @tmp.match(" ").pre_match
+    @tmp_count = Vehicle.where( year: 2014, make: 'Nissan', model: @vauto_name ).count
+    @vauto_count = (@tmp_count/5).round * 5
+
+
   end
 
   # GET /new_vehicles/new
