@@ -21,9 +21,8 @@ class NewVehiclesController < ApplicationController
     # else 
     #   @vauto_name = @tmp
     # end 
-    # @tmp_count = Vehicle.where( year: 2014, make: 'Nissan', model: @vauto_name ).count
-    # @vauto_count = (@tmp_count/5).round * 5
-    @vauto_count = -1
+    @tmp_count = Vehicle.where( year: 2014, make: 'Nissan', model: @new_vehicle.vauto_name ).count
+    @vauto_count = (@tmp_count/5).round * 5
 
   end
 
@@ -84,6 +83,6 @@ class NewVehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def new_vehicle_params
-      params.require(:new_vehicle).permit(:name, :description, :city_mpg, :highway_mpg, :msrp, :image, :category_id, :headline, :slug)
+      params.require(:new_vehicle).permit(:name, :description, :city_mpg, :highway_mpg, :msrp, :image, :category_id, :headline, :slug, :vauto_name)
     end
 end

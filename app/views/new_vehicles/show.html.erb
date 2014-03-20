@@ -24,7 +24,7 @@
 		</header>
 		<div class="description">
 			<h2><%= @new_vehicle.headline %></h2>
-			<p><%= @new_vehicle.description %> <% if @vauto_count > 0 %>We have more than <%= @vauto_count %> <%= @vauto_name.pluralize %> in stock.<% end %></p>
+			<p><%= @new_vehicle.description %> <% if @vauto_count > 0 %>We have more than <%= @vauto_count %> <%= @new_vehicle.vauto_name.pluralize %> in stock.<% end %></p>
 		</div>
 		<% if signed_in? %>
 			<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
