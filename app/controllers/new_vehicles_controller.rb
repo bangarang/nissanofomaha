@@ -21,7 +21,7 @@ class NewVehiclesController < ApplicationController
     # else 
     #   @vauto_name = @tmp
     # end 
-    @tmp_count = Vehicle.where( year: 2014, make: 'Nissan', model: @new_vehicle.vauto_name ).count
+    @tmp_count = Vehicle.where( newused: 'N', make: 'Nissan', model: @new_vehicle.vauto_name ).count
     @vauto_count = (@tmp_count/5).round * 5
 
   end
