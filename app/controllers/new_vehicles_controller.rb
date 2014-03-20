@@ -16,7 +16,11 @@ class NewVehiclesController < ApplicationController
 
     @tmp = @tmp.delete('^a-zA-Z ')
 
-    @vauto_name = @tmp.match(" ").pre_match
+    if @tmp.match(" ").pre_match
+      @vauto_name = @tmp.match(" ").pre_match
+    else 
+      @vauto_name = @tmp
+    end 
     @tmp_count = Vehicle.where( year: 2014, make: 'Nissan', model: @vauto_name ).count
     @vauto_count = (@tmp_count/5).round * 5
 
