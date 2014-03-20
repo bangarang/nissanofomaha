@@ -14,16 +14,16 @@ class NewVehiclesController < ApplicationController
     @tmp = @new_vehicle.name.gsub("<sup>","")
     @tmp = @tmp.gsub("</sup>","")
 
-    @tmp = @tmp.delete('^a-zA-Z ')
+    # @tmp = @tmp.delete('^a-zA-Z ')
 
-    if @tmp.match(" ").pre_match
-      @vauto_name = @tmp.match(" ").pre_match
-    else 
-      @vauto_name = @tmp
-    end 
-    @tmp_count = Vehicle.where( year: 2014, make: 'Nissan', model: @vauto_name ).count
-    @vauto_count = (@tmp_count/5).round * 5
-
+    # if @tmp.match(" ").pre_match
+    #   @vauto_name = @tmp.match(" ").pre_match
+    # else 
+    #   @vauto_name = @tmp
+    # end 
+    # @tmp_count = Vehicle.where( year: 2014, make: 'Nissan', model: @vauto_name ).count
+    # @vauto_count = (@tmp_count/5).round * 5
+    @vauto_count = -1
 
   end
 
