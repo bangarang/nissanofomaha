@@ -48,6 +48,10 @@ section.newvehicle {
 			display: inline-block;
 		}
 		.name {
+			@include media($tablet) { 
+				width: 100%;
+				text-align: center;
+			}
 			h4 {
 				margin: 0;
 				color: #777777;
@@ -62,6 +66,22 @@ section.newvehicle {
 				}
 			}
 		}
+		div.count {
+			display: inline-block;
+			h2 {
+				margin: 5px 0;
+				font-weight: 100;
+				color: #555;
+			}
+			@include media($tablet) {
+				display: block;
+				h2 {
+					margin-bottom: 10px;
+					text-align: center;
+				}
+			}
+			
+		}
 
 		div.info {
 			position: absolute;
@@ -69,7 +89,7 @@ section.newvehicle {
 			bottom: 0;
 			div.spec {
 				display: inline-block;
-				margin: 25px 10px 0;
+				margin: 25px 10px 5px;
 				.title {
 					color: #777777;
 					font-size: 10px;

@@ -1,5 +1,3 @@
-
-
 <% provide(:title, 'New Vehicle: ' + @tmp) %>
 <div class="container">
 	<p id="notice"><%= notice %></p>
@@ -10,21 +8,23 @@
 			  <h4>2014 Nissan</h4>
 			  <h1><%= @new_vehicle.name.html_safe %></h1>
 			</div>
-		<div class="info">
-			<div class="spec">
-				<h3 class="title">Starting MSRP*</h3>
-		  	<h3 class="content">$<%= number_with_delimiter(@new_vehicle.msrp) %></h3>
+			<div class="count">
+			  <h2 class="count"><% if @vauto_count > 5 %>More than <%= @vauto_count %> in stock.<% else %>Less than 5 in stock.<% end %></h2>
 			</div>
-			<div class="spec">
-				<h3 class="title">City/Hwy MPG*</h3>
-		  	<h3 class="content"><%= @new_vehicle.city_mpg %>/<%= @new_vehicle.highway_mpg %></h3>
+			<div class="info">
+				<div class="spec">
+					<h3 class="title">Starting MSRP*</h3>
+			  	<h3 class="content">$<%= number_with_delimiter(@new_vehicle.msrp) %></h3>
+				</div>
+				<div class="spec">
+					<h3 class="title">City/Hwy MPG*</h3>
+			  	<h3 class="content"><%= @new_vehicle.city_mpg %>/<%= @new_vehicle.highway_mpg %></h3>
+				</div>
 			</div>
-		  
-		</div>
 		</header>
 		<div class="description">
 			<h2><%= @new_vehicle.headline %></h2>
-			<p><%= @new_vehicle.description %> <% if @vauto_count > 0 %>We have more than <%= @vauto_count %> New <%= @new_vehicle.vauto_name.pluralize %> in stock.<% end %></p>
+			<p><%= @new_vehicle.description %></p>
 		</div>
 		<% if signed_in? %>
 			<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
