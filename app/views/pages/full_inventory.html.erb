@@ -59,6 +59,9 @@
 		</div>
 	-->
 		<div class="vehiclegroup">
+			<div ng-show="loading" class="loading">
+        <div class="spinning_square"></div>
+      </div>
 			<ul class="vehicles">
 		    <li data-ng-repeat="item in items | orderBy:'price' | filter:query" class="repeat-item">
 		      <div class="vehicle" >
