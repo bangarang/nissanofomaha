@@ -14,4 +14,9 @@ class PagesController < ApplicationController
 		end
 		render :json => @things 
 	end
+
+	def the_inventory
+    @vehicles = Vehicle.where(newused: 'N')
+    render :json => @vehicles
+  end
 end

@@ -26,7 +26,7 @@ Vauto::Application.routes.draw do
   root 'pages#home'
 
   # Example of regular route:
-  get 'items' => 'pages#items'
+  get 'items' => 'pages#the_inventory'
   get 'home' => 'pages#home'
   get 'privacy' => 'pages#privacy'
 
