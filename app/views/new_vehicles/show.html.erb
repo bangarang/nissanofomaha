@@ -9,7 +9,7 @@
 			  <h1><%= @new_vehicle.name.html_safe %></h1>
 			</div>
 			<div class="count">
-			  <h2 class="count"><% if @vauto_count > 5 %>More than <%= @vauto_count %> in stock.<% else %>Less than 5 in stock.<% end %></h2>
+			  <h2><% if @vauto_count > 5 %>More than <%= @vauto_count %> in stock.<% else %>Less than 5 in stock.<% end %></h2>
 			</div>
 			<div class="info">
 				<div class="spec">
