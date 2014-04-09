@@ -11,19 +11,6 @@ app.controller "ItemsCtrl", ["$scope", "$http", @ItemsCtrl = ($scope, $http) ->
     $scope.loading = false
 ]
 
-# app.filter "unique", ->
-#   (input, key) ->
-#     unique = {}
-#     uniqueList = []
-#     i = 0
-
-#     while i < input.length
-#       if typeof unique[input[i][key]] is "undefined"
-#         unique[input[i][key]] = ""
-#         uniqueList.push input[i]
-#       i++
-#     uniqueList
-
 app.controller "VehiclesCtrl", ["$scope", "$http", @VehiclesCtrl = ($scope, $http) ->
   $scope.loading = true
   $http.get("/used.json").success (data) ->

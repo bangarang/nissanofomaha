@@ -12,8 +12,10 @@ class VehiclesController < ApplicationController
         Vehicle.where(newused: 'U', make: p.make ).select("DISTINCT(MODEL)").each do |j|
           tmp << j.model
         end
+        tmp.sort! { |a,b| a[0].downcase <=> b[0].downcase }
         @makes << [p.make, tmp]
     end
+    @makes.sort! { |a,b| a[0].downcase <=> b[0].downcase }
   end
 
   # GET /vehicles/1
@@ -76,6 +78,10 @@ class VehiclesController < ApplicationController
   # end
 
   def import
+
+    ########################################
+    # REMEMBER TO UPDATE THE RAKE TASK TOO #
+    ########################################
 
     # ftp = Net::FTP.new()
     # ftp.passive = true

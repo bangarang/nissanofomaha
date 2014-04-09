@@ -226,3 +226,14 @@ $(document).ready(function() {
 		<a href="/getapproved" class="red_button"><h4>Get Approved</h4></a>
 	</div>
 </div>
+
+<!-- <div class="inventory">
+	<h2 class="title">Check out what we have in Stock</h2>
+	<ul class="inventory_items">
+		<% for v in @inventory %>
+		<li class="inventory_item">
+			<%= v.stock_ %>, $<%= number_with_delimiter(v.price) %>, <%= v.colour %>, <%= v.body %>, <%= v.series_detail %>
+		</li>
+		<% end %>
+	</ul>
+</div> -->
