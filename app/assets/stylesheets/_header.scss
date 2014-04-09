@@ -1,11 +1,12 @@
 header.main {
-	box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+	// box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 	height: 75px;
 	width: 100%;
 	background: white;
 	position: fixed;
 	top: 0;
 	z-index: 100;
+	border-bottom: 3px #ddd solid;
 	nav {
 		@include outer-container;
 		position: relative;
@@ -15,13 +16,17 @@ header.main {
 		ul.menu {
 			display: inline-block;
 			padding-left: 0;
+			margin: 12px 0;
 			li {
 				list-style: none;
 				float: left;
 				position: relative;
-				div.different, div.new-dropdown {
+				
+
+				div.different, div.new-dropdown, div.location, div.phone, div.chat {
 					display: none;
 				}
+
 				div.different.up, div.new-dropdown.up {
 					display: block;
 					position: absolute;
@@ -45,6 +50,7 @@ header.main {
 						border-bottom: 2px $red solid;
 					}
 				}
+				 
 
 				a {
 					font-weight: bold;
@@ -62,6 +68,81 @@ header.main {
 				a.active, a:hover {
 					color: $red;
 				}
+			}
+			li.up {
+				.location-click, .phone-click, .chat-click, .new-dropdown-click, .different-click {
+					color: $red;
+					.top-icon {
+						color: $red;
+					}
+				}
+
+				.location, .phone, .chat, .new-dropdown, .different {
+					display: block;
+					position: absolute;
+					background: white;
+					width: 200px;
+					margin-top: 21px;
+					margin-left: -76px;
+					border: 3px $red solid;
+					a:first-child, a:first-child:hover {
+						border-top: none;
+					}
+					a {
+						display: block;
+						line-height: 50px;
+						text-align: center;
+						text-transform: none;
+						margin: 0;
+						border-top: 1px #999 solid;
+						h4 {
+							margin:0;
+							font-weight: bold;
+						}
+					}
+					a:hover {
+						font-weight: bold;
+						border-color: $red;
+					}
+				}
+				// .location {
+				// 	margin-left: -75px;
+				// }
+				.different {
+					margin-left: -15px;
+					margin-top: 23px;
+				}
+				.new-dropdown {
+					margin-left: -35px;
+					margin-top: 23px;
+				}
+				.location:before, .phone:before, .chat:before, .new-dropdown:before, .different:before {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 0;
+					height: 0;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					border-bottom: 16px solid #c71444;
+					top: -19px;
+					left: 80px;
+				} 
+
+				.location:after, .phone:after, .chat:after, .new-dropdown:after, .different:after {			
+					content: '';
+					position: absolute;
+					display: block;
+					width: 0;
+					height: 0;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					border-bottom: 16px solid white;
+					top: -15px;
+					left: 80px;
+				}
+
+
 			}
 			@include media($tablet) {
 				display:none;
@@ -134,6 +215,18 @@ header.main {
 			right:0;
 		}
 	}
+}
+
+.top-icon {
+	font-size: 24px;
+	line-height: 0;
+	color: #999999;
+	padding: 0 15px;
+	@include transition(0.2s ease-in-out);
+}
+.top-icon:hover {
+	color: $red;
+	cursor: pointer;
 }
 
 .navicontainer {

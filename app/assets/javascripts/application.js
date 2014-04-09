@@ -78,19 +78,9 @@ $(document).ready(function() {
 		$('.model-click').parent().addClass('inactive');
 	});
 
-
-  $(".different-click").click(function() {
-	  $(".different").toggleClass("up");
-	  return false;
-	});
-
-	$(".new-dropdown-click").click(function() {
-	  $(".new-dropdown").toggleClass("up");
-	  return false;
-	});
-	$(".new-dropdown a").click(function() {
-	  $(".new-dropdown").toggleClass("up");
-	});
+	// $(".new-dropdown a").click(function() {
+	//   $(".new-dropdown").toggleClass("up");
+	// });
 
 	$("#interior-click").click(function() {
 		$(this).addClass("active");
@@ -152,6 +142,37 @@ $(document).ready(function() {
 	  $(".mobile-different").toggleClass("up");
 	  return false;
 	});
+ 
+	$(".location-click,.phone-click,.chat-click,.different-click,.new-dropdown-click").click(function() {
+		if ($(this).parent().hasClass("up")) {
+			$(".location-click,.phone-click,.chat-click,.different-click,.new-dropdown-click").parent().removeClass("up");
+		}
+		else {
+			$(".location-click,.phone-click,.chat-click,.different-click,.new-dropdown-click").parent().removeClass("up");
+			$(this).parent().addClass("up");
+		}
+	  return false;
+	});
+
+
+	// $(".phone-click").click(function() {
+	//   $(this).parent().toggleClass("up");
+	//   return false;
+	// });
+	// $(".chat-click").click(function() {
+	//   $(this).parent().toggleClass("up");
+	//   return false;
+	// });
+
+	// $(".different-click").click(function() {
+	//   $(this).parent().toggleClass("up");
+	//   return false;
+	// });
+
+	// $(".new-dropdown-click").click(function() {
+	//   $(this).parent().toggleClass("up");
+	//   return false;
+	// });
 
 	$(".joint-click").click(function() {
 	  $(".joint").toggleClass("up");

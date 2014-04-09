@@ -24,6 +24,26 @@
 			</li>
 			<li><%= link_to "<h4>Used Vehicles</h4>".html_safe, usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
 			<li><a href="/service"><h4>Service</h4></a></li>
+			<li>
+				<a href="#" class="location-click" ><span class="top-icon icon-location"></span></a>
+				<div class="location">
+					<a href="#"><h4>DIRECTIONS</h4></a>
+				</div>
+			</li>
+			<li>
+				<a href="#" class="phone-click" ><span class="top-icon icon-phone"></span></a>
+				<div class="phone">
+					<a href="#"><h4>Sales: 1 (888) 211-1543</h4></a>
+					<a href="#"><h4>Service: 1 (888) 210-4132</h4></a>
+					<a href="#"><h4>Parts: 1 (888) 207-3226</h4></a>
+				</div>
+			</li>
+			<li>
+				<a href="#" class="chat-click" ><span class="top-icon icon-bubble"></span></a>
+				<div class="chat">
+					<a href="#"><h4>Chat Square?</h4></a>
+				</div>
+			</li>
 			<% if signed_in? %>
 			<li><%= link_to "<h4>Sign Out</h4>".html_safe, sign_out_path, :method => :delete %></li>
 			<% end %>
