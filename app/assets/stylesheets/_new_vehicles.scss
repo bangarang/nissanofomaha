@@ -68,10 +68,15 @@ section.newvehicle {
 		}
 		div.count {
 			display: inline-block;
-			h2 {
+			h2 a {
 				margin: 5px 0;
 				font-weight: 100;
 				color: #555;
+				font-size: 20px;
+				text-decoration: none;
+			}
+			a:hover {
+				color: $red;
 			}
 			@include media($tablet) {
 				display: block;
