@@ -335,6 +335,7 @@ div.compare {
 
 div.packages {
 	background: #eeeeee;
+	width: 100%;
 	.label, .package {
 		display:inline-block;
 		width:20%;
@@ -406,7 +407,7 @@ div.packages {
 			color: #777777;
 			font-size: 12px;
 			line-height: 16px;
-			min-height: 100px;
+			height: auto;
 			ul {
 				padding: 0;
 				li {
