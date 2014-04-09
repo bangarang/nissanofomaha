@@ -456,14 +456,6 @@ div#owl-demo {
 	padding: 15px;
 }
 
-.inventory {
-	.title {
-		font-weight: 100;
-		color: #777;
-		text-align: center;
-	}
-}
-
 .edit_nav {
 	text-align: center;
 	.link {
@@ -497,6 +489,46 @@ div.hint {
 		margin-top:0;
 	}
 }
+
+
+
+.inventory {
+	@include outer-container;
+	.title {
+		font-weight: 100;
+		color: #777;
+		text-align: center;
+	}
+
+	table {
+		width: 100%;
+		margin-bottom: 50px;
+		thead {
+			text-transform: uppercase;
+			color: #222;
+			font-size: 12px;
+			line-height: 50px;
+			background: #ddd;
+		}
+
+		tbody {
+			tr {
+				text-align: center;
+				line-height: 30px;
+				font-size: 15px;
+			}
+			tr:nth-child(2n) {
+				background: #eee;
+
+			}
+			tr:hover {
+				background: #FFF2F2;
+			}
+		}
+	}
+}
+
+
 .threesixty_container {
 	position: relative;
 }

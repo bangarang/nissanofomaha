@@ -227,13 +227,30 @@ $(document).ready(function() {
 	</div>
 </div>
 
-<!-- <div class="inventory">
+<% if @inventory %>
+<div class="inventory">
 	<h2 class="title">Check out what we have in Stock</h2>
-	<ul class="inventory_items">
-		<% for v in @inventory %>
-		<li class="inventory_item">
-			<%= v.stock_ %>, $<%= number_with_delimiter(v.price) %>, <%= v.colour %>, <%= v.body %>, <%= v.series_detail %>
-		</li>
-		<% end %>
-	</ul>
-</div> -->
+	<table>
+	  <thead>
+	    <tr>
+	      <th width="200">Stock Number</th>
+	      <th>Color</th>
+	      <th width="150">Body Style</th>
+	      <th width="150">Price</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% for v in @inventory %>
+	    <tr>
+	      <td><%= v.stock_ %></td>
+	      <td><%= v.colour %></td>
+	      <td><%= v.body %></td>
+	      <td>$<%= number_with_delimiter(v.price) %></td>
+	    </tr>
+	    <% end %>
+	    
+	  </tbody>
+	</table>
+</div>
+
+<% end %>

@@ -16,6 +16,8 @@
     
     <%= javascript_include_tag "application" %>
     
+
+    <% if Rails.env.production? %>
     <!--START: CarChat24 Monitoring and Tracking Code: Put this in the HEAD section of your HTML Page -->
     <script type="text/javascript">
       _siteid = "138479c9-7a2c-47b9-86f2-292cdcbdef2f";
@@ -31,7 +33,7 @@
       comCC24StartFunctioning(window.location.protocol + "//service11.carchat24.com/VisitorManager/Scripts/comCC24DomReady.js");
     </script>
     <!--END: CarChat24 Monitoring and Tracking Code-->
-
+    <% end %>
     <!--[if lt IE 9]>
       <%= javascript_include_tag 'html5shiv-printshiv' %>
     <![endif]-->
