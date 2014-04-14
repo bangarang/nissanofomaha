@@ -20,7 +20,6 @@ header.main {
 			li {
 				list-style: none;
 				float: left;
-				position: relative;
 				
 
 				div.different, div.new-dropdown, div.location, div.phone, div.chat {
@@ -107,8 +106,17 @@ header.main {
 				}
 				.location {
 					padding: 20px;
-					width: 800px;
-					margin-left: -600px;
+					width: 100%;
+					right: 0;
+					.title {
+						font-weight: 100;
+						color: #777;
+						text-align: center;
+						margin-top: 0;
+						span {
+							color: $red;
+						}
+					}
 				}
 				.different {
 					margin-left: -15px;
@@ -145,8 +153,7 @@ header.main {
 				}
 
 				.location:before, .location:after {
-					right: 153px;
-					left: auto;
+					left: 693px;
 				}
 
 
@@ -173,7 +180,6 @@ header.main {
 				border-top: 2px #eee solid;
 				li {
 					list-style: none;
-					position: relative;
 					border-bottom: 2px #eee solid;
 
 					div.mobile-different {
