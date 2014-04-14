@@ -84,7 +84,7 @@ header.main {
 					width: 200px;
 					margin-top: 21px;
 					margin-left: -76px;
-					border: 3px $red solid;
+					border-top: 3px $red solid;
 					a:first-child, a:first-child:hover {
 						border-top: none;
 					}
@@ -145,7 +145,7 @@ header.main {
 				}
 
 				.location:before, .location:after {
-					right: 150px;
+					right: 153px;
 					left: auto;
 				}
 
@@ -213,6 +213,59 @@ header.main {
 					}
 					a.active, a:hover {
 						color: $red;
+					}
+				}
+
+				.call {
+					width: 50%;
+					text-align: left;
+					float: left;
+					.phone-title {
+						text-align: left;
+						font-weight: normal;
+						font-size: 10px;
+						display: inline-block;
+					}
+					ul {
+						padding-left: 0;
+						li {
+							
+							a {
+								.icon-phone {
+									background: $red;
+									color: white;
+									line-height: 30px;
+									display: inline-block;
+									padding: 0 10px;
+									display: block;
+									text-align: center;
+									font-size: 15px;
+									@include transition (all 0.1s ease-in-out);
+								}
+								.icon-phone:before {
+									padding-right: 10px;
+								}
+							}
+							a:hover {
+								.icon-phone {
+									background: $darkred;
+								}
+							}
+						}
+					}
+				}
+
+				.find {
+					height: 95px;
+					width: 50%;
+					display: inline-block;
+					float: left;
+					background-size:cover;
+					background-position: center;
+					a.findable {
+						height: 100%;
+						width: 100%;
+						display: inline-block;
 					}
 				}
 			}
