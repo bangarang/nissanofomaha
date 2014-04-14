@@ -149,7 +149,7 @@ $(document).ready(function() {
 		}
 		else {
 			$(".location-click,.phone-click,.chat-click,.different-click,.new-dropdown-click").parent().removeClass("up");
-			$(this).parent().addClass("up");
+			$(this).parent().toggleClass("up");
 		}
 	  return false;
 	});
@@ -197,6 +197,14 @@ $(document).ready(function() {
     $('.usedImageWrapper img').fadeOut(100,function(){
         $(this).fadeIn(400)[0].src = src;
     });
+	});
+
+	$('.location-click').one('click', function(){
+	  var script = document.createElement('script');
+	  script.type = 'text/javascript';
+	  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD_5fB5uxOVsa0GbQUvLRglI4QClaBoUbU&sensor=true&' +
+	      'callback=initialize';
+	  document.body.appendChild(script);
 	});
 
 });

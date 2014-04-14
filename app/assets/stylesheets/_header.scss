@@ -105,9 +105,11 @@ header.main {
 						border-color: $red;
 					}
 				}
-				// .location {
-				// 	margin-left: -75px;
-				// }
+				.location {
+					padding: 20px;
+					width: 800px;
+					margin-left: -600px;
+				}
 				.different {
 					margin-left: -15px;
 					margin-top: 23px;
@@ -140,6 +142,11 @@ header.main {
 					border-bottom: 16px solid white;
 					top: -15px;
 					left: 80px;
+				}
+
+				.location:before, .location:after {
+					right: 150px;
+					left: auto;
 				}
 
 
