@@ -16,3 +16,4 @@
 /tmp
 
 /config/initializers/_env.rb
+/gitignore
