@@ -13,7 +13,19 @@ function initialize() {
   var marker = new google.maps.Marker({
       position: mark,
       map: map,
-      title:"Hello World!"
+      title:"Nissan of Omaha"
+  });
+
+    var contentString = '<div id="content">'+
+      '<a href="https://www.google.com/maps/dir///@41.2648229,-96.2226255,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x0:0x6f391bb2b64a5b08!2m2!1d-96.188293!2d41.264828">Get Directions</a>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
   });
 }
 
