@@ -8,9 +8,6 @@
 			  <h4>2014 Nissan</h4>
 			  <h1><%= @new_vehicle.name.html_safe %></h1>
 			</div>
-			<div class="count">
-				<a href="#inventory" class="red_button small"><p>Current Inventory</p></a>
-			</div>
 			<div class="info">
 				<div class="spec">
 					<% if @inventory %>
@@ -31,9 +28,17 @@
 			<h2><%= @new_vehicle.headline %></h2>
 			<p><%= @new_vehicle.description %></p>
 		</div>
+
+		<div class="count">
+			<a href="#inventory" class="red_button small"><p>Current Inventory</p></a>
+		</div>
 		<% if signed_in? %>
-			<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
-			<%= link_to 'Back', new_vehicles_path %>
+		<div>
+			<p>
+				<%= link_to 'Edit', edit_new_vehicle_path(@new_vehicle) %> |
+				<%= link_to 'Back', new_vehicles_path %>
+			</p>
+		</div>
 		<% end %>
 		
 		<% unless @new_vehicle.exteriors.empty? && @new_vehicle.interiors.empty? %>
