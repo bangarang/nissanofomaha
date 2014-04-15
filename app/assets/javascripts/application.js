@@ -212,4 +212,20 @@ $(document).ready(function() {
 	  document.body.appendChild(script);
 	});
 
-});
+
+  function a() {
+   	$(".lazy").lazyload({
+	      effect : "fadeIn"
+	  });
+    b();
+	}
+
+	function b() {
+	    $(window).resize();
+	}
+
+	a();
+
+	$(document).load('function_a_complete', b);
+
+	});

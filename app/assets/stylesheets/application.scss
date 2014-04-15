@@ -17,6 +17,12 @@
 
 @import "nissan-ag";
 
+$gray: #999;
+$lightgray: #DDDDDD;
+$darkgray: #666666;
+$red: #C71444;
+$darkred: #B30030;
+
 html, body {
   margin: 0;
   width: 100%;
@@ -30,11 +36,6 @@ img.full {
   width: 100%;
   display: block;
 }
-$gray: #999;
-$lightgray: #DDDDDD;
-$darkgray: #666666;
-$red: #C71444;
-$darkred: #B30030;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'nissan-ag';
