@@ -68,6 +68,9 @@ section.newvehicle {
 		}
 		div.count {
 			display: inline-block;
+			a.red_button.small {
+				display: block;
+			}
 			h2 a {
 				margin: 5px 0;
 				font-weight: 100;

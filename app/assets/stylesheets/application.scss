@@ -61,6 +61,11 @@ div.container {
 .fourofour {
 	padding: 10% 0;
 }
+@include media($tablet) {
+  #inviteCallout_759FE10B-E863 {
+    display: none !important;
+  }
+}
 
 
 @import "owl.carousel";
