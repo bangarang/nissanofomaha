@@ -39,14 +39,12 @@
 					<a href="#"><h4>Parts: 1 (888) 207-3226</h4></a>
 				</div>
 			</li>
-			<li>
-				<a href="#" class="new_chat_click" ><span class="top-icon icon-bubble" ></span></a>
-				<div class="chat">
-					<div id="28B21973-CABE-4652-8BBC-B415BAB1AAE1" style="display:inline-block; position:relative;"></div>
-				</div>
-			</li>
 			<% if signed_in? %>
 			<li><%= link_to "<h4>Sign Out</h4>".html_safe, sign_out_path, :method => :delete %></li>
+			<% else %>
+			<li>
+				<a href="#" class="new_chat_click" ><span class="top-icon icon-bubble" ></span></a>
+			</li>
 			<% end %>
 		</ul>
 		
