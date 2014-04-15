@@ -1,4 +1,4 @@
-div.new_vehicle_form, div.test_ride_form, div.credit_application_form{
+.new_vehicle_form, .test_ride_form, .credit_application_form, .password-reset, .sign-in  {
 	.group {
 		@include outer-container;
 		background: #EEEEEE;
@@ -412,37 +412,6 @@ div.actions {
 
 }
 	
-
-// .red_checkbox {
-//   margin: 4px;
-//   background-color: #EFEFEF;
-//   border-radius: 4px;
-//   border: 1px solid #D0D0D0;
-//   overflow: auto;
-//   float: left;
-// 	label {
-//     float:left;
-//     width:4.0em;
-//     span {
-// 	    text-align:center;
-// 	    padding:3px 0px;
-// 	    display:block;
-// 	    border-radius:4px;
-// 		}
-// 		input {
-// 	    position:absolute;
-// 	    top:-20px;
-// 		}
-// 	}
-// 	input:hover + span {
-//     background-color:#efE0E0;
-// 	}
-// 	input:checked + span {
-//     background-color:#911;
-//     color:#fff;
-// 	}
-// 	input:checked:hover + span {
-//     background-color:#c11;
-//     color:#fff;
-// 	}
-// }
+.other-links {
+	margin-bottom: 50px;
+}

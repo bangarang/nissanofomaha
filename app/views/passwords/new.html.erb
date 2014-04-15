@@ -1,16 +1,22 @@
-<div id='clearance' class='password-reset'>
-  <h2><%= t '.title' %></h2>
-
-  <p><%= t '.description' %></p>
+<div id='clearance' class='container password-reset'>
 
   <%= form_for :password, :url => passwords_path do |form| %>
-    <div class='text-field'>
-      <%= form.label :email %>
-      <%= form.text_field :email, :type => 'email' %>
+  <section class="form_section">
+    <h2 class="thin_form_title"><%= t '.title' %></h2>
+    <h5 class="subtitle"><%= t '.description' %></h5>
+    <div class="the_fields">
+      <div class="text_field">
+        <div class="gray_label fifth">
+          <p><%= form.label :email %></p>
+        </div>
+        <div class="text_field_content">
+          <%= form.text_field :email, :type => 'email' %>
+        </div>
+      </div>
     </div>
-
-    <div class='submit-field'>
-      <%= form.submit %>
-    </div>
+  </section>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
   <% end %>
 </div>

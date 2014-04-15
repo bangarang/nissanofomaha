@@ -239,7 +239,7 @@ $(document).ready(function() {
 
 <% if @vauto_count > 0 %>
 <div class="inventory" id="inventory">
-	<h2 class="title">Take a look at the <%= @vauto_count %> we have in stock.</h2>
+	<h2 class="title">Take a look at the <%= @vauto_count %>  <%= @vauto_name.pluralize %> we have in stock.</h2>
 	<table>
 	  <thead>
 	    <tr>

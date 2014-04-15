@@ -1,30 +1,32 @@
-<div class="test_ride_form">
-  <%= form_for :session, :url => session_path do |form| %>
-
-    <div class="field">
-      <div class="pref_cont">
-        <label class="prefix">E-Mail</label>
+<%= form_for :session, :url => session_path do |form| %>
+  
+  <div class="the_fields">
+    <div class="text_field">
+      <div class="gray_label fifth">
+        <p>E-Mail Address</p>
       </div>
-      <div class="input_cont">
+      <div class="text_field_content">
         <%= form.text_field :email, :type => 'email', placeholder: 'you@example.com' %>
       </div>
     </div>
-    
-    <div class="field">
-      <div class="pref_cont">
-        <label class="prefix">Password</label>
+  </div>
+  <div class="the_fields">
+    <div class="text_field">
+      <div class="gray_label fifth">
+        <p>Password</p>
       </div>
-      <div class="input_cont">
-        <%= form.password_field :password %>
+      <div class="text_field_content">
+        <%= form.password_field :password, placeholder: 'password' %>
       </div>
     </div>
+  </div>
 
-    <div class="actions">
-      <input name="commit" type="submit" value="Sign In">
-    </div>
-    <div class='other-links'>
-      <!-- <%= link_to t('.sign_up'), sign_up_path %> -->
-      <%= link_to t('.forgot_password'), new_password_path %>
-    </div>
-  <% end %>
-</div>
+
+  <div class="actions">
+    <input name="commit" type="submit" value="Sign In">
+  </div>
+  <div class='other-links'>
+    <!-- <%= link_to t('.sign_up'), sign_up_path %> -->
+    <%= link_to '<p>forgot password?</p>'.html_safe, new_password_path, class: 'red_button small' %>
+  </div>
+<% end %>
