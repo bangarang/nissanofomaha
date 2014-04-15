@@ -75,6 +75,30 @@ header.main {
 						color: $red;
 					}
 				}
+				.location-click:before {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 0;
+					height: 0;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					border-bottom: 16px solid #c71444;
+					top: -19px;
+					left: 80px;
+				}
+				.location-click:after {			
+					content: '';
+					position: absolute;
+					display: block;
+					width: 0;
+					height: 0;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					border-bottom: 16px solid white;
+					top: -15px;
+					left: 80px;
+				}
 
 				.location, .phone, .chat, .new-dropdown, .different {
 					display: block;
@@ -126,7 +150,7 @@ header.main {
 					margin-left: -35px;
 					margin-top: 23px;
 				}
-				.location:before, .phone:before, .chat:before, .new-dropdown:before, .different:before {
+				.phone:before, .chat:before, .new-dropdown:before, .different:before {
 					content: '';
 					position: absolute;
 					display: block;
@@ -139,7 +163,7 @@ header.main {
 					left: 80px;
 				} 
 
-				.location:after, .phone:after, .chat:after, .new-dropdown:after, .different:after {			
+				.phone:after, .chat:after, .new-dropdown:after, .different:after {			
 					content: '';
 					position: absolute;
 					display: block;
