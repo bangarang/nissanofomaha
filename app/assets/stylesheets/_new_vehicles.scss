@@ -75,9 +75,6 @@ section.newvehicle {
 				font-size: 20px;
 				text-decoration: none;
 			}
-			a:hover {
-				color: $red;
-			}
 			@include media($tablet) {
 				display: block;
 				h2 {

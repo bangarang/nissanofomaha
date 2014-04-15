@@ -9,12 +9,17 @@
 			  <h1><%= @new_vehicle.name.html_safe %></h1>
 			</div>
 			<div class="count">
-			  <h2><a href="#inventory"><% if @vauto_count > 5 %>More than <%= @vauto_count %> in stock.<% else %>Less than 5 in stock.<% end %></a></h2>
+				<a href="#inventory" class="red_button small"><p>Current Inventory</p></a>
 			</div>
 			<div class="info">
 				<div class="spec">
+					<% if @inventory %>
+					<h3 class="title">Starting at</h3>
+			  	<h3 class="content">$<%= number_with_delimiter(@inventory.first.price) %></h3>
+			  	<% else %>
 					<h3 class="title">Starting MSRP*</h3>
 			  	<h3 class="content">$<%= number_with_delimiter(@new_vehicle.msrp) %></h3>
+			  	<% end %>
 				</div>
 				<div class="spec">
 					<h3 class="title">City/Hwy MPG*</h3>
@@ -227,9 +232,9 @@ $(document).ready(function() {
 	</div>
 </div>
 
-<% if @inventory %>
+<% if @vauto_count > 0 %>
 <div class="inventory" id="inventory">
-	<h2 class="title">Check out what we have in Stock</h2>
+	<h2 class="title">We have <%= @vauto_count.to_words %> in stock.</h2>
 	<table>
 	  <thead>
 	    <tr>
