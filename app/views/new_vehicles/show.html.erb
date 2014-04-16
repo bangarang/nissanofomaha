@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="count">
-			<a href="#inventory" class="red_button small"><p>Current Inventory</p></a>
+			<a href="#inventory" class="red_button small"><p>View Current Inventory</p></a>
 		</div>
 		<% if signed_in? %>
 		<div>
@@ -182,6 +182,7 @@ $(document).ready(function() {
 	
 </div>
 
+<% if @new_vehicle.packages %>
 <div class="compare">
 	<h2 class="title">Compare 2014 Nissan <%= @new_vehicle.name.html_safe %> Versions & Specs</h2>
 	<div class="controllable">
@@ -230,6 +231,8 @@ $(document).ready(function() {
 	<% end %>
 	</div>
 </div>
+<% end %>
+
 <div class="container">
 	<div class="links">
 		<a href="/scheduleajoyride" class="red_button"><h4>Schedule a Joy Ride</h4></a>
@@ -239,7 +242,7 @@ $(document).ready(function() {
 
 <% if @vauto_count > 0 %>
 <div class="inventory" id="inventory">
-	<h2 class="title">Take a look at the <%= @vauto_count %>  <%= @vauto_name.pluralize %> we have in stock.</h2>
+	<h2 class="title">Take a look at the <%= @vauto_count %>  <%= @new_vehicle.vauto_name.pluralize %> we have in stock.</h2>
 	<table>
 	  <thead>
 	    <tr>

@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery.reel
 //= require jquery_ujs
@@ -77,10 +65,6 @@ $(document).ready(function() {
 	$('.make li.showall').click(function() {
 		$('.model-click').parent().addClass('inactive');
 	});
-
-	// $(".new-dropdown a").click(function() {
-	//   $(".new-dropdown").toggleClass("up");
-	// });
 
 	$("#interior-click").click(function() {
 		$(this).addClass("active");
@@ -160,32 +144,9 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// $(".phone-click").click(function() {
-	//   $(this).parent().toggleClass("up");
-	//   return false;
-	// });
-	// $(".chat-click").click(function() {
-	//   $(this).parent().toggleClass("up");
-	//   return false;
-	// });
-
-	// $(".different-click").click(function() {
-	//   $(this).parent().toggleClass("up");
-	//   return false;
-	// });
-
-	// $(".new-dropdown-click").click(function() {
-	//   $(this).parent().toggleClass("up");
-	//   return false;
-	// });
-
 	$(".joint-click").click(function() {
 	  $(".joint").toggleClass("up");
 	});
-
-	// $(".vehicles li .vehicle .bottom p.ma.ng-binding").hover(function() {
-	//   $(".bottom_comments .ma").addClass("up");
-	// });
 
 	$('ul.vehicles').on("mouseenter mouseleave", ".bottom .chips p.ma", function(e){
     $(this).parent().parent().find('.comments p.ma').toggleClass("up");
