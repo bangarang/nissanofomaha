@@ -4,7 +4,7 @@ class ImportsController < ApplicationController
   # GET /imports
   # GET /imports.json
   def index
-    @imports = Import.all.reverse
+    @imports = Import.all.order(:current).reverse
   end
 
   # GET /imports/1

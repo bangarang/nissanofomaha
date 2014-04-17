@@ -1,27 +1,41 @@
 <div class="container">
-  <h1>Backups</h1>
-  <% @imports.each do |import| %>
-  <div class="backup<%= " latest" if import.latest %>">
-    <h6>Last Import: <%= import.current.to_formatted_s(:long_ordinal) if import.current  %></h6><!-- 
---><h6>Initial Import: <%= import.import_time.to_formatted_s(:long_ordinal) if import.import_time %></h6><!-- 
---><h6 class="restore"><%= link_to 'Restore', restore_path(:import_id => import) %></h6>
-    <%= link_to '×', import, method: :delete, data: { confirm: 'Are you sure?' }, class: 'close' %>
-  </div>
-  <% end %>
-  <br>
-
-  <%= link_to 'New Import', new_import_path %>
-
-  <div>
-    <%= form_tag import_latest_path do %>
-      <%= submit_tag "Import Latest File", class: "button" %>
+  <h1 class="backup_title">Backups</h1>
+  <table class="backups">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Last Import: </th>
+        <th>Initial Import:</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @imports.each do |import| %>
+      <tr class="backup<%= " latest" if import.latest %>">
+        <td><label class="current">Current</label></td>
+        <td><%= import.current.to_formatted_s(:long_ordinal) if import.current  %></td>
+        <td><%= import.import_time.to_formatted_s(:long_ordinal) if import.import_time %></td>
+        <td class="restore"><%= link_to 'Import', restore_path(:import_id => import) %></td>
+        <td><%= link_to '×', import, method: :delete, data: { confirm: 'Are you sure?' }, class: 'close' %></td>
+      </tr>
     <% end %>
+    </tbody>
+  </table>
+  <h1 class="backup_title">Controls</h1>
+  <div class="import-links">
+    <div class="link">
+      <%= link_to 'Upload File', new_import_path %>
+    </div>
+    <div class="link">
+      <%= form_tag import_latest_path do %>
+        <%= submit_tag "Use Latest Backup", class: "button" %>
+      <% end %>
+    </div>
+    <div class="link">
+      <%= form_tag import_ftp_path do %>
+        <%= submit_tag "Import from FTP Site", class: "button" %>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= form_tag import_ftp_path do %>
-      <%= submit_tag "Import FTP File", class: "button" %>
-    <% end %>
-  </div>
-
-
 </div>  
