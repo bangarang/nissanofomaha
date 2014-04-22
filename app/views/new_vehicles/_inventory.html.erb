@@ -25,3 +25,12 @@
 </div>
 
 <% end %>
+
+
+					<% if @inventory %>
+					<h3 class="title">Starting at</h3>
+			  	<h3 class="content">$<%= number_with_delimiter(@inventory.first.price) %></h3>
+			  	<% else %>
+					<h3 class="title">Starting MSRP*</h3>
+			  	<h3 class="content">$<%= number_with_delimiter(@new_vehicle.msrp) %></h3>
+			  	<% end %>
