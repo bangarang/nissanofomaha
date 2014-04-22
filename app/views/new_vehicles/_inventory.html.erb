@@ -1,0 +1,27 @@
+<% if @vauto_count > 0 %>
+<div class="inventory" id="inventory">
+	<h2 class="title">Take a look at the <%= @vauto_count %>  <%= @new_vehicle.vauto_name.pluralize %> we have in stock.</h2>
+	<table>
+	  <thead>
+	    <tr>
+	      <th width="200">Stock Number</th>
+	      <th>Color</th>
+	      <th width="150">Body Style</th>
+	      <th width="150">Price</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% for v in @inventory %>
+	    <tr>
+	      <td><%= v.stock_ %></td>
+	      <td><%= v.colour %></td>
+	      <td><%= v.body %></td>
+	      <td>$<%= number_with_delimiter(v.price) %></td>
+	    </tr>
+	    <% end %>
+	    
+	  </tbody>
+	</table>
+</div>
+
+<% end %>
