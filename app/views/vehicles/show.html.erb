@@ -258,6 +258,17 @@
 			</div>
 			<% end %>
 
+			<% if @vehicle.series %>
+			<div class="spec">
+				<div class="spec_title">
+					<h5>Series Detail</h5>
+				</div>
+				<div class="spec_info">
+					<h3><%= @vehicle.series_detail %></h3>
+				</div>
+			</div>
+			<% end %>
+
 			<% if @vehicle.inspection_checklist_ %>
 			<div class="spec">
 				<div class="spec_title">

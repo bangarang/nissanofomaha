@@ -10,8 +10,13 @@
 			</div>
 			<div class="info">
 				<div class="spec">
+					<% if @inventory %>
+					<h3 class="title">Starting at</h3>
+			  	<h3 class="content">$<%= number_with_delimiter(@inventory.first.price) %></h3>
+			  	<% else %>
 					<h3 class="title">Starting MSRP*</h3>
 			  	<h3 class="content">$<%= number_with_delimiter(@new_vehicle.msrp) %></h3>
+			  	<% end %>
 				</div>
 				<div class="spec">
 					<h3 class="title">City/Hwy MPG*</h3>
@@ -24,6 +29,9 @@
 			<p><%= @new_vehicle.description %></p>
 		</div>
 
+		<div class="count">
+			<a href="#inventory" class="red_button small"><p>View Current Inventory</p></a>
+		</div>
 		<% if signed_in? %>
 		<div>
 			<p>
@@ -231,3 +239,31 @@ $(document).ready(function() {
 		<a href="/getapproved" class="red_button"><h4>Get Approved</h4></a>
 	</div>
 </div>
+
+<% if @vauto_count > 0 %>
+<div class="inventory" id="inventory">
+	<h2 class="title">Take a look at the <%= @vauto_count %>  <%= @new_vehicle.vauto_name.pluralize %> we have in stock.</h2>
+	<table>
+	  <thead>
+	    <tr>
+	      <th width="200">Stock Number</th>
+	      <th>Color</th>
+	      <th width="150">Body Style</th>
+	      <th width="150">Price</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% for v in @inventory %>
+	    <tr>
+	      <td><%= v.stock_ %></td>
+	      <td><%= v.colour %></td>
+	      <td><%= v.body %></td>
+	      <td>$<%= number_with_delimiter(v.price) %></td>
+	    </tr>
+	    <% end %>
+	    
+	  </tbody>
+	</table>
+</div>
+
+<% end %>
