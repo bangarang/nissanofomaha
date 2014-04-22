@@ -13,7 +13,7 @@
 		@include outer-container;
 		@include media($tablet) {
 		}
-		.group {
+		.group, section.column {
 			@include span-columns(6);
 			@include media($tablet) {
 				margin: 15px auto;
@@ -166,10 +166,14 @@
 	}
 
 	.joint-click {
-		cursor:pointer;
-		@include transition(0.2s); 
+		cursor:pointer; 
+		line-height: 50px;
+		.subtitle {
+			@include transition(0.2s); 
+			margin: 0;
+		}
 	}
-	.joint-click:hover {
+	.joint-click:hover .subtitle {
 		color: $darkred;
 	}
 	.joint {
@@ -302,6 +306,14 @@ div.actions {
 
 	.text_field.half {
 		@include span-columns(6);
+		@include media($mobile) {
+			@include span-columns(4);
+			margin: 5px 0;
+		}
+	}
+
+	.text_field.third {
+		@include span-columns(4);
 		@include media($mobile) {
 			@include span-columns(4);
 			margin: 5px 0;
