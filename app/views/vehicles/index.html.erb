@@ -1,11 +1,12 @@
 <% provide(:title, 'Used Vehicles') %>
-<section class="main_top used_top" style="background-image: url(<%= asset_path('used_cars.jpg') %>)">
-  <div class="container used_main">
-    <h2>THE EXPERIENCE IS ANYTHING BUT SECONDHAND</h2>
-    <p>At Nissan of Omaha, our technicians prep each vehicle for the lot with a rigorous inspection, making sure you’re bringing home just what you expect. Buying used here doesn’t mean crossing your fingers and leaving with a bunch of unanswered questions. Our customer service training extends beyond the shiny new car showroom. Whatever your price range may be, we’ll help find a great match from our rotating, expansive selection of used and certified pre-owned vehicles. Come shop with us at Nissan of Omaha today. 
-</h2>
-  </div>
-</section>
+<div class="gray_back">
+  <section class="main_top used_top lazy" data-original="<%= asset_path('used_cars.jpg') %>"style="background-image: url()">
+    <div class="container used_main">
+      <h2>THE EXPERIENCE IS ANYTHING BUT SECONDHAND</h2>
+      <p>At Nissan of Omaha, our technicians prep each vehicle for the lot with a rigorous inspection, making sure you’re bringing home just what you expect. Buying used here doesn’t mean crossing your fingers and leaving with a bunch of unanswered questions. Our customer service training extends beyond the shiny new car showroom. Whatever your price range may be, we’ll help find a great match from our rotating, expansive selection of used and certified pre-owned vehicles. Come shop with us at Nissan of Omaha today. 
+    </div>
+  </section>
+</div>
 
 <div class="filter">
   <h3>Filter Your Results</h3>
@@ -90,7 +91,7 @@
                     <span ng-show="{{item.city_mpg}}">{{item.city_mpg}}</span>
                     <span ng-show="{{item.city_mpg&&item.highway_mpg}}">/</span>
                     <span ng-show="{{item.highway_mpg}}">{{item.highway_mpg}}</span></p>
-                  <p class="mileage">{{item.mileage }} k</p>
+                  <p class="mileage">{{item.mileage}} k</p>
                 </div>
                 
               </div>

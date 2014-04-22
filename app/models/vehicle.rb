@@ -14,7 +14,9 @@ class Vehicle < ActiveRecord::Base
 	end
 
 	def mileage
-		(self.odometer / 1000)
+		unless self.odometer.blank?
+			(self.odometer / 1000)
+		end
 	end
 
 	def photos 
