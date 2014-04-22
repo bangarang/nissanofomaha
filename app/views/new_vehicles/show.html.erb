@@ -248,6 +248,7 @@ $(document).ready(function() {
 	    <tr>
 	      <th width="200">Stock Number</th>
 	      <th>Color</th>
+	      <th width="150">Series</th>
 	      <th width="150">Body Style</th>
 	      <th width="150">Price</th>
 	    </tr>
@@ -257,6 +258,7 @@ $(document).ready(function() {
 	    <tr>
 	      <td><%= v.stock_ %></td>
 	      <td><%= v.colour %></td>
+	      <td><%= v.series %></td>
 	      <td><%= v.body %></td>
 	      <td>$<%= number_with_delimiter(v.price) %></td>
 	    </tr>
