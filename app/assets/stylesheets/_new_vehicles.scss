@@ -69,7 +69,7 @@ section.newvehicle {
 		div.count {
 			display: inline-block;
 			a.red_button.small {
-				display: block;
+				display: table;
 			}
 			h2 a {
 				margin: 5px 0;
@@ -119,6 +119,13 @@ section.newvehicle {
 			}
 		}
 		border-bottom: 2px solid $red;
+	}
+
+	a.red_button.small {
+		display: table;
+		@include media($tablet) {
+			margin: auto;
+		}
 	}
 	div.description {
 		color: #777777;
@@ -491,8 +498,7 @@ div.hint {
 	margin-top: -60px;
 	@include transition(.2s);
 	@include media($tablet) {
-		top: 0;
-		margin-top:0;
+		opacity: 0;
 	}
 }
 

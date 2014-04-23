@@ -22,12 +22,9 @@ header.main {
 			margin: 0;
 			width: 100%;
 			padding: 0 90px 0 145px;
-			line-height: 75px;
 			li {
 				list-style: none;
 				float: left;
-				
-
 				div.different, div.new-dropdown, div.location, div.phone, div.chat {
 					display: none;
 				}
@@ -56,6 +53,9 @@ header.main {
 					}
 				}
 				 
+			 .top-icon {
+					line-height: 75px;
+				}
 
 				a {
 					font-weight: bold;
@@ -64,6 +64,7 @@ header.main {
 					text-decoration: none;
 					
 					h4 {
+						line-height: 75px;
 						font-size: 13px;
 						margin: 0 17px 0 0;
 						@include media($header) {
@@ -106,6 +107,7 @@ header.main {
 						h4 {
 							margin:0;
 							font-weight: bold;
+							line-height:50px;
 						}
 					}
 					a:hover {
@@ -450,6 +452,9 @@ $color: #777;
 	  &:before { top: $button-size/4; }
 	  &:after { top: -$button-size/4; }
 	}
+}
+.lines-button.x.close {
+	padding: 25px 10px;
 }
 
 .lines-button.x.close .lines{

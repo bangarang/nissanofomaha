@@ -142,6 +142,11 @@ $(document).ready(function() {
 		$(".location-click,.phone-click,.chat-click,.different-click,.new-dropdown-click").parent().removeClass("up");
 	});
 
+	$('#map-canvas').click( function(event){
+	    event.stopPropagation();
+	});
+
+
 	$('.new_chat_click').click(function(){
 		window.open ("https://service11.carchat24.com/VisitorManager/ChatWindows/Web/Chat_Condensed.aspx?sid=db618f91-9e97-49e6-85db-b7c88c9cd164&pid=1b2229e2-ee8b-414b-b673-ad9e5a7a500f&siteid=138479c9-7a2c-47b9-86f2-292cdcbdef2f&subscriberid=db5aa9e4-2b4e-426b-a2e1-03f11a2697af&inviteId=00000000-0000-0000-0000-000000000000&page_type=PreChat&targetuser=&templateId=5786ff6e-21d7-4611-8387-17b5fcdc4cf3&userTemplateId=8f9de122-07d0-46bf-b7a2-b957df8bdb42&source=1"
 			, "mywindow","menubar=1,resizable=1,width=500,height=525");
