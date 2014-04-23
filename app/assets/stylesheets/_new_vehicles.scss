@@ -510,6 +510,14 @@ div.hint {
 		font-weight: 100;
 		color: #777;
 		text-align: center;
+		a {
+			text-decoration: none;
+			color: $red;
+			@include transition(.1s);
+		}
+		a:hover {
+			color: $darkred;
+		}
 	}
 
 	table {
