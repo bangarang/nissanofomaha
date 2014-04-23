@@ -306,7 +306,7 @@ section.main_top.used_top {
 }
 
 .used_main {
-	padding: 5% 15px 20%;
+	padding: 5% 15px 20% !important;
 	@include media($big) {
 		padding: 50px 15px 200px;
 	}
