@@ -158,6 +158,7 @@
 }
 
 .vehiclegroup {
+	@include outer-container;
 	ul.vehicles {
 		padding: 0;
 		li {

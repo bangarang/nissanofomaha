@@ -227,7 +227,6 @@ div.actions {
 	.gray_label {
 		background: #eee;
 		text-align: center;
-		border-radius: 5px;
 		.gray_label_content {
 			font-weight: 100;
 			font-size: 15px;
@@ -260,8 +259,6 @@ div.actions {
 			}
 		}
 		border: 2px solid #eee;
-		border-bottom-right-radius: 0px;
-		border-top-right-radius: 0px;
 	}
 	.text_field_content {
 		width: 60%;
@@ -283,24 +280,25 @@ div.actions {
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
-			-webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
-			-moz-transition: -moz-box-shadow 0.45s, border-color 0.45s ease-in-out;
-			transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+			-webkit-transition: -webkit-box-shadow 0.1s, border-color 0.1s ease-in-out;
+			-moz-transition: -moz-box-shadow 0.1s, border-color 0.1s ease-in-out;
+			transition: box-shadow 0.1s, border-color 0.1s ease-in-out;
 			-webkit-transition: all 0.15s linear;
 			-moz-transition: all 0.15s linear;
 			transition: all 0.15s linear;
 
 			border: 2px solid #eee;
-			border-bottom-right-radius: 5px;
-			border-top-right-radius: 5px;
 
 			@include media($mobile) {
 				font-size: 12px;
 				padding: 12px;
 			}
-
+			outline: none;
 		}
-
+		input:focus {
+			border-color: #777;
+			box-shadow: none;
+		}
 
 	}
 

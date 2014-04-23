@@ -1,6 +1,8 @@
 <header class="main">
 	<nav>
-		<a href="/"><%= image_tag("logo.png", :class => "logo") %></a>
+		<div class="logo">
+			<a href="/"><%= image_tag("logo.png") %></a>
+		</div>
 		<div class="lines-button" type="button" role="button">
 		  <span class="lines"></span>
 		</div>
@@ -24,14 +26,11 @@
 			</li>
 			<li><%= link_to "<h4>Used Vehicles</h4>".html_safe, usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
 			<li><a href="/service"><h4>Service</h4></a></li>
-			<li>
-				<a href="#" class="location-click" ><span class="top-icon icon-location"></span></a>
-				<div class="location">
-					<h3 class="title"><span>Find us: </span>17410 Burt Street Omaha, NE 68118</h3>
-					<div id="map-canvas" style="width: 100%; height: 200px"></div
-				</div>
+
+			<li class="icon">
+				<a href="#" class="new_chat_click" ><span class="top-icon icon-bubble" ></span></a>
 			</li>
-			<li>
+			<li class="icon">
 				<a href="#" class="phone-click" ><span class="top-icon icon-phone"></span></a>
 				<div class="phone">
 					<a href="#"><h4>Sales: 1 (888) 211-1543</h4></a>
@@ -39,14 +38,19 @@
 					<a href="#"><h4>Parts: 1 (888) 207-3226</h4></a>
 				</div>
 			</li>
+			<li class="icon">
+				<a href="#" class="location-click" ><span class="top-icon icon-location"></span></a>
+				<div class="location">
+					<h3 class="title"><span>Find us: </span>17410 Burt Street Omaha, NE 68118</h3>
+					<div id="map-canvas" style="width: 100%; height: 200px"></div
+				</div>
+			</li>
 			<% if signed_in? %>
 			<li><%= link_to "<h4>Sign Out</h4>".html_safe, sign_out_path, :method => :delete %></li>
 			<% else %>
-			<li>
-				<a href="#" class="new_chat_click" ><span class="top-icon icon-bubble" ></span></a>
-			</li>
 			<% end %>
 		</ul>
+
 		
 		<ul class="mobile-menu">
 			<li>
@@ -78,6 +82,6 @@
 				</div>
 			</li>
 		</ul>
-		<a href="http://nissanusa.com"><%= image_tag("nissan_logo.png", :class => "nissan_logo") %></a>
+		<a href="http://nissanusa.com" class="nissan_logo"><%= image_tag("nissan_logo.png") %></a>
 	</nav>
 </header>

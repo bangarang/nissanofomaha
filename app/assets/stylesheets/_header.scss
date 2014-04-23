@@ -10,13 +10,19 @@ header.main {
 	nav {
 		@include outer-container;
 		position: relative;
-		img.logo {
-			margin-top: 12px;
+		.logo {
+			// margin-top: 12px;
+			display: inline-block;
+			position: absolute;
+			top: 12px;
 		}
-		ul.menu {
+		.menu {
 			display: inline-block;
 			padding-left: 0;
-			margin: 12px 0;
+			margin: 0;
+			width: 100%;
+			padding: 0 90px 0 145px;
+			line-height: 75px;
 			li {
 				list-style: none;
 				float: left;
@@ -59,7 +65,10 @@ header.main {
 					
 					h4 {
 						font-size: 13px;
-						margin: 0 17px;
+						margin: 0 17px 0 0;
+						@include media($header) {
+							font-size: 11px;
+						}			
 					}
 					
 					@include transition(0.1s ease-in-out);
@@ -81,7 +90,7 @@ header.main {
 					position: absolute;
 					background: white;
 					width: 200px;
-					margin-top: 21px;
+					top: 72px;
 					margin-left: -76px;
 					border-top: 3px $red solid;
 					a:first-child, a:first-child:hover {
@@ -120,13 +129,45 @@ header.main {
 				}
 				.different {
 					margin-left: -15px;
-					margin-top: 23px;
 				}
 				.new-dropdown {
-					margin-left: -35px;
-					margin-top: 23px;
+					margin-left: -58px;
 				}
-				.location:before,.phone:before, .chat:before, .new-dropdown:before, .different:before {
+
+				.phone {
+					margin-left: -121px;
+				}
+				// .phone:before, .chat:before, .new-dropdown:before, .different:before {
+				// 	content: '';
+				// 	position: absolute;
+				// 	display: block;
+				// 	width: 0;
+				// 	height: 0;
+				// 	border-left: 20px solid transparent;
+				// 	border-right: 20px solid transparent;
+				// 	border-bottom: 16px solid #c71444;
+				// 	top: -19px;
+				// 	left: 80px;
+				// } 
+
+				// .phone:after, .chat:after, .new-dropdown:after, .different:after {			
+				// 	content: '';
+				// 	position: absolute;
+				// 	display: block;
+				// 	width: 0;
+				// 	height: 0;
+				// 	border-left: 20px solid transparent;
+				// 	border-right: 20px solid transparent;
+				// 	border-bottom: 16px solid white;
+				// 	top: -15px;
+				// 	left: 80px;
+				// }
+
+				// .location:before, .location:after {
+				// 	left: 693px;
+				// }
+
+				.location-click:before, .phone-click:before, .chat-click:before, .new-dropdown-click:before, .different-click:before {
 					content: '';
 					position: absolute;
 					display: block;
@@ -135,11 +176,12 @@ header.main {
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
 					border-bottom: 16px solid #c71444;
-					top: -19px;
-					left: 80px;
+					top: 57px;
+					margin-left: -3px;
+					z-index: 1;
 				} 
 
-				.location:after, .phone:after, .chat:after, .new-dropdown:after, .different:after {			
+				.location-click:after, .phone-click:after, .chat-click:after, .new-dropdown-click:after, .different-click:after {			
 					content: '';
 					position: absolute;
 					display: block;
@@ -148,21 +190,31 @@ header.main {
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
 					border-bottom: 16px solid white;
-					top: -15px;
-					left: 80px;
+					top: 61px;
+					margin-left: -3px;
+					z-index: 1;
 				}
 
-				.location:before, .location:after {
-					left: 693px;
+				.different-click:before, .different-click:after {
+					margin-left: 62px;
 				}
+				.new-dropdown-click:before, .new-dropdown-click:after {
+					margin-left: 22px;
+				}
+			}
 
-
+			.icon {
+				float: right;
 			}
 			@include media($tablet) {
 				display:none;
 			}
 		}
-
+		.menu.icons {
+			float: right;
+			margin-right: 90px;
+			margin-left: 0px;
+		}
 		ul.mobile-menu {
 			display:none;
 		}
@@ -276,9 +328,10 @@ header.main {
 				}
 			}
 		}
-		img.nissan_logo {
+		.nissan_logo {
 			position: absolute;
 			right:0;
+			top:0;
 		}
 	}
 }
@@ -287,7 +340,7 @@ header.main {
 	font-size: 24px;
 	line-height: 0;
 	color: #999999;
-	padding: 0 15px;
+	padding: 0 5px;
 	@include transition(0.2s ease-in-out);
 }
 .top-icon:hover {
