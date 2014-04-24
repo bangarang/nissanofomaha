@@ -11,77 +11,92 @@
         </ul>
       </div>
     <% end %>
-
-    <div class="field">
-      <div class="pref_cont">
-        <%= f.label :name, class: 'prefix' %>
-      </div>
-      <div class="input_cont">
-        <%= f.text_field :name, placeholder: 'Name of the Vehicle' %>
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="pref_cont">
-        <%= f.label :vauto_name, class: 'prefix' %>
-      </div>
-      <div class="input_cont">
-        <%= f.text_field :vauto_name, placeholder: 'vAuto Model Name of the Vehicle' %>
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="pref_cont">
-        <%= f.label :headline, class: 'prefix' %>
-      </div>
-      <div class="input_cont">
-        <%= f.text_field :headline %>
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="pref_cont">
-        <%= f.label :msrp, class: 'prefix' %>
-      </div>
-      <div class="input_cont">
-        <%= f.text_field :msrp, placeholder: 'Price of the Vehicle' %>
-      </div>
-    </div>
-
-    <div class="field">
-      <h3>Description</h3>
-      <%= f.text_area :description %>
-    </div>
-    
-    <div class="mpg">
-      <h3>Miles Per Gallon</h3>
-      <div class="field">
-        <div class="pref_cont">
-          <%= f.label :city, class: 'prefix' %>
-        </div>
-        <div class="input_cont">
-          <%= f.number_field :city_mpg %>
+    <section class="form_section">
+      <h1 class="thin_form_title">Editing New Vehicle</h1>
+      <div class="the_fields">
+        <div class="text_field">
+          <div class="gray_label fifth">
+            <p>Name</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.text_field :name, placeholder: 'Name of the Vehicle' %>
+          </div>
         </div>
       </div>
-      
-      <div class="field">
-        <div class="pref_cont">
-          <%= f.label :highway, class: 'prefix' %>
-        </div>
-        <div class="input_cont">
-          <%= f.number_field :highway_mpg %>
+       
+      <div class="the_fields"> 
+        <div class="text_field">
+          <div class="gray_label fifth">
+            <p>vAuto Name</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.text_field :vauto_name, placeholder: 'vAuto Model Name of the Vehicle' %>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="field two">
-      <%= f.file_field :image %>
-    </div>
-    <div class="field two last">
-      <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+      <div class="the_fields">
+        <div class="text_field">
+          <div class="gray_label fifth">
+            <p>Headline</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.text_field :headline %>
+          </div>
+        </div>
+      </div>
+
+      <div class="the_fields">
+        <div class="text_field">
+          <div class="gray_label fifth">
+            <p>MSRP</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.text_field :msrp, placeholder: 'Price of the Vehicle' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="the_fields">
+        <div class="text_field">
+          <h5 class="subtitle">Description</h5>
+          <%= f.text_area :description, class: 'tinymce', :rows => 1, :cols => 1 %>
+        </div>
+      </div>  
+
+      <div class="the_fields">
+        <h5 class="subtitle">Miles Per Gallon</h5>
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>City</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.number_field :city_mpg %>
+          </div>
+        </div>
+        
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>Highway</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.number_field :highway_mpg %>
+          </div>
+        </div>
+      </div>
+
+        <div class="field two">
+          <%= f.file_field :image %>
+        </div>
+        <div class="field two last">
+          <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
+        </div>
+      </section>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
   <% end %>
 </div>
+
+<%= tinymce_assets %>
+<%= tinymce %>
