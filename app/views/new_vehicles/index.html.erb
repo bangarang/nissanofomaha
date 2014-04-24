@@ -8,9 +8,9 @@
       <%= link_to image_tag(new_vehicle.image_url), new_vehicle %>
       <h3 class="name"><%= link_to new_vehicle.name.html_safe, new_vehicle %></h3>
 
-      <% @inventory = Vehicle.where( newused: 'N', make: 'Nissan', model: new_vehicle.vauto_name ).order(:price) %>
-      <% if @inventory %>
-      <h4 class="price">$<%= number_with_delimiter(@inventory.first.price) %></h4>
+      <% inventory = Vehicle.where( newused: 'N', make: 'Nissan', model: new_vehicle.vauto_name ).order(:price).first %>
+      <% if inventory %>
+      <h4 class="price">$<%= number_with_delimiter(inventory.price) %></h4>
       <% else %>
       <h4 class="price">$<%= number_with_delimiter(new_vehicle.msrp) %></h4>
       <% end %>
