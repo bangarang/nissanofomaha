@@ -10,7 +10,7 @@
 			</div>
 			<div class="info">
 				<div class="spec">
-					<% if @inventory %>
+					<% if @inventory.first.price %>
 					<h3 class="title">Starting at</h3>
 			  	<h3 class="content">$<%= number_with_delimiter(@inventory.first.price) %></h3>
 			  	<% else %>
