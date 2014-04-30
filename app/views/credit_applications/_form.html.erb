@@ -112,14 +112,22 @@
       </div>
 
       <div class="the_fields">
-        <div class="text_field">
+        <div class="text_field half">
           <div class="gray_label fifth">
-            <p>Social Security Number</p>
+            <p>SSN #</p>
           </div>
           <div class="text_field_content">
             <%= f.text_field :primary_social_security_number %>
           </div>
         </div>   
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>DOB</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.text_field :primary_date_of_birth %>
+          </div>
+        </div> 
       </div>
 
       <div class="the_fields">
@@ -403,15 +411,6 @@
             <%= f.text_field :joint_contact_phone %>
           </div>
         </div>
-<!-- 
-        <div class="text_field">
-          <div class="gray_label fifth">
-            <p>Date of Birth</p>
-          </div>
-          <div class="text_field_content">
-            <%= f.text_field :joint_date_of_birth %>
-          </div>
-        </div> -->
 
         <div class="text_field half">
           <div class="gray_label fifth">
@@ -444,12 +443,20 @@
       </div>
 
       <div class="the_fields">
-        <div class="text_field">
+        <div class="text_field half">
           <div class="gray_label fifth">
-            <p>Social Security Number</p>
+            <p>SSN #</p>
           </div>
           <div class="text_field_content">
             <%= f.text_field :joint_social_security_number %>
+          </div>
+        </div>   
+        <div class="text_field half">
+          <div class="gray_label fifth">
+            <p>DOB</p>
+          </div>
+          <div class="text_field_content">
+            <%= f.text_field :joint_date_of_birth %>
           </div>
         </div>   
       </div>
