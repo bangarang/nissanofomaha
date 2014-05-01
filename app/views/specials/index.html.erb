@@ -2,7 +2,7 @@
   <h1>Specials</h1>
       <% @specials.each do |special| %>
 
-        <div class="individual_special<% if special.photo %> photo" style="background-image:url(<%= special.photo %>);"><% else %>"<% end %>>
+        <div class="individual_special<% unless special.photos.first.nil? %> photo" style="background-image:url(<%= special.photos.first.image_url %>);"><% else %>"<% end %>>
           <h2 class="title"><%= special.name %></h2>
           <p class="description"><%= special.description %></p>
           <h5 class="price"><%= special.price %></h5>
