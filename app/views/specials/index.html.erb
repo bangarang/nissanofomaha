@@ -1,33 +1,35 @@
-<h1>Listing specials</h1>
+<div class="container">
+  <h1>Listing specials</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @specials.each do |special| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= special.name %></td>
-        <td><%= special.description %></td>
-        <td><%= special.price %></td>
-        <td><%= special.image %></td>
-        <td><%= link_to 'Show', special %></td>
-        <td><%= link_to 'Edit', edit_special_path(special) %></td>
-        <td><%= link_to 'Destroy', special, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @specials.each do |special| %>
+        <tr>
+          <td><%= special.name %></td>
+          <td><%= special.description %></td>
+          <td><%= special.price %></td>
+          <td><%= special.photo %></td>
+          <td><%= link_to 'Show', special %></td>
+          <td><%= link_to 'Edit', edit_special_path(special) %></td>
+          <td><%= link_to 'Destroy', special, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Special', new_special_path %>
+  <br>
+
+  <%= link_to 'New Special', new_special_path %>
+</div>
