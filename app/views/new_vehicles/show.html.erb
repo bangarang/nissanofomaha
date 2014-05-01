@@ -26,7 +26,7 @@
 		</header>
 		<div class="description">
 			<h2><%= @new_vehicle.headline %></h2>
-			<p><%= @new_vehicle.description %></p>
+			<p><%= @new_vehicle.description.html_safe %></p>
 		</div>
 
 		<div class="count">

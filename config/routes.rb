@@ -1,4 +1,6 @@
 Vauto::Application.routes.draw do
+  resources :specials
+
   resources :parts_orders
 
   resources :credit_applications

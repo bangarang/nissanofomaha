@@ -28,6 +28,7 @@ jQuery ->
       content[$('#fileupload').data('as')] = domain + path
       content["photo[exterior_id]"] = $('#fileupload').data('exterior')
       content["photo[interior_id]"] = $('#fileupload').data('interior')
+      content["photo[special_id]"] = $('#fileupload').data('special')
       $.post(to, content)
       data.context.remove() if data.context # remove progress bar
     

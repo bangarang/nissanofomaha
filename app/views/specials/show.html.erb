@@ -1,0 +1,40 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @special.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @special.description %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @special.price %>
+  </p>
+
+  <div id="photos">
+    <%= render @special.photos %>
+  </div>
+  <div class="clear"></div>
+
+  <%= s3_uploader_form post: photos_url, as: "photo[image_url]", special: @special.id do %>
+    <%= file_field_tag :file, multiple: true %>
+  <% end %>
+
+  <script id="template-upload" type="text/x-tmpl">
+    <div class="upload">
+      {%=o.name%}
+      <div class="progress">
+        <div class="bar" style="width: 0%">
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <%= link_to 'Edit', edit_special_path(@special) %> |
+  <%= link_to 'Back', specials_path %>
+</div>
