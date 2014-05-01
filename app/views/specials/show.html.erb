@@ -17,12 +17,12 @@
   </p>
 
   <div id="photos">
-    <%= render @special.photos %>
+    <%= render @special.photo %>
   </div>
   <div class="clear"></div>
 
   <%= s3_uploader_form post: photos_url, as: "photo[image_url]", special: @special.id do %>
-    <%= file_field_tag :file, multiple: true %>
+    <%= file_field_tag :file %>
   <% end %>
 
   <script id="template-upload" type="text/x-tmpl">

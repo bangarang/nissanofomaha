@@ -1,34 +1,19 @@
 <div class="container">
-  <h1>Listing specials</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Image</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
+  <h1>Specials</h1>
       <% @specials.each do |special| %>
-        <tr>
-          <td><%= special.name %></td>
-          <td><%= special.description %></td>
-          <td><%= special.price %></td>
-          <td><%= link_to 'Show', special %></td>
-          <td><%= link_to 'Edit', edit_special_path(special) %></td>
-          <td><%= link_to 'Destroy', special, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+
+        <div class="individual_special<% if special.photo %> photo" style="background-image:url(<%= special.photo %>);"><% else %>"<% end %>>
+          <h2 class="title"><%= special.name %></h2>
+          <p class="description"><%= special.description %></p>
+          <h5 class="price"><%= special.price %></h5>
+          <% if signed_in? %>
+          <div class="controls">
+            <%= link_to 'Show', special %> |
+            <%= link_to 'Edit', edit_special_path(special) %> |
+            <%= link_to 'Destroy', special, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+          <% end %>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
   <%= link_to 'New Special', new_special_path %>
 </div>
