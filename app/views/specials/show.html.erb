@@ -22,7 +22,7 @@
   <div class="clear"></div>
 
   <%= s3_uploader_form post: photos_url, as: "photo[image_url]", special: @special.id do %>
-    <%= file_field_tag :file %>
+    <%= file_field_tag :file, multiple: true %>
   <% end %>
 
   <script id="template-upload" type="text/x-tmpl">

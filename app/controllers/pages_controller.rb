@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 	before_action :authorize, only: [:full_inventory, :items]
 	def home
+		@special = Special.last
 	end
 
 	def full_inventory

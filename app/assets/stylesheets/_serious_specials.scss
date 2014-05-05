@@ -1,4 +1,26 @@
+.special_title {
+	color: #777;
+	font-weight: 100;
+	text-align: center;
+}
+
 .individual_special {
+	display: inline-block;
+	width: 48%;
+	margin: 1%;
+	float: left;
+	background-size: cover;
+	position: relative;
+	.gray_wrap {
+		background: rgba(0,0,0,0.5);
+	}
+
+	.content {
+		padding: 20px 20px 0;
+		height: 200px;
+		overflow: scroll;
+	}
+
 	.title {
 		background: #c71444;
 		color: white;
@@ -8,9 +30,76 @@
 		padding: 5px 15px;
 		font-size: 18px;
 	}
+	.description {
+		color: white;
+		text-align: center;
+	}
+	.price {
+		background: $red;
+		color: white;
+		text-transform: uppercase;
+		margin: auto;
+		display: table;
+		padding: 5px 15px;
+		font-size: 16px;
+	}
 
+	.special_controls {
+		color: white;
+		display: inline-block;
+		padding: 5px 15px;
+		font-size: 15px;
+		margin: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-weight: 100;
+		a {
+			color: white;
+			text-decoration: none;
+			opacity: 1;
+			transition: 0.2s ease-in-out;
+			padding: 10px 0;
+		}
+		a:hover {
+			opacity: 0.7;
+		}
+
+		.special_close {
+			font-size: 18px;
+		}
+	}
 }
+
+.individual_special.home {
+	width: 100%;
+	margin: inherit;
+}
+
+.individual_special.no_photo {
+	border: $red solid 1px;
+	background: white;
+	.description {
+		color: #444;
+	}
+
+	.special_controls {
+		color: #444;
+		a {
+			color: #444;
+		}
+	}
+}
+
 
 .special.photo {
 	background-size: cover;
+}
+
+.specials_container {
+	margin-bottom: 20px;
+}
+
+.clearline {
+	clear: both;
 }

@@ -10,20 +10,38 @@
       </ul>
     </div>
   <% end %>
+<section class="form_section">
+  
+  <div class="the_fields">
+    <div class="text_field half">
+      <div class="gray_label fifth">
+        <p>Name</p>
+      </div>
+      <div class="text_field_content">
+        <%= f.text_field :name, placeholder: 'Service Special' %>
+      </div>
+    </div>
+    <div class="text_field half">
+      <div class="gray_label fifth">
+        <p>Price</p>
+      </div>
+      <div class="text_field_content">
+        <%= f.text_field :price, placeholder: 'Price' %>
+      </div>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
+  <div class="the_fields">
+    <div class="text_field">
+      <h5 class="subtitle">Description</h5>
+      <%= f.text_area :description, class: 'tinymce', :rows => 1, :cols => 1 %>
+    </div>
+  </div> 
+
   <div class="actions">
     <%= f.submit %>
   </div>
+</section>
 <% end %>
+<%= tinymce_assets %>
+<%= tinymce %>

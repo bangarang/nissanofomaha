@@ -21,7 +21,51 @@
 			<%= link_to(image_tag('service-icon.jpg'), getservice_path) %>
 		</div>
 		<div class="special">
-			<%= link_to(image_tag('service-special.jpg'), service_path) %>
+			<!-- <%= link_to(image_tag('service-special.jpg'), service_path) %> -->
+
+
+			<% if @special.photos.first %>
+      <div class="individual_special has_photo home" style="background-image:url(<%= @special.photos.first.image_url %>);">
+        <div class="gray_wrap">
+          <h2 class="title"><%= @special.name %></h2>
+          <% if signed_in? %>
+            <h5 class="special_controls">
+              <%= link_to 'Change Photo', @special %> |
+              <%= link_to 'Edit Text', edit_special_path(@special) %> |
+              <%= link_to '×', @special, method: :delete, data: { confirm: 'Are you sure?' }, class: 'special_close' %>
+            </h5>
+          <% end %>
+          <div class="content">
+            <div class="description"><%= @special.description.html_safe %></div>
+            <% if @special.price %>
+            <h5 class="price"><%= @special.price %></h5>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+        <% else %>
+        <div class="individual_special no_photo home">
+          <h2 class="title"><%= @special.name %></h2>
+          <div class="content">
+            <div class="description"><%= @special.description.html_safe %></div>
+            <% unless @special.price.blank? %>
+            <h5 class="price"><%= @special.price %></h5>
+            <% end %>
+          </div>
+          <% if signed_in? %>
+          <h5 class="special_controls">
+            <%= link_to 'Show', @special %> |
+            <%= link_to 'Edit', edit_special_path(@special) %> |
+            <%= link_to '×', @special, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </h5> 
+          <% end %>
+        </div>
+        <% end %>
+
+
+
+
 		</div>
 	</div>
 </section>
