@@ -21,7 +21,7 @@
 			<%= link_to(image_tag('service-icon.jpg'), getservice_path) %>
 		</div>
 		<div class="special">
-			<%= link_to(image_tag('service-special.jpg'), service_path) %>
+			<%= link_to(image_tag('service-special.jpg'), service_path, id: 'my-link') %>
 		</div>
 	</div>
 </section>
@@ -42,3 +42,18 @@
 		<a href="/scheduleajoyride" class="red_button big"><h4>Schedule a Joy Ride Today</h4></a>
 	</div>
 </div>
+
+<%= javascript_tag do %>
+  document.getElementById("my-link").onclick = function(e) {
+    var left = (screen.width/2)-(600/2);
+    var top = (screen.height/2)-(410/2);
+    var myWindow = window.open("", "", "toolbar=no, resizable=no, width=600, height=410");
+    myWindow.document.write('<%= image_tag('exp06302014_2495oil.jpg', width: '100%') %>');
+
+    myWindow.moveTo(left, top);
+    myWindow.document.title = "Oil Change Coupon";
+    myWindow.print();
+    return false;
+  }
+
+<% end %>
