@@ -47,10 +47,8 @@
   document.getElementById("my-link").onclick = function(e) {
     var left = (screen.width/2)-(600/2);
     var top = (screen.height/2)-(410/2);
-    var myWindow = window.open("", "", "toolbar=no, resizable=no, width=600, height=410");
+    var myWindow = window.open("", "", "width=600,height=410,chrome,centerscreen,location=yes,left="+left+",top="+top);
     myWindow.document.write('<%= image_tag('exp06302014_2495oil.jpg', width: '100%') %>');
-
-    myWindow.moveTo(left, top);
     myWindow.document.title = "Oil Change Coupon";
     myWindow.print();
     return false;
