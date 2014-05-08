@@ -40,14 +40,14 @@
 			</p>
 		</div>
 		<% end %>
-		
+
 		<% unless @new_vehicle.exteriors.empty? && @new_vehicle.interiors.empty? %>
-	
-			<% if @new_vehicle.exteriors.empty? %> 
+
+			<% if @new_vehicle.exteriors.empty? %>
 			<div id="exterior-reel">
 				<%= image_tag(@new_vehicle.image_url, class: 'full') %>
 			</div>
-				
+
 			<% else %>
 			<div class="threesixty_container">
 				<div class="hint leave">Drag to Rotate</div>
@@ -60,7 +60,7 @@
 		      data-preload="linear">
 
 				<% end %>
-				<% unless @new_vehicle.interiors.empty? %> 
+				<% unless @new_vehicle.interiors.empty? %>
 
 		    <img src="<%= @new_vehicle.interiors.sort { |u| u.photos.length }.first.photos.order(:name).first.image_url %>" width="950" height="535"
 		      class="reel interior off"
@@ -68,14 +68,14 @@
 		      data-images="<% count = 0 %><% for photo in@new_vehicle.interiors.sort { |u| u.photos.length }.first.photos.order(:name) %><% count = count + 1 %><%= photo.image_url %><%= "," unless count == @new_vehicle.interiors.sort { |u| u.photos.length }.first.photos.length %><% if @new_vehicle.interiors.sort { |u| u.photos.length }.first.photos.length == 1 %>,<%= photo.image_url %><% end %><% end %>"
 		      data-frames="<%= @new_vehicle.interiors.sort { |u| u.photos.length }.first.photos.length %>"
 		      data-revolution="500"
-		      data-preload="linear">	
+		      data-preload="linear">
 				<% end %>
 
 
 			</div>
-			
+
 	    <div class="labels">
-	    	<% unless @new_vehicle.exteriors.empty? %> 
+	    	<% unless @new_vehicle.exteriors.empty? %>
 		    	<div class="exterior active">
 		    		<% count = 0 %>
 		    		<% @new_vehicle.exteriors.sort { |u| -u.photos.length }.each do |exterior| %>
@@ -85,7 +85,7 @@
 		    	</div>
 	    	<% end %>
 
-	    	<% unless @new_vehicle.interiors.empty? %> 
+	    	<% unless @new_vehicle.interiors.empty? %>
 		    	<div class="interior">
 		    		<% count = 0 %>
 		    		<% @new_vehicle.interiors.sort { |u| u.photos.length }.each do |interior| %>
@@ -105,7 +105,7 @@
 			    	<div class="exterior-views">
 			    		<h5 class="title">Select Color: </h5>
 							<% @new_vehicle.exteriors.sort { |u| -u.photos.length }.each do |exterior| %>
-								<div class="color"> 
+								<div class="color">
 									<div class="circle" id="<%= exterior.slug %>" style="background:<%= exterior.color %>"></div>
 								</div>
 							<% end %>
@@ -136,8 +136,8 @@ $(document).ready(function() {
 			,'<%= photo.image_url %>'<% end %><% end %>]);
 	  	if( $('#exterior').reel('frame') > <%= exterior.photos.length %>){
 				$('#exterior').reel('frame',<%= exterior.photos.length %>);
-			}	
-		$('#exterior').reel('frames', <%= exterior.photos.length %>);			  	
+			}
+		$('#exterior').reel('frames', <%= exterior.photos.length %>);
 	  	$('.labels .exterior h5').removeClass('active');
 		$('#<%= exterior.slug %>_label').addClass('active');
 	  });
@@ -147,11 +147,11 @@ $(document).ready(function() {
 	$('#<%= interior.slug %>').click(function(){
 	  	$('#interior').reel('images', [<% count = 0 %><% for photo in interior.photos.order(:name) %><% count = count + 1 %>'<%= photo.image_url %>'<%= "," unless count == interior.photos.length %><% if interior.photos.length == 1 %>
 			,'<%= photo.image_url %>'<% end %><% end %>]);
-	  	
+
 	  	if( $('#interior').reel('frame') > <%= interior.photos.length %>){
 				$('#interior').reel('frame',<%= interior.photos.length %>);
-			}	
-			$('#interior').reel('frames', <%= interior.photos.length %>);			  	
+			}
+			$('#interior').reel('frames', <%= interior.photos.length %>);
 		  $('.labels .interior h5').removeClass('active');
 			$('#<%= interior.slug %>_label').addClass('active');
 	  });
@@ -174,12 +174,12 @@ $(document).ready(function() {
   });
 });
 <% end %>
-		<% end %> 
+		<% end %>
 		<% if @new_vehicle.exteriors.empty? && @new_vehicle.interiors.empty? %>
 			<%= image_tag(@new_vehicle.image_url, class: 'full reel exterior') %>
 		<% end %>
 	</section>
-	
+
 </div>
 
 <% if @new_vehicle.packages %>
@@ -206,7 +206,7 @@ $(document).ready(function() {
 		<div class="features">
 			<h4>Features</h4>
 		</div>
-	</div><!-- 
+	</div><!--
 	--><div id="owl-demo">
 	<% for package in @new_vehicle.packages %>
 		<div class="package">
@@ -225,7 +225,7 @@ $(document).ready(function() {
 				<%= package.features.html_safe %>
 			</div>
 			<div class="link">
-				<%= link_to "> Feature Details", package.link if package.link %>
+				<%= link_to "> Feature Details", package.link, :target => "_blank" if package.link %>
 			</div>
 		</div>
 	<% end %>
@@ -263,7 +263,7 @@ $(document).ready(function() {
 	      <td>$<%= number_with_delimiter(v.price) %></td>
 	    </tr>
 	    <% end %>
-	    
+
 	  </tbody>
 	</table>
 </div>
