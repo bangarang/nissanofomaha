@@ -200,7 +200,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   neat
-  newrelic_rpm
+  newrelic_rpm (~> 3.8.1.221)
   numbers_and_words
   pg
   rails (= 4.0.5)

@@ -59,7 +59,7 @@ gem 'html5shiv-rails'
 
 gem 'numbers_and_words'
 
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.8.1.221'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
