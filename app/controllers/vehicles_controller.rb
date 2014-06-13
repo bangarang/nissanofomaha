@@ -10,7 +10,9 @@ class VehiclesController < ApplicationController
       # @makes << p.make
         tmp =[]
         Vehicle.where(newused: 'U', make: p.make ).select("DISTINCT(MODEL)").each do |j|
-          tmp << j.model
+          if ( j.model ) 
+            tmp << j.model
+          end
         end
         if tmp.length > 2
           tmp.sort!
