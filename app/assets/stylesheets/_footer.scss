@@ -63,9 +63,13 @@ footer {
 	}
 	.address {
 		text-align: center;
+		line-height: 50px;
 		span.white {
 			color: white;
 			padding: 0 10px;
+		}
+		h5 {
+			margin: 0;
 		}
 	}
 	.privacy {

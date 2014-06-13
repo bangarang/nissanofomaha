@@ -182,21 +182,13 @@ $(document).ready(function() {
 	  document.body.appendChild(script);
 	});
 
+ 	$(".lazy").show().lazyload({
+      effect : "fadeIn"
+  });
 
-  function a() {
-   	$(".lazy").lazyload({
-	      effect : "fadeIn"
-	  });
-    b();
-	}
-
-	function b() {
-	    $(window).resize();
-	}
-
-	a();
-
-	$(document).load('function_a_complete', b);
+	$(window).load(function(){
+	     $("html,body").trigger("scroll");
+	});
 
 
 	});

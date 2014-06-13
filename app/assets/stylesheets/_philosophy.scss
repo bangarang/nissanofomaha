@@ -113,6 +113,7 @@ section.main_top {
 		color: white;
 		.leed {
 			padding-bottom: 30%;
+			padding-top: 1px;
 			@include media($tablet) {
 				padding-top: 25px;
 				padding-bottom: 100px;
@@ -397,7 +398,7 @@ section.join_section_3 {
 	}
 	.bottom_border {
 		border-bottom: 3px solid $red;
-		width: 100%;
+		width: 97%;
 		position: absolute;
 		z-index: -1;
 		margin-top: 0px;
