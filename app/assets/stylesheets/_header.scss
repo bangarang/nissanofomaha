@@ -1,3 +1,28 @@
+.top-callout {
+	display: none;
+	@include media($mobile) {
+		display: block;
+		.maps {
+			display: inline-block;
+			padding: 0 15px;
+		}
+		.phone {
+			display: inline-block;
+			float: right;
+			padding: 0 15px;
+		}
+		a {
+			text-decoration: none;
+			color: $darkgray;
+			transition: 0.15s ease-in-out;
+		}
+		a:hover {
+			color: $red;
+		}
+		border-bottom: solid 2px #ccc;
+	}
+}
+
 .main-navigation {
 	// box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 	height: 75px;
@@ -93,6 +118,7 @@
 					width: 200px;
 					top: 72px;
 					margin-left: -76px;
+					border: 1px solid #ccc;
 					border-top: 3px $red solid;
 					a:first-child, a:first-child:hover {
 						border-top: none;
