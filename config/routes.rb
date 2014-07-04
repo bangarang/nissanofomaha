@@ -49,6 +49,8 @@ Vauto::Application.routes.draw do
 
   get "index.asp" => 'pages#thanks'
 
+  get "thankyou" => 'pages#thanks'
+
   get 'scheduleajoyride' => 'test_rides#new'
 
   get 'partsorder' => 'parts_orders#new'

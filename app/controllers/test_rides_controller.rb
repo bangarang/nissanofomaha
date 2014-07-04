@@ -29,7 +29,7 @@ class TestRidesController < ApplicationController
     respond_to do |format|
       if @test_ride.save
         TestDrive.joyride(@test_ride).deliver
-        format.html { redirect_to root_url, notice: 'Test ride was successfully created.' }
+        format.html { redirect_to '/thankyou', notice: 'Test ride was successfully created.' }
         format.json { render action: 'show', status: :created, location: @test_ride }
       else
         format.html { render action: 'new' }
