@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>Locations for Nissan of Omaha.</name>
+		<atom:link rel="related" href="http://www.nissanofomaha.com" />
+		<Folder>
+			<Placemark>
+				<name><![CDATA[Nissan of Omaha]]></name>
+				<address><![CDATA[17410 Burt St, Omaha, NE, 68118, United States]]></address>
+				<description><![CDATA[]]></description>
+				<Point>
+					<coordinates>-96.1878259,41.2648478,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

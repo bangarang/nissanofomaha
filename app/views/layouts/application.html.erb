@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="<%= asset_path('favicon.png') %>" />
     <title><%= content_for?(:title) ? "Nissan of Omaha | " +  yield(:title) : "Nissan of Omaha" %></title>
+
+    <% if current_page?('/')%> 
+      <link rel="canonical" href="http://www.nissanofomaha.com/" />
+      <meta name="google-site-verification" content="WRgc2_T6b34FObkCY-Qg_F2USBpGaYddksfa83lGKHA" />
+      <meta name="msvalidate.01" content="AEACD7D553D122153C6E5DD64141E4BF" />
+    <% end %>
+
+
     <% if Rails.env.production? && !signed_in? %>
     <script type="text/javascript">
     window.analytics||(window.analytics=[]),window.analytics.methods=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group","on","once","off"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;window.analytics.methods.length>i;i++){var method=window.analytics.methods[i];window.analytics[method]=window.analytics.factory(method)}window.analytics.load=function(t){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)},window.analytics.SNIPPET_VERSION="2.0.8",
