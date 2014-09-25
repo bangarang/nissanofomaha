@@ -34,6 +34,7 @@
 			</li>
 			<li><%= link_to "<h4>Used Vehicles</h4>".html_safe, usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
 			<li><a href="/service"><h4>Service</h4></a></li>
+			<li><a href="/getapproved"><h4>Get Approved</h4></a></li>
 
 			<li class="icon">
 				<a href="#" class="new_chat_click" ><span class="top-icon icon-bubble" ></span></a>
@@ -74,6 +75,7 @@
 			</li>
 			<li><%= link_to "<h4>Used Vehicles</h4>".html_safe, usedvehicles_url, class: active_class?(usedvehicles_url) %></li>
 			<li><a href="/service"><h4>Service</h4></a></li>
+			<li><a href="/getapproved"><h4>Get Approved</h4></a></li>
 			<% if signed_in? %>
 			<li><%= link_to "<h4>Sign Out</h4>".html_safe, sign_out_path, :method => :delete %></li>
 			<% end %>
