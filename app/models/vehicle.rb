@@ -13,11 +13,11 @@ class Vehicle < ActiveRecord::Base
 		vin
 	end
 
-	# def mileage
-	# 	unless self.odometer.blank?
-	# 		(self.odometer / 1000)
-	# 	end
-	# end
+	def mileage_k
+		unless self.mileage.blank?
+			(self.mileage.to_i / 1000)
+		end
+	end
 
 	def photos 
 		self.imageurls.to_s.split("|")
