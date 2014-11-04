@@ -4,7 +4,7 @@
 
 	<div class="head">
 		<h2 class="used-title"><%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %></h2>
-		<h2 class="used-price">$<%= number_with_delimiter(@vehicle.price) %></h2>
+		<% unless (@vehicle.price == 0)  %><h2 class="used-price">$<%= number_with_delimiter(@vehicle.price) %></h2><% end %>
 	</div>
 	<div class="prior"></div>
 	<% if signed_in? %>
@@ -37,7 +37,7 @@
 					<h5>Mileage</h5>
 				</div>
 				<div class="spec_info">
-					<h3><%= @vehicle.odometer %></h3>
+					<h3><%= @vehicle.mileage %></h3>
 				</div>
 			</div>
 			<div class="spec">
@@ -46,7 +46,7 @@
 				</div>
 				<div class="spec_info">
 					<h4 class="spec_header">City/Hwy MPG*</h4>
-					<h3><%= @vehicle.city_mpg %>/<%= @vehicle.highway_mpg %></h3>
+					<h3><%= @vehicle.mpgcity %>/<%= @vehicle.mpghighway %></h3>
 				</div>
 			</div>
 				<div class="spec">
@@ -66,7 +66,7 @@
 					<h5>Engine</h5>
 				</div>
 				<div class="spec_info">
-					<h3><%= @vehicle.engine_displacement %>-liter <%= @vehicle.engine_cylinder_ct %> cylinder</h3>
+					<h3><%= @vehicle.engine %></h3>
 				</div>
 			</div>
 			<div class="spec">
@@ -82,7 +82,7 @@
 					<h5>Stock #</h5>
 				</div>
 				<div class="spec_info">
-					<h3><%= @vehicle.stock_ %></h3>
+					<h3><%= @vehicle.stock %></h3>
 				</div>
 			</div>
 		</div>
@@ -96,7 +96,7 @@
 	<% if @vehicle.description %>
 	<div class="stats">
 		<div class="whole">
-			<h5 class="title">Description</h5>
+			<h5 class="title">description</h5>
 			<p><%= @vehicle.description %></p>
 		</div>
 	</div>
@@ -104,13 +104,13 @@
 
 	<div class="stats">
 		<div class="left">
-			<% if @vehicle.body_door_ct %>
+			<% if @vehicle.doors %>
 			<div class="spec">
 				<div class="spec_title">
-					<h5>Door Count</h5>
+					<h5>Doors</h5>
 				</div>
 				<div class="spec_info">
-					<h3><%= @vehicle.body_door_ct %></h3>
+					<h3><%= @vehicle.doors %></h3>
 				</div>
 			</div>
 			<% end %>
@@ -137,24 +137,13 @@
 			</div>
 			<% end %>
 
-			<% if @vehicle.colour %>
+			<% if @vehicle.extcolor %>
 			<div class="spec">
 				<div class="spec_title">
-					<h5>Color</h5>
+					<h5>Exterior Color</h5>
 				</div>
 				<div class="spec_info">
-					<h3><%= @vehicle.colour %></h3>
-				</div>
-			</div>
-			<% end %>
-
-			<% if @vehicle.interior_color %>
-			<div class="spec">
-				<div class="spec_title">
-					<h5>Interior Color</h5>
-				</div>
-				<div class="spec_info">
-					<h3><%= @vehicle.interior_color %></h3>
+					<h3><%= @vehicle.extcolor %></h3>
 				</div>
 			</div>
 			<% end %>
@@ -192,24 +181,13 @@
 			</div>
 			<% end %>
 
-			<% if @vehicle.inventory_date %>
+			<% if @vehicle.indate %>
 			<div class="spec">
 				<div class="spec_title">
 					<h5>Inventory Date</h5>
 				</div>
 				<div class="spec_info">
-					<h3><%= @vehicle.inventory_date %></h3>
-				</div>
-			</div>
-			<% end %>
-
-			<% if @vehicle.certified %>
-			<div class="spec">
-				<div class="spec_title">
-					<h5>Certified</h5>
-				</div>
-				<div class="spec_info">
-					<h3><%= @vehicle.certified %></h3>
+					<h3><%= @vehicle.indate %></h3>
 				</div>
 			</div>
 			<% end %>
@@ -225,13 +203,13 @@
 			</div>
 			<% end %>
 
-			<% if @vehicle.model_number %>
+			<% if @vehicle.modelcode %>
 			<div class="spec">
 				<div class="spec_title">
 					<h5>Model Number</h5>
 				</div>
 				<div class="spec_info">
-					<h3><%= @vehicle.model_number %></h3>
+					<h3><%= @vehicle.modelcode %></h3>
 				</div>
 			</div>
 			<% end %>
@@ -282,11 +260,11 @@
 
 		</div>
 
-		<% if @vehicle.features %>
+		<% if @vehicle.comments.length > 2 %>
 		<div class="left">
 			<div class="whole">
-				<h5 class="title">Features</h5>
-				<p><%= @vehicle.features %></p>
+				<h5 class="title">Comments</h5>
+				<p><%= @vehicle.comments %></p>
 			</div>
 		</div>
 		<% end %>

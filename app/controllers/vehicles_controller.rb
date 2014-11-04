@@ -4,12 +4,12 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.where(newused: 'U')
+    @vehicles = Vehicle.where(condition: 'Used')
     @makes = []
-    Vehicle.where(newused: 'U').select("DISTINCT(MAKE)").each do |p| 
+    Vehicle.where(condition: 'Used').select("DISTINCT(MAKE)").each do |p| 
       # @makes << p.make
         tmp =[]
-        Vehicle.where(newused: 'U', make: p.make ).select("DISTINCT(MODEL)").each do |j|
+        Vehicle.where(condition: 'Used', make: p.make ).select("DISTINCT(MODEL)").each do |j|
           if ( j.model ) 
             tmp << j.model
           end
@@ -121,6 +121,6 @@ class VehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
-      params.require(:vehicle).permit(:make, :model, :year, :vin, :photos, :dealerid, :stock_,:newused,:model_number,:body,:transmission,:series,:body_door_ct,:odometer,:engine_cylinder_ct,:engine_displacement,:drivetrain_desc,:colour,:interior_color,:invoice,:msrp,:book_value,:price,:inventory_date,:certified,:description,:features,:photo_url_list,:city_mpg,:highway_mpg,:photos_last_modified_date,:status_code,:cost,:series_detail,:inspection_checklist_,:video_url,:video_player_url,:rw, :m_a)
+      params.require(:vehicle).permit(:make,:model,:year,:vin,:photos,:dealerid,:stock_,:newused,:model_number,:body,:transmission,:series,:body_door_ct,:odometer,:engine_cylinder_ct,:engine_displacement,:drivetrain_desc,:colour,:interior_color,:invoice,:msrp,:book_value,:price,:inventory_date,:certified,:description,:features,:photo_url_list,:city_mpg,:highway_mpg,:photos_last_modified_date,:status_code,:cost,:series_detail,:inspection_checklist_,:video_url,:video_player_url,:rw,:m_a,:feedid,:stock,:mileage,:trim,:intcolor,:extcolor,:genericintcolor,:genericextcolor,:retailprice,:dealercost,:modelcode,:extcolorcode,:intcolorcode,:condition,:indate,:comments,:imageurls,:options,:standardequipment,:optioncodes,:mpgcity,:mpghighway,:doors,:engine, :drivetrain)
     end
 end

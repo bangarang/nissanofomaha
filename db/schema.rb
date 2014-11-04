@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502152631) do
+ActiveRecord::Schema.define(version: 20141104172524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -226,6 +226,32 @@ ActiveRecord::Schema.define(version: 20140502152631) do
     t.string   "video_player_url"
     t.string   "rw"
     t.boolean  "m_a"
+    t.string   "feedid"
+    t.string   "stock"
+    t.string   "mileage"
+    t.string   "trim"
+    t.string   "intcolor"
+    t.string   "extcolor"
+    t.string   "genericintcolor"
+    t.string   "genericextcolor"
+    t.string   "retailprice"
+    t.string   "dealercost"
+    t.string   "modelcode"
+    t.string   "extcolorcode"
+    t.string   "intcolorcode"
+    t.string   "condition"
+    t.string   "indate"
+    t.text     "comments"
+    t.text     "imageurls"
+    t.text     "options"
+    t.text     "standardequipment"
+    t.string   "optioncodes"
+    t.string   "doors"
+    t.string   "engine"
+    t.integer  "mpghighway",                default: 0
+    t.integer  "mpgcity",                   default: 0
+    t.string   "drivetrain"
+    t.string   "cabtype"
   end
 
 end

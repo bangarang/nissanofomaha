@@ -256,9 +256,9 @@ $(document).ready(function() {
 	  <tbody>
 	  	<% for v in @inventory %>
 	    <tr>
-	      <td><%= v.stock_ %></td>
-	      <td><%= v.colour %></td>
-	      <td><%= v.series %></td>
+	      <td><%= v.stock %></td>
+	      <td><%= v.extcolor %></td>
+	      <td><%= v.trim %></td>
 	      <td><%= v.body %></td>
 	      <td>$<%= number_with_delimiter(v.price) %></td>
 	    </tr>

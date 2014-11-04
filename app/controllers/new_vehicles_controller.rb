@@ -22,7 +22,7 @@ class NewVehiclesController < ApplicationController
     #   @vauto_name = @tmp
     # end 
 
-    @inventory = Vehicle.where( newused: 'N', make: 'Nissan', model: @new_vehicle.vauto_name ).order(:price)
+    @inventory = Vehicle.where( condition: 'New', make: 'Nissan', model: @new_vehicle.vauto_name ).order(:price)
     # @tmp_count = @inventory.count
     # @vauto_count = (@tmp_count/5).round * 5
     @vauto_count = @inventory.count

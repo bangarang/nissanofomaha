@@ -71,13 +71,13 @@
         <div class="spinning_square"></div>
       </div>
       <ul class="vehicles">
-        <li data-ng-repeat="item in items | orderBy:'price' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
+        <li data-ng-repeat="item in items | orderBy:'-price' | filter:query | filter:priceFilter | filter:odometerFilter | filter:mpgFilter | filter:modelFilter | filter:makeFilter" class="repeat-item">
           <div class="vehicle" >
             <div class="top"><p class="year">{{item.year}}</p><p class="drive">{{item.drivetrain_desc}}</p></div>
             <div class="main">
-              <a href="/used/{{item.vin}}"><div class="image" style="background-image: url('{{item.photos[0]}}') "></div></a>
+              <a href="/used/{{item.vin}}"><div class="image" style="background-image: url('{{item.photos[0]}}') "><span class="fa fa-car" ng-show="{{!item.photos[0].length}}"></span></div></a>
               <p class="name"><a href="/used/{{item.vin}}">{{item.make}} {{item.model }}</a></p>
-              <p class="price">${{item.price | number:0}}</p>
+              <p class="price"  ng-show="{{item.price > 0}}">${{item.price | number:0}}</p>
               
               <div class="bottom">
                 <div class="comments">
@@ -88,10 +88,10 @@
                 <div class="chips">
                   <p class="ma">{{item.m_a}}</p>
                   <p class="mpg">
-                    <span ng-show="{{item.city_mpg}}">{{item.city_mpg}}</span>
-                    <span ng-show="{{item.city_mpg&&item.highway_mpg}}">/</span>
-                    <span ng-show="{{item.highway_mpg}}">{{item.highway_mpg}}</span></p>
-                  <p class="mileage">{{item.mileage}} k</p>
+                    <span ng-show="{{item.mpgcity}}">{{item.mpgcity}}</span>
+                    <span ng-show="{{item.mpgcity&&item.mpghighway}}">/</span>
+                    <span ng-show="{{item.mpghighway}}">{{item.mpghighway}}</span></p>
+                  <p class="mileage">{{item.mileage}}k</p>
                 </div>
                 
               </div>

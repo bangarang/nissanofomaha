@@ -16,8 +16,8 @@ app.controller "VehiclesCtrl", ["$scope", "$http", @VehiclesCtrl = ($scope, $htt
   $http.get("/used.json").success (data) ->
     $scope.items = data
     $scope.loading = false
-    $scope.city_mpg = 0
-    $scope.highway_mpg = 0
+    $scope.mpgcity = 0
+    $scope.mpghighway = 0
 		$scope.priceFilter = (item) ->
 			if $scope.min_price or $scope.max_price
 		  	item.price > $scope.min_price and item.price < $scope.max_price
@@ -29,7 +29,7 @@ app.controller "VehiclesCtrl", ["$scope", "$http", @VehiclesCtrl = ($scope, $htt
 		  else
 		  	true
 		$scope.mpgFilter = (item) ->
-		  item.highway_mpg >= $scope.highway_mpg and item.city_mpg >= $scope.city_mpg
+		  item.mpghighway >= $scope.mpghighway and item.mpgcity >= $scope.mpgcity
 
 		$scope.modelFilter = (item) ->
 		  if $scope.the_model?
