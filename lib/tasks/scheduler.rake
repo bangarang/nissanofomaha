@@ -6,7 +6,7 @@ task :import_vehicles => :environment do
   # import.import_ftp
 
   path_to_file = '/'
-  filename = 'inventory.txt'
+  filename = '8221.txt'
   
 
   time = Time.zone.now
@@ -36,9 +36,12 @@ task :import_vehicles => :environment do
 
   text = open(@last_import.file_url).read.gsub(/\"/,'')
 
-  CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "\t" }) do |row|
+  ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
+  valid_string = ic.iconv(text + ' ')[0..-2]
 
-    if Vehicle.find_by(vin: row[1])
+  CSV.parse(text, { :headers => true, header_converters: :symbol, :col_sep => "," }) do |row|
+
+    if Vehicle.find_by(vin: row[2])
       # puts row["vin"]
     else
       Vehicle.create! row.to_hash
